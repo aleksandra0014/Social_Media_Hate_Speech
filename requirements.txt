@@ -4,3 +4,4 @@ numpy
 requests    
 tzdata 
 ipykernel
+dvc[gdrive]
