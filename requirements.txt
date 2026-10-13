@@ -6,3 +6,5 @@ tzdata
 ipykernel
 dvc[gdrive]
 pyyaml 
+cryptography==50.0.2
+pyOpenSSL==26.4.0
