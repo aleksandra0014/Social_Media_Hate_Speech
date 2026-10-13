@@ -1,0 +1,25 @@
+schema: '2.0'
+stages:
+  collect_bluesky:
+    cmd: python scripts/bluesky.py events.json --out data/raw/bluesky
+    deps:
+    - path: events.json
+      hash: md5
+      md5: df389cb5d3ca755f071a21b3192d3785
+      size: 421
+    - path: scripts/bluesky.py
+      hash: md5
+      md5: 0588708fd401e3630146deff78a88bbc
+      size: 41435
+    params:
+      params.yaml:
+        bluesky:
+          days_before: 28
+          days_after: 28
+          material_max_age: 4
+    outs:
+    - path: data/raw/bluesky
+      hash: md5
+      md5: 2ad31da02ce7b0b9ba5629e4c480685c.dir
+      size: 186513944
+      nfiles: 55

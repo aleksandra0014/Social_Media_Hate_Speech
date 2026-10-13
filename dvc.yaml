@@ -1,0 +1,11 @@
+stages:
+  collect_bluesky:
+    cmd: python scripts/bluesky.py events.json --out data/raw/bluesky
+    deps:
+      - scripts/bluesky.py
+      - events.json
+    params:
+      - bluesky
+    outs:
+      - data/raw/bluesky:
+          persist: true

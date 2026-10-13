@@ -1,0 +1,4 @@
+bluesky:
+  days_before: 28
+  days_after: 28
+  material_max_age: 4
