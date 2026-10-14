@@ -9,3 +9,28 @@ stages:
     outs:
       - data/raw/bluesky:
           persist: true
+
+  filter_bluesky:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/preprocess_filter.py --platform bluesky --event ${item}
+      deps:
+        - scripts/preprocess_filter.py
+        - src/preprocessing
+        - data/raw/bluesky/${item}/posts.csv
+        - data/raw/bluesky/${item}/comments.csv
+      params:
+        - preprocess.filter
+      outs:
+        - data/interim/bluesky/${item}/filtered
+
+  clean_bluesky:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/preprocess_clean.py --platform bluesky --event ${item}
+      deps:
+        - scripts/preprocess_clean.py
+        - src/preprocessing
+        - data/interim/bluesky/${item}/filtered
+      outs:
+        - data/interim/bluesky/${item}/clean

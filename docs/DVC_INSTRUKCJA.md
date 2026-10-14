@@ -189,3 +189,25 @@ Najprościej unikać konfliktów tak: scalamy gałęzie **po kolei**, a następn
 | `WARNING: Unable to find less in the PATH` | Nic się nie stało, można zignorować. |
 | W terminalu pojawia się `>>` i polecenie nie działa | Wklejone polecenie zawierało znak nowej linii. Naciśnij Enter jeszcze raz albo wklej je bez nowej linii. |
 | Git pokazuje pliki CSV jako nowe | Nie dodawaj ich do gita. Folder musi być śledzony przez DVC (`dvc add` albo etap w `dvc.yaml`). |
+
+---
+
+## 8. Preprocessing tekstów (Bluesky)
+
+Dwa etapy uruchamiane osobno dla każdego wydarzenia z listy `preprocess.events` w `params.yaml` (`foreach` w `dvc.yaml`):
+
+| Etap | Co robi | Wynik |
+|---|---|---|
+| `filter_bluesky` | odrzuca posty i komentarze: `no_text` (same linki/wzmianki/liczby), `emoji_only`, `very_short` (< `min_words` słów), `non_polish` (lingua, pewność PL < `min_pl_confidence`), `duplicate` (ten sam tekst w obrębie wydarzenia) | `data/interim/bluesky/<event>/filtered/` – `posts.csv`, `comments.csv`, `excluded_*.csv` (kolumna `drop_reason`), `filter_report.json` |
+| `clean_bluesky` | z pozostałych tekstów usuwa emoji, linki, wzmianki, `#tag` → `tag`, normalizuje białe znaki | `data/interim/bluesky/<event>/clean/` – `text` oczyszczony, `text_raw` oryginał |
+
+Kod jest wspólny dla platform (`src/preprocessing/`), skrypty: `scripts/preprocess_filter.py`, `scripts/preprocess_clean.py`.
+
+```powershell
+dvc repro filter_bluesky clean_bluesky                                  # wszystkie wydarzenia z listy
+dvc repro "filter_bluesky@2024-04-10_Pakt_Azyl_PE" "clean_bluesky@2024-04-10_Pakt_Azyl_PE"   # jedno
+```
+
+- Żeby przetworzyć tylko część wydarzeń, zostaw na liście `preprocess.events` tylko je.
+- Zmiana `preprocess.filter` w `params.yaml` przelicza oba etapy dla wszystkich wydarzeń z listy.
+- Klasyfikacja tematu (migracja) i zapis do `data/processed/` dojdą jako kolejny etap.
