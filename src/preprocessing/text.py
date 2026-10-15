@@ -9,7 +9,11 @@ LINK_RE = re.compile(
     r'|\b[\w.-]+\.(?:pl|com|org|net|eu|be|social|app|io|tv|info|gov|uk|de|me|ly|news|fun)\b/?\S*',
     re.I,
 )
-USER_RE = re.compile(r'@\[user\]|(?<![\w@])@[\w.-]+')
+USER_RE = re.compile(r'(?:@\[user\]|(?<![\w@])@[\w.-]+)(?:[ \t]*:(?=\s|$))?')   # with the ':' of a reply
+# '>' lines quote another user; group 1 keeps a leading '@[user]:' on the same line
+QUOTE_RE = re.compile(r'^([ \t]*(?:(?:@\[user\]|@[\w.-]+)[ \t]*:?[ \t]*)*)>.*$', re.M)
+LENNY_RE = re.compile(r'\([^()\n]{0,12}ʖ[^()\n]{0,12}\)')      # ( ͡° ͜ʖ ͡°) and its variants
+LENNY_TOKEN = '[lenny]'
 PLACEHOLDER_RE = re.compile(r'\[email\]|\[phone\]')
 HASHTAG_RE = re.compile(r'#(\w+)')
 WORD_RE = re.compile(r'[^\W\d_]+')
@@ -28,7 +32,8 @@ def has_emoji(text):
 
 
 def strip_noise(text):
-    """Text without links, mentions, placeholders and hashtags; used for word counts and language detection."""
+    """Author's own words only (no quotes, lenny faces, links, mentions, placeholders, hashtags)."""
+    text = LENNY_RE.sub(' ', QUOTE_RE.sub(r'\1', text))
     text = USER_RE.sub(' ', text)      # before LINK_RE, so '@jan.bsky.social' is not eaten as a domain
     text = LINK_RE.sub(' ', text)
     text = PLACEHOLDER_RE.sub(' ', text)

@@ -1,8 +1,11 @@
-"""Step 2: strip emoji, links and mentions from texts that survived the filter."""
-from .text import HASHTAG_RE, LINK_RE, PLACEHOLDER_RE, USER_RE, normalize_whitespace, remove_emoji
+"""Step 2: strip quotes, emoji, links and mentions; lenny faces become one token."""
+from .text import (HASHTAG_RE, LENNY_RE, LENNY_TOKEN, LINK_RE, PLACEHOLDER_RE, QUOTE_RE, USER_RE,
+                   normalize_whitespace, remove_emoji)
 
 
 def clean_text(text):
+    text = QUOTE_RE.sub(r'\1', text)
+    text = LENNY_RE.sub(f' {LENNY_TOKEN} ', text)   # kept: irony marker on Wykop
     text = USER_RE.sub(' ', text)
     text = LINK_RE.sub(' ', text)
     text = PLACEHOLDER_RE.sub(' ', text)

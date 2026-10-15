@@ -51,3 +51,28 @@ def test_assign_drop_reason(detector):
 ])
 def test_clean_text(text, expected):
     assert clean_text(text) == expected
+
+
+@pytest.mark.parametrize('text, expected', [
+    ('>cytat z innego komentarza\n\n@[user]: moja odpowiedź tutaj', 'moja odpowiedź tutaj'),
+    ('> pierwszy\n>> drugi\nwłasne zdanie', 'własne zdanie'),
+    ('@[user]: tak właśnie było', 'tak właśnie było'),
+    ('No jasne ( ͡° ͜ʖ ͡°) xD', 'No jasne [lenny] xD'),
+    ('Szkoda ( ͡° ʖ̯ ͡°) i tyle (⌐ ͡■ ͜ʖ ͡■)', 'Szkoda [lenny] i tyle [lenny]'),
+    ('a > b to prawda', 'a > b to prawda'),
+    ('@[user]: >cytat w tej samej linii\nodpowiedź autora tutaj', 'odpowiedź autora tutaj'),
+    ('@[user] @[user] : braki w paliwie', 'braki w paliwie'),
+    ('@[user]: :D zawsze to samo', ':D zawsze to samo'),
+])
+def test_clean_text_quotes_replies_lenny(text, expected):
+    assert clean_text(text) == expected
+
+
+@pytest.mark.parametrize('text, reason', [
+    ('>długi cytat z zupełnie innego komentarza\n@[user]: xD', VERY_SHORT),
+    ('>sam cytat bez odpowiedzi autora', NO_TEXT),
+    ('xD ( ͡° ͜ʖ ͡°) ok', VERY_SHORT),
+    ('>krótki cytat\n@[user]: ale to jest moja pełna odpowiedź', None),
+])
+def test_rule_reason_ignores_quotes_and_lenny(text, reason):
+    assert rule_reason(text, 3) == reason

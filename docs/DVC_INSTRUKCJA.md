@@ -20,7 +20,7 @@ repozytorium (git → GitHub)              Google Drive (remote DVC "gdrive")
 
 Struktura danych:
 ```
-data/raw/bluesky/   ← etap collect_bluesky (Ola)
+data/raw/bluesky/   ← etap collect_bluesky
 data/raw/youtube/   ← YouTube
 data/raw/wykop/     ← Wykop
 ```
@@ -198,8 +198,8 @@ Dwa etapy uruchamiane osobno dla każdego wydarzenia z listy `preprocess.events`
 
 | Etap | Co robi | Wynik |
 |---|---|---|
-| `filter_bluesky` | odrzuca posty i komentarze: `no_text` (same linki/wzmianki/liczby), `emoji_only`, `very_short` (< `min_words` słów), `non_polish` (lingua, pewność PL < `min_pl_confidence`), `duplicate` (ten sam tekst w obrębie wydarzenia) | `data/interim/bluesky/<event>/filtered/` – `posts.csv`, `comments.csv`, `excluded_*.csv` (kolumna `drop_reason`), `filter_report.json` |
-| `clean_bluesky` | z pozostałych tekstów usuwa emoji, linki, wzmianki, `#tag` → `tag`, normalizuje białe znaki | `data/interim/bluesky/<event>/clean/` – `text` oczyszczony, `text_raw` oryginał |
+| `filter_bluesky` | odrzuca posty i komentarze: `no_text` (same linki/wzmianki/liczby albo sam cytat), `emoji_only`, `very_short` (< `min_words` własnych słów autora; cytaty `>` i „lenny face” się nie liczą), `non_polish` (lingua, pewność PL < `min_pl_confidence`), `duplicate` (ten sam tekst w obrębie wydarzenia) | `data/interim/bluesky/<event>/filtered/` – `posts.csv`, `comments.csv`, `excluded_*.csv` (kolumna `drop_reason`), `filter_report.json` |
+| `clean_bluesky` | z pozostałych tekstów usuwa cytaty (linie zaczynające się od `>`), emoji, linki, wzmianki (z dwukropkiem odpowiedzi `@[user]:`), `#tag` → `tag`; „lenny face” `( ͡° ͜ʖ ͡°)` i jej warianty zamienia na token `[lenny]` (sygnał ironii); normalizuje białe znaki | `data/interim/bluesky/<event>/clean/` – `text` oczyszczony, `text_raw` oryginał |
 
 Kod jest wspólny dla platform (`src/preprocessing/`), skrypty: `scripts/preprocess_filter.py`, `scripts/preprocess_clean.py`.
 
@@ -211,3 +211,26 @@ dvc repro "filter_bluesky@2024-04-10_Pakt_Azyl_PE" "clean_bluesky@2024-04-10_Pak
 - Żeby przetworzyć tylko część wydarzeń, zostaw na liście `preprocess.events` tylko je.
 - Zmiana `preprocess.filter` w `params.yaml` przelicza oba etapy dla wszystkich wydarzeń z listy.
 - Klasyfikacja tematu (migracja) i zapis do `data/processed/` dojdą jako kolejny etap.
+
+---
+
+## 9. Wykop
+
+Wykop jest zbierany przez API v3. W repo ten dane są **źródłem**, a podział na wydarzenia robi etap DVC, tak samo jak dla Bluesky:
+
+| Element | Co to jest |
+|---|---|
+| `data/external/wykop/` (`dvc add`) | eksport kolektora: `items.csv`, `comments.csv`, `events.csv`, `window_events.csv`, `daily_coverage.csv` |
+| `collect_wykop` | `scripts/wykop.py` dzieli eksport na `data/raw/wykop/<data>_<wydarzenie>/` z tymi samymi plikami i regułami co `collect_bluesky`: okno ±28 dni, materiał do 4 dni starszy od komentarza, tylko PL, `posts.csv`, `comments.csv`, `excluded.csv`, `daily.csv`, `report.json` |
+| `filter_wykop`, `clean_wykop` | te same skrypty preprocessingu co dla Bluesky (`--platform wykop`), ta sama lista `preprocess.events` |
+
+```powershell
+dvc pull collect_wykop                     # tylko dane Wykopu
+dvc repro collect_wykop filter_wykop clean_wykop
+```
+
+Nowy eksport z kolektora: podmień pliki w `data/external/wykop/`, potem `dvc add data/external/wykop` i `dvc repro collect_wykop filter_wykop clean_wykop`.
+
+Różnice względem Bluesky są opisane w `report.json`:
+- Komentarze pobierano tylko dla części wpisów (`materials_comments_status`), więc nie jest to pełna populacja komentarzy.
+- Język wykrywał kolektor (lingua). `langs` zawiera wykryty język, a nie deklarację autora.
