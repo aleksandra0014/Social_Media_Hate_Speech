@@ -1,0 +1,15 @@
+{
+  "n_items": 18,
+  "n_annotators": 2,
+  "n_items_complete_all_annotators": 18,
+  "mean_pairwise_percent_agreement": 1.0,
+  "mean_pairwise_cohen_kappa (Light)": 1.0,
+  "mean_pairwise_PABAK": 1.0,
+  "fleiss_kappa": 1.0,
+  "fleiss_kappa_n_items": 18,
+  "gwet_AC1": 1.0,
+  "gwet_AC1_n_items": 18,
+  "krippendorff_alpha_nominal": 1.0,
+  "krippendorff_alpha_CI95_low": 1.0,
+  "krippendorff_alpha_CI95_high": 1.0
+}

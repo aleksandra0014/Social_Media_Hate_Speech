@@ -1,3 +1,5 @@
 .env.local
 data/
 venv/
+models/scripts/outputs/models/
+models/scripts_small/outputs_debug/models

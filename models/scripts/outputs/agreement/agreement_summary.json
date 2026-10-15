@@ -1,0 +1,15 @@
+{
+  "n_items": 200,
+  "n_annotators": 3,
+  "n_items_complete_all_annotators": 200,
+  "mean_pairwise_percent_agreement": 0.8366666666666666,
+  "mean_pairwise_cohen_kappa (Light)": 0.6791093647675179,
+  "mean_pairwise_PABAK": 0.6733333333333332,
+  "fleiss_kappa": 0.670861134745421,
+  "fleiss_kappa_n_items": 200,
+  "gwet_AC1": 0.6757686708721159,
+  "gwet_AC1_n_items": 200,
+  "krippendorff_alpha_nominal": 0.6714096995208454,
+  "krippendorff_alpha_CI95_low": 0.5975313028602158,
+  "krippendorff_alpha_CI95_high": 0.7466967017450142
+}

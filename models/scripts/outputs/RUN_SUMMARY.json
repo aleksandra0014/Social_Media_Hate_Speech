@@ -1,0 +1,18 @@
+{
+  "modele_dotrenowane": {
+    "herbert_hs_banpl": "outputs/models/herbert_hs_banpl",
+    "herbert_base_poleval": "outputs/models/herbert_base_poleval",
+    "herbert_base_banpl": "outputs/models/herbert_base_banpl",
+    "roberta_base_poleval": "outputs/models/roberta_base_poleval",
+    "roberta_base_banpl": "outputs/models/roberta_base_banpl",
+    "polbert_cb_banpl": "outputs/models/polbert_cb_banpl",
+    "polbert_base_poleval": "outputs/models/polbert_base_poleval",
+    "polbert_base_banpl": "outputs/models/polbert_base_banpl"
+  },
+  "ewaluacja_18": "outputs/evaluation/evaluation_all_18.csv",
+  "predykcje_comments": "outputs/comments_predictions",
+  "adnotacja": "outputs/annotation",
+  "zgodnosc": "outputs/agreement",
+  "porownanie": "outputs/model_vs_annotation",
+  "wykresy": "outputs/figures"
+}

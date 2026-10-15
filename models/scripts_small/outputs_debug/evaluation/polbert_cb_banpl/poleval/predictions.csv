@@ -1,0 +1,151 @@
+text,true_label,p_hate,p_no_hate,pred_label,confidence,correct,n_chunks
+RT I teraz wyobraźcie sobie ławnika przy takiej skomplikowanej sprawie jak to postanowienie SN.,0,0.1377352774143219,0.8622647225856781,0,0.8622647225856781,1,1
+"Och, widzę, że przy tym poście zaszło nieporozumienie. One mają dom, tylko chwilowo nie mają półki 😉",0,0.15495401620864868,0.8450459837913513,0,0.8450459837913513,1,1
+Ja też jestem DUZI a hawajska blee #nikogo,0,0.1050540953874588,0.8949459046125412,0,0.8949459046125412,1,1
+co za mało wyświetleń że po raz kolejny wrzucasz tego linka ?,0,0.10582186281681061,0.8941781371831894,0,0.8941781371831894,1,1
+zanim się odezwiesz to wytrzeźwiej,0,0.5107853412628174,0.4892146587371826,1,0.5107853412628174,0,1
+Awwwww a ja na Ciebie Agatka 😍,0,0.16455014050006866,0.8354498594999313,0,0.8354498594999313,1,1
+W Polsce to może być szok ;),0,0.0597146637737751,0.9402853362262249,0,0.9402853362262249,1,1
+Bardzo Solidarności wie co mówi. Jacek Kaczmarski w 1975 roku,0,0.10614094883203506,0.8938590511679649,0,0.8938590511679649,1,1
+towarzystwo będzie najlepsze jak znikniesz z horyzontu Panie Lis,1,0.4446069002151489,0.5553930997848511,0,0.5553930997848511,0,1
+"e, ja już jedną w tym roku przeczytałam, wystarczy.",0,0.05608280003070831,0.9439171999692917,0,0.9439171999692917,1,1
+ale Jose wiedział jaką zawodniczke bierze i widocznie mu pasowała :),0,0.024204498156905174,0.9757955018430948,0,0.9757955018430948,1,1
+"Sprawdzam na flightradarze, samolot \""już\"" wleciał do Polski.",0,0.09778682142496109,0.9022131785750389,0,0.9022131785750389,1,1
+historia ludzkości to historia głupoty #jajco,0,0.346749484539032,0.653250515460968,0,0.653250515460968,1,1
+Kasę ukradli państwu a oddali Caritasowi. To jest zwrot debilu?,1,0.9573149085044861,0.042685091495513916,1,0.9573149085044861,1,1
+O czym ty bredzisz. Jak nic nie wiesz o sprawie to się po prostu nie odzywaj i nie rób z siebie durnia.,1,0.32081806659698486,0.6791819334030151,0,0.6791819334030151,0,1
+teraz pasuje do lądowania -),0,0.08151227980852127,0.9184877201914787,0,0.9184877201914787,1,1
+"Tak, mam na liście \""Do przeczytania\"".",0,0.09350600093603134,0.9064939990639687,0,0.9064939990639687,1,1
+"Nie no, raczej tu nie chodziło o pchnięcie. Jeśli już - o biodro/nogi.",0,0.07716084271669388,0.9228391572833061,0,0.9228391572833061,1,1
+"Wybaczam ci że nie masz swastyki na ryju i na profilowym, mimo skarg",1,0.8264904022216797,0.1735095977783203,1,0.8264904022216797,1,1
+Skoro inwestor chce wyłożyć 40 mln to za tydzień może z taką oferta wyjść do TSW bez udziału Cupiala.,0,0.044945087283849716,0.9550549127161503,0,0.9550549127161503,1,1
+"oświeciłam swoją rodzinkę, że istnieje taki zwyczaj i oni wszyscy byli w szoku, zależy od regionu no nie",0,0.052407406270504,0.947592593729496,0,0.947592593729496,1,1
+tu nie chodzi o to czy jest szczęśliwy dla nas tylko o to że nie potrafi sędziować :P,0,0.04511947184801102,0.954880528151989,0,0.954880528151989,1,1
+Niechce się powtarzać ale znów niewiem czemu var anulowal bramkę,0,0.049746956676244736,0.9502530433237553,0,0.9502530433237553,1,1
+"Ale on nie był nigdy aż tak zenujacy z tym symulowaniem, jak na tym mundialu.",0,0.04025157168507576,0.9597484283149242,0,0.9597484283149242,1,1
+No Hamsik z 3 raczej nie będzie grał 😉,0,0.039476100355386734,0.9605238996446133,0,0.9605238996446133,1,1
+To ta pani co ma roztrojenie jaźni?,0,0.31700825691223145,0.6829917430877686,0,0.6829917430877686,1,1
+z tego co wiem to wyłowiono jego ciało z jakieś wody,1,0.09460281580686569,0.9053971841931343,0,0.9053971841931343,0,1
+UEFA jak PKP. Co 10 minut opóźnienie zwiększa się o 10 minut. 14:30.,0,0.040978338569402695,0.9590216614305973,0,0.9590216614305973,1,1
+"RT wiek to okropny złodziej. kiedy zaczynasz rozumieć, na czym polega życie, ono ścina cię z nóg i przygarbia ci plecy.",0,0.42108869552612305,0.578911304473877,0,0.578911304473877,1,1
+czemu szkoda że Gdynia przegrała ?,0,0.05229160562157631,0.9477083943784237,0,0.9477083943784237,1,1
+no to wiemy już komu Gliwice zawdzięczają utrzymanie :),0,0.048674628138542175,0.9513253718614578,0,0.9513253718614578,1,1
+"A teraz wiesz że jest Trump, hejt, trolle, ja jestem zdegustowany np. tolerancja się kończy",0,0.17448753118515015,0.8255124688148499,0,0.8255124688148499,1,1
+"Kiedy żona powie, że ci w nich dobrze",0,0.2033785730600357,0.7966214269399643,0,0.7966214269399643,1,1
+"Dwóch fanów już mamy, reszta szybko się znajdzie i będziemy rosnąć w sile 😂😂",0,0.04226860776543617,0.9577313922345638,0,0.9577313922345638,1,1
+RT Mój dziadek zgubił dowód osobisty. W poniedziałek mu znajdę.,0,0.08039828389883041,0.9196017161011696,0,0.9196017161011696,1,1
+"Co 11 lat - niemal regularnie, dość osobliwe jednak",0,0.08582470566034317,0.9141752943396568,0,0.9141752943396568,1,1
+Tak na pewno to było zaplanowane 😂,0,0.04291610047221184,0.9570838995277882,0,0.9570838995277882,1,1
+kibice wierzą w zwycięstwo swojej drużyny.Ty to nazywasz dopisywaniem pkt ? Haha,0,0.08015090227127075,0.9198490977287292,0,0.9198490977287292,1,1
+"wiek to okropny złodziej. kiedy zaczynasz rozumieć, na czym polega życie, ono ścina cię z nóg i przygarbia ci plecy.",0,0.41397812962532043,0.5860218703746796,0,0.5860218703746796,1,1
+Awww dziękuje z całego serduszka,0,0.11362779885530472,0.8863722011446953,0,0.8863722011446953,1,1
+"RT Jak można porównywać premie dla rządu, który w dwa lata zrobił więcej niż poprzedni przez osiem okradał kraj i przyniósł…",0,0.17682573199272156,0.8231742680072784,0,0.8231742680072784,1,1
+Boze naprawdę? 😮 To ktos z naszego otoczenia? 🤔,0,0.07998310029506683,0.9200168997049332,0,0.9200168997049332,1,1
+"Grunt, że Lech zrobił wielki ruch, nie pozyskując Bezjaka.",0,0.0897955372929573,0.9102044627070427,0,0.9102044627070427,1,1
+nie ma chyba takich :),0,0.05785514414310455,0.9421448558568954,0,0.9421448558568954,1,1
+Czemu myślałam ze dzisiaj niedziela,0,0.06690679490566254,0.9330932050943375,0,0.9330932050943375,1,1
+Pełna zgoda. To skandal że zamykają przestępców ! Za PO się przecież z nimi dogadywano !,0,0.14243489503860474,0.8575651049613953,0,0.8575651049613953,1,1
+Obrona ojczyzny to nie zatajanie prawdy przed światem.,0,0.07916565984487534,0.9208343401551247,0,0.9208343401551247,1,1
+Już chciałam być smutna xd,0,0.0533788688480854,0.9466211311519146,0,0.9466211311519146,1,1
+Jako obywatel kategorycznie domagam się abyś włożył sobie nos w końcowy odcinek układu pokarmowego,1,0.4539928436279297,0.5460071563720703,0,0.5460071563720703,0,1
+"Policja w USA dostała wezwanie, że dzieci były za głośno. Przyjechał policjant, pograł w kosza. \""Ścigamy złych, dzieci niech będą dziećmi\""",0,0.09320532530546188,0.9067946746945381,0,0.9067946746945381,1,1
+To ciekawe. W Warszawie w tym roku naukę w I klasie zacznie tylko 11% #sześciolatki. 89% rodzice zostawiają w przedszkolach.,0,0.08665259182453156,0.9133474081754684,0,0.9133474081754684,1,1
+Ryszard Kalisz dzieła wybrane tom I rozdział I,0,0.10259229689836502,0.897407703101635,0,0.897407703101635,1,1
+Nie ma za co x,0,0.07290668785572052,0.9270933121442795,0,0.9270933121442795,1,1
+"Vadis na wahadle, ototototo 😄",0,0.1332179307937622,0.8667820692062378,0,0.8667820692062378,1,1
+na Westerplatte 13 jest sklep Lego,0,0.0878596305847168,0.9121403694152832,0,0.9121403694152832,1,1
+To Pani Krysia jest Twoją Ojczyzną?,0,0.16028828918933868,0.8397117108106613,0,0.8397117108106613,1,1
+"Sorry, mam aż trzech Waszych w więc to nie może się udać ;)",0,0.11273739486932755,0.8872626051306725,0,0.8872626051306725,1,1
+"Nie zmieścił się w kadrze to dostał wolne, bo przecież teraz będzie przerwa na kadrę.",0,0.05195199325680733,0.9480480067431927,0,0.9480480067431927,1,1
+"Przykre, że tak trollują Sergio Romero, dobry bramkarz via",0,0.07081501185894012,0.9291849881410599,0,0.9291849881410599,1,1
+A w ostatniej kolejce gra Termalika z Korona wiec ktoras z tych druzyn na pewno nas nie przegoni,0,0.045946329832077026,0.954053670167923,0,0.954053670167923,1,1
+Czyli Legie stać aby wydać coś koło 2 mln euro na zawodnika ?,0,0.026290740817785263,0.9737092591822147,0,0.9737092591822147,1,1
+Od sędziów z postępowaniami dyscyplinarnymi kandydującymi do KRS,0,0.11124958842992783,0.8887504115700722,0,0.8887504115700722,1,1
+Haha bez jaj.Ale w sumie czego się po was spodziewać jak panienki u was grają.,0,0.3328077793121338,0.6671922206878662,0,0.6671922206878662,1,1
+Jarkacza nie zmiesz . możesz zmienić Jarkacza ale to nic nie znieni,0,0.2148204892873764,0.7851795107126236,0,0.7851795107126236,1,1
+"Kariere piłkarską skończył, ale trzeba jeszcze trochę kasiory zgarnąć jako maskotka drużyny 😂",0,0.06136184558272362,0.9386381544172764,0,0.9386381544172764,1,1
+A co nie widzisz ?,0,0.1496964544057846,0.8503035455942154,0,0.8503035455942154,1,1
+"Panie Kropiwnicki, w latach 80 wojsko polskie skladalo przysięgę na wierność w szeregach armi radzieckiej #Woronicza17",0,0.13665123283863068,0.8633487671613693,0,0.8633487671613693,1,1
+"Myślę, że w jedenastce Chorwatów będzie kilka zmian, a i tak osiągną dobry wynik.",0,0.04414888098835945,0.9558511190116405,0,0.9558511190116405,1,1
+Co za bełkot ten halicki. #Woronicza17,0,0.3299461603164673,0.6700538396835327,0,0.6700538396835327,1,1
+Tomaszowi szkoda że PMM nie schował zarobionej kasy w LISIEJ NORZE. 😂😂😂,0,0.354646772146225,0.645353227853775,0,0.645353227853775,1,1
+RT Może być kliknęli i zrobili dobry uczynek? Każdy RT = oddany na Marcina Gortata głos. #NBAvote,0,0.10501442849636078,0.8949855715036392,0,0.8949855715036392,1,1
+Jebać słonicę- motylicę!!!!😁😁😁. Wrocław nie daj się!!!,0,0.9621149301528931,0.037885069847106934,1,0.9621149301528931,0,1
+Nie pamiętam kiedy miałam wolny weekend więc to dla mnie jak miesiąc laby ;-D,0,0.04751775041222572,0.9524822495877743,0,0.9524822495877743,1,1
+Nic na to nie wskazuje (tweet z wczoraj):,0,0.055886924266815186,0.9441130757331848,0,0.9441130757331848,1,1
+Maddie z Ciebie nie będzie 😂,0,0.10879550129175186,0.8912044987082481,0,0.8912044987082481,1,1
+"Są pytania o mecze wyjazdowe w Jaga Benefit - tu czekamy na odpowiednie listy, żeby móc dodać punkty za minioną rundę.",0,0.04202171787619591,0.9579782821238041,0,0.9579782821238041,1,1
+I znowu łżesz jak bura suka. UE mówi całkowicie co innego niż wy do swoich moherów.,1,0.9669254422187805,0.03307455778121948,1,0.9669254422187805,1,1
+"Nieprawda. Normalnie tak się nie \""tnie\"".",0,0.15468625724315643,0.8453137427568436,0,0.8453137427568436,1,1
+RT Kop w dupę i do Watykanu się mądrzyć za swoją kasę !,1,0.9489908814430237,0.05100911855697632,1,0.9489908814430237,1,1
+Gdzie jest mędrek z mędrkowa ?,0,0.2587548494338989,0.7412451505661011,0,0.7412451505661011,1,1
+"Ja jestem zachwycona też \""Cywilizacją komunizmu\"". Za kunszt słowa.",0,0.08726710081100464,0.9127328991889954,0,0.9127328991889954,1,1
+Ale najpierw Sadurskiego do Australii,0,0.09541266411542892,0.9045873358845711,0,0.9045873358845711,1,1
+no i co z tego że w przesądzonym dwumeczu ? Z wami też grali na pół gwizdka i dostaliście 5-1,0,0.07710234075784683,0.9228976592421532,0,0.9228976592421532,1,1
+A w kościółku już byłeś?,0,0.1610373854637146,0.8389626145362854,0,0.8389626145362854,1,1
+"#FF dla depeszowców z #PAP, którzy robią kawał dobrej dziennikarskiej roboty, a najczęściej są zupełnie anonimowi. #ChapeauBas",0,0.15144656598567963,0.8485534340143204,0,0.8485534340143204,1,1
+No dzisiaj coś wyjątkowo w tę stronę idzie 😁,0,0.06299112737178802,0.937008872628212,0,0.937008872628212,1,1
+"Ty jesteś jebnięty, tła takiego parcha mam jechać przez pół polski",1,0.9655393958091736,0.034460604190826416,1,0.9655393958091736,1,1
+ok.W takim razie Cionek jest Polakiem.Ma polskie obywatelstwo ? Ma,0,0.11245723813772202,0.887542761862278,0,0.887542761862278,1,1
+Lg g6 to dobry wybór,0,0.03654507175087929,0.9634549282491207,0,0.9634549282491207,1,1
+"Jak można porównywać premie dla rządu, który w dwa lata zrobił więcej niż poprzedni przez osiem okradał kraj i przyniósł straty #woronicza17",0,0.18957291543483734,0.8104270845651627,0,0.8104270845651627,1,1
+"Przykładaj lód na opuchliznę i mam taka super maść przeciwbólową, Olfen żel, jak coś to polecam",0,0.17304441332817078,0.8269555866718292,0,0.8269555866718292,1,1
+przynajmniej się nie sprzedajemy tak jak wy Amice,0,0.16254834830760956,0.8374516516923904,0,0.8374516516923904,1,1
+Ciekawe czy Ariana przyjedzie do Polski w nowej trasie,0,0.06349906325340271,0.9365009367465973,0,0.9365009367465973,1,1
+"Gdzie jest to całe zakłamane,lewackie skurwysynstwo??? No gdzie??",1,0.9275370240211487,0.07246297597885132,1,0.9275370240211487,1,1
+Mitrovic najlepszy nieliczac asyst i bramki,0,0.057722266763448715,0.9422777332365513,0,0.9422777332365513,1,1
+Zaczekaj aż ten debil się dowie,1,0.9525988101959229,0.04740118980407715,1,0.9525988101959229,1,1
+"Też jesteś kwiatem, tylko że chwastem #Boni",0,0.17965386807918549,0.8203461319208145,0,0.8203461319208145,1,1
+"Fav albo rt to zrobię Wam indy!!! Nie wiem czy wszystkim, zależy kogo będę kojarzyć 🔥🔥🔥",0,0.07089493423700333,0.9291050657629967,0,0.9291050657629967,1,1
+2/2 a później się zastanawiaj po co Wiśle akademia i wychwalaj akademie Legii i ich stawianie na młodzież,0,0.10031268000602722,0.8996873199939728,0,0.8996873199939728,1,1
+W tym wypadku sama jedziesz na 500+,0,0.06295567005872726,0.9370443299412727,0,0.9370443299412727,1,1
+PiS już się zbliża już puka do twych drzwi.Pobiegnij go przywitać z radości serce drży. 😁😁😁,0,0.21411940455436707,0.7858805954456329,0,0.7858805954456329,1,1
+"RT Trzeba być patriotą swojego miasta, swojego regionu, swojej ziemi. Prezes #PiS J. #Kaczyński w #Zamość: #DotrzymujemySłowa",0,0.07780351489782333,0.9221964851021767,0,0.9221964851021767,1,1
+Aaaaa czyli było u Ciebie na promocji ale tak ogólnie kosztują 25 i 30?,0,0.09400130808353424,0.9059986919164658,0,0.9059986919164658,1,1
+nie kłóć się jak nie chcesz mieć później problemów! :),1,0.09338712692260742,0.9066128730773926,0,0.9066128730773926,0,1
+Dziadek (85 l.) z kolegami z roku postanowił napisać książkę. I sobie przesyłają rozdziały mailem. - Dasz przeczytać? - Zgram Ci na pena.,0,0.16943366825580597,0.830566331744194,0,0.830566331744194,1,1
+Cierzniak nie był w żadnym klubie kokosa tylko w rezerwach.Nikt mu takich rzeczy nie kazał robić ani biegać po schodach,0,0.08166567981243134,0.9183343201875687,0,0.9183343201875687,1,1
+Pewnie pił dzień wcześniej i przebiegł maraton,0,0.07456161081790924,0.9254383891820908,0,0.9254383891820908,1,1
+Nie traktuje tych ludzi poważnie. Nie potrafię,0,0.04841424152255058,0.9515857584774494,0,0.9515857584774494,1,1
+Nie omieszkam. W przyszłym tygodniu to zrobię.,0,0.059297677129507065,0.9407023228704929,0,0.9407023228704929,1,1
+nie czytałem tekstu ale co to za tytuł ? Hiszpanie nie mają kasy ? To zobaczcie na najwyższe transfery w historii,0,0.0797281563282013,0.9202718436717987,0,0.9202718436717987,1,1
+To ktoś powinien robić korektę w takim razie...,0,0.09150872379541397,0.908491276204586,0,0.908491276204586,1,1
+Skąd teraz będziesz miał informacje o frekwencji na Wiśle ?:(,0,0.05543600022792816,0.9445639997720718,0,0.9445639997720718,1,1
+po co znowu lansujecie tego pajaca ?,1,0.5655562281608582,0.43444377183914185,1,0.5655562281608582,1,1
+RT . spotkał się z Kubicą. „#Polska zawsze wspiera swoich” #wieszwiecej #RobertK…,0,0.08701223880052567,0.9129877611994743,0,0.9129877611994743,1,1
+Otworzysz następny? Przyjdzie na ciebie pora popaprańcu. TS czeka.,1,0.9713060259819031,0.028693974018096924,1,0.9713060259819031,1,1
+a więc to nie są woreczki na kanapki? 😟,0,0.14359131455421448,0.8564086854457855,0,0.8564086854457855,1,1
+Chcesz wiedzieć jak wyglądał mecz ? Jak Anna Grodzka.,0,0.0638657808303833,0.9361342191696167,0,0.9361342191696167,1,1
+może inni nie chcieli strzelać ? Poza tym to że ktoś jest obrońcą nie znaczy że nie potrafi strzelać :),0,0.04692764952778816,0.9530723504722118,0,0.9530723504722118,1,1
+"Czuję się rozczarowany, ale skoro było tak grubo to wiadomo :)",0,0.07847052812576294,0.9215294718742371,0,0.9215294718742371,1,1
+Ja swojej kupiłam taka piękna sukieneczkę i książeczkę,0,0.05886145308613777,0.9411385469138622,0,0.9411385469138622,1,1
+Sylwestrowy obowiązek do wykonania. Daj RT = oddaj głos na Marcina Gortata. Zebraliśmy już tutaj blisko 10 000 głosów. #NBAVOTE,0,0.058488525450229645,0.9415114745497704,0,0.9415114745497704,1,1
+kolejny krok do głównego celu :) 🏆,0,0.06845436990261078,0.9315456300973892,0,0.9315456300973892,1,1
+"Kocur z Krychowiakiem to jedyny zestaw w środku pola, który będzie dobrze funkcjonował przy 3-4-3.",0,0.08046840131282806,0.9195315986871719,0,0.9195315986871719,1,1
+Jestem przeciw PiS ale pierdol się kutasie. Jak chcesz pamiętać to kup sobie pamiętnik.,1,0.9707608819007874,0.029239118099212646,1,0.9707608819007874,1,1
+"Gdzie to świętowanie ? Chętnie bym przyszedł, ale wczoraj mnie Pan olał.",0,0.11105120182037354,0.8889487981796265,0,0.8889487981796265,1,1
+To tylko balon z którego schodzi powietrze,0,0.10042441636323929,0.8995755836367607,0,0.8995755836367607,1,1
+...dzięki za walkę tez się należy,0,0.07069556415081024,0.9293044358491898,0,0.9293044358491898,1,1
+"A PiS i Kukiz jeden chuj wielki śmiech i wstyd, żenada na cały świat",1,0.9617026448249817,0.03829735517501831,1,0.9617026448249817,1,1
+Czy ktoś pamięta o moich urodzinach oprócz mojej mamy bo szczerze to watpie mocno XD,0,0.05674043297767639,0.9432595670223236,0,0.9432595670223236,1,1
+Czemu zapraszacie rasistów i zera bezwzględnego ?,1,0.2474929541349411,0.7525070458650589,0,0.7525070458650589,0,1
+"RT w pewnym wieku przestają cb pytać \""kim zostaniesz\"" i zaczynają pytać \""jakie masz plany na przyszłość\"" kurwa sad bez jabłek troc…",0,0.49477285146713257,0.5052271485328674,0,0.5052271485328674,1,1
+Są faworytami w tym meczu wg bukmacherów,0,0.05771908536553383,0.9422809146344662,0,0.9422809146344662,1,1
+"Finał będzie jeden, na neutralnym terenie ponoć 27 czerwca ;)",0,0.046570900827646255,0.9534290991723537,0,0.9534290991723537,1,1
+"Olej jak kto sie ubiera, patrz na statystyki kolego z tt",0,0.25960326194763184,0.7403967380523682,0,0.7403967380523682,1,1
+"My tu o polityce,a tu byki ryczą! Zaczynają rykowisko!😁",0,0.11441190540790558,0.8855880945920944,0,0.8855880945920944,1,1
+mamy brać kogoś bo inni biorą ?,0,0.1334090232849121,0.8665909767150879,0,0.8665909767150879,1,1
+"No na fb lepiej, będzie wygodniej",0,0.11656150966882706,0.8834384903311729,0,0.8834384903311729,1,1
+A potem pójdziesz pod prokuratora za ukradzione kilometrówki,1,0.38284537196159363,0.6171546280384064,0,0.6171546280384064,0,1
+"A ty taki dziennikarz, że nie wiesz co oznacza znak zapytania 😂",0,0.20680147409439087,0.7931985259056091,0,0.7931985259056091,1,1
+Decyzją spikera brytyjskiej Izby Gmin noszenie krawatów przez posłów i reporterów podczas posiedzeń parlamentu nie będzie już obowiązkowe 👔,0,0.12060943990945816,0.8793905600905418,0,0.8793905600905418,1,1
+Coś się dzieje atak botów z każdej strony,0,0.10888928920030594,0.8911107107996941,0,0.8911107107996941,1,1
+W sumie na tej edycji to chciałbym zobaczyć tylko jego idk,0,0.04678577184677124,0.9532142281532288,0,0.9532142281532288,1,1
+Młodsze pokolenie ma problem... wszystkie fajne nicki są już zajęte.,0,0.16056767106056213,0.8394323289394379,0,0.8394323289394379,1,1
+mi też tak mówią i serio wyglądam jak dzieciak a mam 20 lat lmao,0,0.07332964241504669,0.9266703575849533,0,0.9266703575849533,1,1
+RT Sylwestrowy obowiązek do wykonania. Daj RT = oddaj głos na Marcina Gortata. Zebraliśmy już tutaj blisko 10 000 głosów.,0,0.09270547330379486,0.9072945266962051,0,0.9072945266962051,1,1
+A ten drugi jaki zespół prowadzi ?,0,0.04427545890212059,0.9557245410978794,0,0.9557245410978794,1,1
+Na 200 lecie obecny rząd ma już dać program przed najbliższymi wyborami wiec obstawiam zero nerwowości,0,0.07309003174304962,0.9269099682569504,0,0.9269099682569504,1,1
+"100 osób +/-5 salkanw sam raz, każda kolejna osoba to ścisk 😂😂😂",0,0.0822514221072197,0.9177485778927803,0,0.9177485778927803,1,1
+Dokladnie i 25 mln zawstydzonych,0,0.16237150132656097,0.837628498673439,0,0.837628498673439,1,1
+Czyli dalej reklamowanie firmy na PL rynku rozumiem.,0,0.06672987341880798,0.933270126581192,0,0.933270126581192,1,1

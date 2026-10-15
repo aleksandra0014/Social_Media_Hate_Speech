@@ -1,0 +1,91 @@
+{
+  "DEBUG_MODE": true,
+  "COMMENTS_CSV": "../comments_examples/comments.csv",
+  "OUT": "outputs_debug",
+  "DIR_MODELS": "outputs_debug/models",
+  "DIR_DATA": "outputs_debug/data",
+  "DIR_EVAL": "outputs_debug/evaluation",
+  "DIR_PRED": "outputs_debug/comments_predictions",
+  "DIR_ANN": "outputs_debug/annotation",
+  "DIR_ANN_DONE": "outputs_debug/annotation/completed",
+  "DIR_AGR": "outputs_debug/agreement",
+  "DIR_CMP": "outputs_debug/model_vs_annotation",
+  "DIR_FIG": "outputs_debug/figures",
+  "POLEVAL_HF_CANDIDATES": [
+    [
+      "poleval2019_cyberbullying",
+      "task01"
+    ],
+    [
+      "community-datasets/poleval2019_cyberbullying",
+      "task01"
+    ]
+  ],
+  "BANPL_TEST_SIZE": 0.1,
+  "VAL_SIZE": 0.1,
+  "BANPL_ZIP": "data/BAN-PL_1.zip",
+  "BANPL_DIR": "data/ban-pl",
+  "BANPL_TEXT_COL": null,
+  "BANPL_LABEL_COL": null,
+  "SEED": 42,
+  "EPOCHS": 1,
+  "EARLY_STOP_PATIENCE": 2,
+  "WARMUP_RATIO": 0.06,
+  "WEIGHT_DECAY": 0.01,
+  "GRAD_CLIP": 1.0,
+  "USE_CLASS_WEIGHTS": true,
+  "GRADIENT_CHECKPOINTING": true,
+  "TRAIN_MAX_LEN": {
+    "poleval": 128,
+    "banpl": 256
+  },
+  "TRAIN_BATCH": {
+    "large": 8,
+    "base": 16
+  },
+  "GRAD_ACCUM": {
+    "large": 4,
+    "base": 2
+  },
+  "LEARNING_RATE": {
+    "large": 1e-05,
+    "base": 5e-05
+  },
+  "MAX_TRAIN_SAMPLES": {
+    "poleval": 300,
+    "banpl": 300
+  },
+  "HERBERT_READY": "dkleczek/Polish-Hate-Speech-Detection-Herbert-Large",
+  "POLBERT_READY": "ptaszynski/bert-base-polish-cyberbullying",
+  "POLBERT_BASE": "dkleczek/bert-base-polish-uncased-v1",
+  "ROBERTA_BASE": "sdadas/polish-roberta-base-v2",
+  "HERBERT_BASE": "allegro/herbert-large-cased",
+  "HATE_INDEX_OVERRIDE": {},
+  "CLEAN_TRAIN_DATA": true,
+  "CLEAN_COMMENTS_FOR_MODELS": true,
+  "DATA_VERSION": "clean_v1",
+  "THRESHOLD": 0.5,
+  "INFER_MAX_LEN": 512,
+  "INFER_STRIDE": 128,
+  "INFER_BATCH": 16,
+  "INFER_CHUNK_BATCH": 16,
+  "UNCERTAIN_BAND": 0.1,
+  "INCLUDE_UNTUNED_BASELINES_IN_ENSEMBLE": false,
+  "ANNOTATORS": [
+    "A1",
+    "A2",
+    "A3",
+    "A4"
+  ],
+  "ANN_N_PER_STRATUM": 5,
+  "ANN_MIN_CHARS": 3,
+  "BOOTSTRAP_N": 100,
+  "FORCE_RETRAIN": false,
+  "FORCE_REEVAL": false,
+  "FORCE_REPREDICT": false,
+  "timestamp": "2026-10-15T13:00:03.254663",
+  "torch": "2.14.1",
+  "transformers": "5.19.0",
+  "python": "3.14.5",
+  "device": "mps"
+}
