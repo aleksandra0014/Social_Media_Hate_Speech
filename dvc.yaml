@@ -34,3 +34,41 @@ stages:
         - data/interim/bluesky/${item}/filtered
       outs:
         - data/interim/bluesky/${item}/clean
+
+  collect_wykop:
+    # data/external/wykop = export of the Wykop API collector (`dvc add`); this stage only splits it
+    # into event folders with the same window rules as collect_bluesky
+    cmd: python scripts/wykop.py events.json --source data/external/wykop --out data/raw/wykop
+    deps:
+      - scripts/wykop.py
+      - events.json
+      - data/external/wykop
+    params:
+      - wykop
+    outs:
+      - data/raw/wykop
+
+  filter_wykop:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/preprocess_filter.py --platform wykop --event ${item}
+      deps:
+        - scripts/preprocess_filter.py
+        - src/preprocessing
+        - data/raw/wykop/${item}/posts.csv
+        - data/raw/wykop/${item}/comments.csv
+      params:
+        - preprocess.filter
+      outs:
+        - data/interim/wykop/${item}/filtered
+
+  clean_wykop:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/preprocess_clean.py --platform wykop --event ${item}
+      deps:
+        - scripts/preprocess_clean.py
+        - src/preprocessing
+        - data/interim/wykop/${item}/filtered
+      outs:
+        - data/interim/wykop/${item}/clean

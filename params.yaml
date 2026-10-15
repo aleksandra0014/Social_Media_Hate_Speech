@@ -3,8 +3,13 @@ bluesky:
   days_after: 28
   material_max_age: 4
 
+wykop:
+  days_before: 28
+  days_after: 28
+  material_max_age: 4
+
 preprocess:
-  # Event folders (data/raw/bluesky/<event>) to run filter_bluesky / clean_bluesky for.
+  # Event folders (data/raw/<platform>/<event>) to run filter_* / clean_* for.
   events:
     - 2024-04-10_Pakt_Azyl_PE
     - 2024-05-28_Atak_Zolnierz_Granica
