@@ -149,3 +149,66 @@ stages:
       md5: bedb2077dbdb5637d59258e63ba97933.dir
       size: 22018970
       nfiles: 2
+  filter_bluesky@2026-07-30_Ceuta_Masowe_Przekroczenie:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2026-07-30_Ceuta_Masowe_Przekroczenie
+    deps:
+    - path: data/raw/bluesky/2026-07-30_Ceuta_Masowe_Przekroczenie/comments.csv
+      hash: md5
+      md5: 44417e401752d7067839a8e4c051cf3b
+      size: 11841502
+    - path: data/raw/bluesky/2026-07-30_Ceuta_Masowe_Przekroczenie/posts.csv
+      hash: md5
+      md5: bdf03adb76f458d960ad20a98af09051
+      size: 11486875
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: f308efd4d0d23f0481bf779e2fd4608e
+      size: 1741
+    - path: src/preprocessing
+      hash: md5
+      md5: 87e909ff40a97d03e82b14034619ea9f.dir
+      size: 18278
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/bluesky/2026-07-30_Ceuta_Masowe_Przekroczenie/filtered
+      hash: md5
+      md5: 48d52253f8229ed8875adeefe93b9035.dir
+      size: 23449362
+      nfiles: 5
+  clean_bluesky@2026-07-30_Ceuta_Masowe_Przekroczenie:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2026-07-30_Ceuta_Masowe_Przekroczenie
+    deps:
+    - path: data/interim/bluesky/2026-07-30_Ceuta_Masowe_Przekroczenie/filtered
+      hash: md5
+      md5: 48d52253f8229ed8875adeefe93b9035.dir
+      size: 23449362
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 1aae5de387516075e762fe9092273281
+      size: 1058
+    - path: src/preprocessing
+      hash: md5
+      md5: 87e909ff40a97d03e82b14034619ea9f.dir
+      size: 18278
+      nfiles: 12
+    outs:
+    - path: data/interim/bluesky/2026-07-30_Ceuta_Masowe_Przekroczenie/clean
+      hash: md5
+      md5: dd14a90cca6de41bca3a643ea32a6290.dir
+      size: 27066553
+      nfiles: 2
