@@ -17,8 +17,9 @@ from src.preprocessing.text import QUOTE_RE, normalize_whitespace  # noqa: E402
 
 OUT_ROOT = ROOT / 'data/annotation'
 
-LABELS = {'hate': ['1', '0'], 'uncertain': ['1']}
-SHEET_COLUMNS = ['item_id', 'context_post', 'context_parent', 'context_quote', 'text', 'hate', 'uncertain', 'note']
+LABELS = {'hate': ['1', '0'], 'hate_migrants': ['1', '0'], 'uncertain': ['1']}
+SHEET_COLUMNS = ['item_id', 'context_post', 'context_parent', 'context_quote', 'text', 'hate', 'hate_migrants',
+                 'uncertain', 'note']
 POOLS = {'mig_hostile': 0.4, 'mig_other': 0.4, 'ambiguous': 0.2}
 
 _PL = str.maketrans('ąćęłńóśźżĄĆĘŁŃÓŚŹŻ', 'acelnoszzACELNOSZZ')
@@ -38,18 +39,17 @@ HOSTILE = re.compile(
 INSTRUCTION = [
     'Zasady: docs/CODEBOOK.md (wersja {version}). Anotator: {annotator}.',
     '',
-    'hate = 1  komentarz jest mową nienawiści wobec migrantów (w tym Ukraińców): obelga, dehumanizacja,',
-    '          stereotyp, wykluczenie, przemoc albo kod/ironia ze względu na pochodzenie lub status migranta.',
-    'hate = 0  wszystko inne, także krytyka polityki, atak na polityka, użytkownika lub państwo, kontrmowa.',
+    'hate = 1          autor atakuje kogokolwiek: obelga, dehumanizacja, stereotyp, wykluczenie, przemoc, kod/ironia.',
+    'hate_migrants = 1  ten atak jest skierowany do migrantów (w tym Ukraińców) ze względu na pochodzenie lub status.',
+    'Dozwolone pary hate/hate_migrants: 0/0, 1/0, 1/1.',
     '',
     'Kolejność decyzji:',
-    '1. Czy autor wyraża wrogość wobec ludzi?                              nie -> 0',
-    '2. Czy adresatem są migranci?                                         nie -> 0',
-    '3. Czy chodzi o pochodzenie/status, a nie czyn osoby, decyzję, państwo? nie -> 0',
-    '4. Obelga, dehumanizacja, stereotyp, wykluczenie, przemoc, kod/ironia?  tak -> 1, nie -> 0',
+    '1. Czy AUTOR (nie cytat) atakuje jakąś osobę lub grupę?        nie -> 0/0, tak -> hate = 1',
+    '2. Czy atak dotyczy migrantów ze względu na pochodzenie/status,',
+    '   a nie czyn konkretnej osoby?                                tak -> hate_migrants = 1, nie -> 0',
     '',
     'Kontekst (context_post, context_parent, context_quote) służy tylko do ustalenia adresata.',
-    'context_quote to cytat z innego komentarza - nie jest słowami autora i nie wpływa na hate.',
+    'context_quote to cytat z innego komentarza - nie jest słowami autora i nie wpływa na kody.',
     'Jeśli masz wątpliwości: wybierz najbardziej oczywiste odczytanie, wpisz uncertain = 1 i krótko opisz w note.',
     'Nie zmieniaj kolumn item_id, context_*, text ani nazwy pliku.',
 ]
@@ -126,10 +126,10 @@ def write_sheet(items, path, annotator, version):
     ws.append(SHEET_COLUMNS)
     for _, r in items.iterrows():
         ws.append([r['item_id'], r['context_post'][:600], r['context_parent'][:600], r['context_quote'][:600],
-                   r['shown'], '', '', ''])
+                   r['shown']] + [''] * (len(SHEET_COLUMNS) - 5))
     n = len(items) + 1
     widths = {'item_id': 9, 'context_post': 40, 'context_parent': 35, 'context_quote': 35, 'text': 70, 'hate': 8,
-              'uncertain': 11, 'note': 35}
+              'hate_migrants': 14, 'uncertain': 11, 'note': 35}
     for i, col in enumerate(SHEET_COLUMNS, start=1):
         cell = ws.cell(row=1, column=i)
         ws.column_dimensions[cell.column_letter].width = widths[col]

@@ -11,7 +11,7 @@ LINK_RE = re.compile(
 )
 USER_RE = re.compile(r'(?:@\[user\]|(?<![\w@])@[\w.-]+)(?:[ \t]*:(?=\s|$))?')   # with the ':' of a reply
 # '>' lines quote another user; group 1 keeps a leading '@[user]:' on the same line
-QUOTE_RE = re.compile(r'^([ \t]*(?:(?:@\[user\]|@[\w.-]+)[ \t]*:?[ \t]*)*)>.*$', re.M)
+QUOTE_RE = re.compile(r'^([ \t]*(?:(?:@\[user\]|@[\w.-]+)(?:[ \t]*:)?[ \t]*)*)>.*$', re.M)  # no nested optional spaces: linear time
 LENNY_RE = re.compile(r'\([^()\n]{0,12}ʖ[^()\n]{0,12}\)')      # ( ͡° ͜ʖ ͡°) and its variants
 LENNY_TOKEN = '[lenny]'
 PLACEHOLDER_RE = re.compile(r'\[email\]|\[phone\]')

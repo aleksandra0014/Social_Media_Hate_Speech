@@ -76,3 +76,11 @@ def test_clean_text_quotes_replies_lenny(text, expected):
 ])
 def test_rule_reason_ignores_quotes_and_lenny(text, reason):
     assert rule_reason(text, 3) == reason
+
+
+def test_quote_regex_is_fast_on_many_mentions():
+    import time
+    text = ' '.join(['@[user]'] * 200) + ' wołam plusujących'
+    start = time.perf_counter()
+    assert clean_text(text) == 'wołam plusujących'
+    assert time.perf_counter() - start < 1

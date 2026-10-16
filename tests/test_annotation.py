@@ -49,17 +49,21 @@ def test_norm(raw, expected):
 
 
 def test_clean_sheet():
-    df = pd.DataFrame({'item_id': ['P1', 'P2', 'P3', 'P4'],
-                       'hate': ['1', 'może', '', 'tak'],
-                       'uncertain': ['', '1', '', '0'],
-                       'note': ['', '', '', '']})
+    df = pd.DataFrame({'item_id': ['P1', 'P2', 'P3', 'P4', 'P5'],
+                       'hate': ['1', 'może', '', 'tak', '0'],
+                       'hate_migrants': ['1', '0', '', 'nie', '1'],
+                       'uncertain': ['', '1', '', '0', ''],
+                       'note': ['', '', '', '', '']})
     out, problems = clean_sheet(df, 'X')
     found = {(p[1], p[2], p[4]) for p in problems}
     assert ('P2', 'hate', 'value not 0/1') in found
     assert ('P3', 'hate', 'missing') in found
+    assert ('P3', 'hate_migrants', 'missing') in found
+    assert ('P5', 'hate_migrants', 'hate_migrants=1 requires hate=1') in found
     assert ('P2', 'note', 'uncertain=1 without note') in found
-    assert list(out['hate']) == ['1', '', '', '1']
-    assert list(out['uncertain']) == ['', '1', '', '']
+    assert list(out['hate']) == ['1', '', '', '1', '0']
+    assert list(out['hate_migrants']) == ['1', '0', '', '0', '']
+    assert list(out['uncertain']) == ['', '1', '', '', '']
 
 
 @pytest.mark.parametrize('text, migration', [
