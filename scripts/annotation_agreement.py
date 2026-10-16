@@ -122,11 +122,19 @@ def summary(wide):
             'share_1': round(float(np.mean([v == '1' for u in units for v in u])), 3) if units else None}
 
 
+def slur_groups(meta):
+    """Pre-labelled (slur) vs other items; pre-labels push agreement up, so report both."""
+    if 'slurs' not in meta:
+        return []
+    return meta.groupby(np.where(meta['slurs'] != '', 'z obelgą (1/1 wstępnie)', 'bez obelgi'))
+
+
 def variable_report(w, unc, meta, annotators):
     """Agreement on one label: overall, without uncertain items, by platform and pool, pairs, annotators."""
     rep = {'all': summary(w), 'without_uncertain_items': summary(w[(unc != '1').all(axis=1)]),
            'by_platform': {k: summary(w.loc[g.index]) for k, g in meta.groupby('platform')},
            'by_pool': {k: summary(w.loc[g.index]) for k, g in meta.groupby('pool')},
+           'by_slur': {k: summary(w.loc[g.index]) for k, g in slur_groups(meta)},
            'pairs': {}, 'annotators_detail': {}}
     for a, b in itertools.combinations(annotators, 2):
         m = (w[a] != '') & (w[b] != '')
@@ -174,8 +182,8 @@ def main():
 
     differs = lambda w: w.apply(lambda r: len({v for v in r if v != ''}) > 1, axis=1)
     dis_ids = meta.index[differs(wide['hate']) | differs(wide['hate_migrants'])]
-    dis = meta.loc[dis_ids, ['platform', 'pool', 'context_post', 'context_parent', 'context_quote',
-                          'text']].copy()
+    dis = meta.loc[dis_ids, [c for c in ('platform', 'pool', 'context_post', 'context_parent', 'context_quote',
+                                         'text', 'slurs') if c in meta]].copy()
     for a in annotators:
         s = sheets[a].reindex(dis_ids).fillna('')
         dis[a] = s['hate'] + '/' + s['hate_migrants'] + s['uncertain'].map({'1': ' [?]'}).fillna('') + \
@@ -204,7 +212,7 @@ def export_tables(r, path):
         v = r[var]
         scopes = [('wszystkie', v['all']), ('bez uncertain', v['without_uncertain_items'])] + \
             [(f'platforma: {k}', s) for k, s in v['by_platform'].items()] + \
-            [(f'pula: {k}', s) for k, s in v['by_pool'].items()]
+            [(f'pula: {k}', s) for k, s in v['by_pool'].items()] +             [(f'słownik: {k}', s) for k, s in v.get('by_slur', {}).items()]
         for name, s in scopes:
             summary_rows.append({'etykieta': var, 'zakres': name, 'n': s['n_items'], 'alpha': s['alpha'],
                                  'alpha_ci_dol': s['alpha_ci95'][0], 'alpha_ci_gora': s['alpha_ci95'][1],
@@ -247,6 +255,7 @@ def render(r, n_dis, n_prob):
                   row('wszystkie', v['all']), row('bez komentarzy z `uncertain`', v['without_uncertain_items'])]
         lines += [row(f'platforma: {k}', s) for k, s in v['by_platform'].items()]
         lines += [row(f'pula: {k}', s) for k, s in v['by_pool'].items()]
+        lines += [row(f'słownik: {k}', s) for k, s in v.get('by_slur', {}).items()]
         lines += ['', '| Para | κ Cohena | zgodność | n |', '|---|---|---|---|']
         lines += [f"| {p} | {s['kappa']} | {s['agreement']} | {s['n']} |" for p, s in v['pairs'].items()]
         lines += ['', f'| Osoba | zgodność z większością pozostałych | udział {var}=1 | udział uncertain |',

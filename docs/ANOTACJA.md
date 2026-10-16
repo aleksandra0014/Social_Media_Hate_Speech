@@ -16,6 +16,10 @@ python scripts/annotation_sample.py --name pilot_v1 --n-per-platform 100 --annot
   - 40%: komentarz wspomina migrantów lub Ukraińców i zawiera wrogie słowo,
   - 40%: komentarz wspomina migrantów lub Ukraińców bez wrogiego słowa,
   - 20%: wrogie słowo bez wzmianki o migrantach, pod wpisem o migracji. To przypadki z niejasnym adresatem, np. samo „wypierdalajcie”.
+- Komentarze z obelgą ze słownika `src/lexicon/slurs.py` nie są odrzucane: trafiają do puli 40% „migranci + wrogie słowo”.
+  - W arkuszu mają już wpisane `hate=1` i `hate_migrants=1` (codebook pkt 4.12). Arkusz nie pokazuje, które słowo zostało znalezione; kodujący poprawia tylko fałszywe trafienie.
+  - Znalezione słowa są w `manifest.csv` (kolumna `slurs`, `(?)` = słowo zależne od kontekstu).
+  - `--prefill strict` (domyślnie) wpisuje `1/1` tylko przy słowach niezależnych od kontekstu, `--prefill all` przy wszystkich trafieniach, a `--prefill none` nigdzie.
 - Wynik trafia do `data/annotation/pilot_v1/`:
   - `sheets/pilot_v1_<osoba>.xlsx` to arkusz z listą rozwijaną w kolumnach `hate`, `hate_migrants` i `uncertain` oraz zakładką `instrukcja`,
   - w arkuszu `text` zawiera tylko słowa autora; cytat z innego komentarza (`>`) jest w kolumnie `context_quote`,
@@ -35,7 +39,7 @@ python scripts/annotation_agreement.py --name pilot_v1
 
 W `data/annotation/pilot_v1/results/` powstają:
 - `report.md`:
-  - osobno dla `hate` i `hate_migrants`, dla wszystkich komentarzy, bez komentarzy oznaczonych `uncertain` oraz osobno według platformy i puli: α Krippendorffa z 95% przedziałem ufności, κ Fleissa, średnia κ Cohena z par, pełna zgodność i udział kodu `1`,
+  - osobno dla `hate` i `hate_migrants`, dla wszystkich komentarzy, bez komentarzy oznaczonych `uncertain` oraz osobno według platformy, puli i słownika (komentarze wstępnie oznaczone `1/1` podnoszą zgodność, więc ważniejszy jest wynik `bez obelgi`): α Krippendorffa z 95% przedziałem ufności, κ Fleissa, średnia κ Cohena z par, pełna zgodność i udział kodu `1`,
   - κ Cohena dla każdej pary,
   - dla każdej osoby: zgodność z większością pozostałych i udział kodu `1`,
 - `disagreements.csv`: komentarze, w których kody się różnią (w `hate` lub `hate_migrants`), z kodami `hate/hate_migrants` i notatkami wszystkich osób. Na spotkaniu uzupełnij kolumny `decision` i `codebook_change`,

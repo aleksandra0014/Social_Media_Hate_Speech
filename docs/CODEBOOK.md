@@ -1,6 +1,6 @@
 # Codebook: mowa nienawiści wobec migrantów
 
-**Wersja 0.2 · 2026-10-15 · do pilotażu**
+**Wersja 0.4  2026-10-16**
 
 Codebook opisuje, jak zamienić komentarz z mediów społecznościowych na dwie etykiety:
 - **`hate`:** czy komentarz jest mową nienawiści (hejtem) wobec kogokolwiek (1), czy nie (0),
@@ -63,7 +63,7 @@ Komentarz dostaje `hate=1`, gdy autor atakuje **konkretną osobę albo grupę** 
 | **Dehumanizacja** | przedstawia ludzi jako zwierzęta, robactwo, chorobę, śmieci, broń, najazd | „to bydło”, „to nie uchodźcy, to szarańcza” |
 | **Stereotyp / generalizacja** | przypisuje całej grupie negatywne cechy | „oni się nie nadają do pracy, tylko do socjalu” |
 | **Wykluczenie** | wzywa do wydalenia, izolacji lub odebrania praw **całej grupie** albo to pochwala | „wywieźć wszystkich, kobiety i dzieci też” |
-| **Przemoc** | grozi przemocą, wzywa do niej albo ją pochwala | „na granicy powinni strzelać” |
+| **Przemoc** | grozi przemocą, wzywa do niej, namawia albo ją pochwala, także wobec osób nazwanych „nielegalnymi” czy „bandziorami” | „na granicy powinni strzelać”, „dobrze, że w końcu do nich strzelają” |
 | **Kod / ironia** | robi któreś z powyższych za pomocą kodu, ironii lub memu, gdy intencja jest czytelna | „nie molestował, tylko ubogacał kulturowo” |
 
 Wulgaryzm **nie jest konieczny** (grzeczny stereotyp to `1`) ani **wystarczający** (wulgaryzm bez adresata to `0`). Ostra, ale rzeczowa krytyka („ten minister kłamie”, „ustawa jest fatalna”) to `0`.
@@ -72,10 +72,19 @@ Wulgaryzm **nie jest konieczny** (grzeczny stereotyp to `1`) ani **wystarczając
 
 Komentarz dostaje `hate_migrants=1`, gdy ma `hate=1` i atak jest skierowany do migrantów **ze względu na ich pochodzenie, narodowość, rasę, religię lub status migranta albo uchodźcy**. Wystarczy jeden fragment wymierzony w migrantów, nawet jeśli komentarz atakuje też kogoś innego.
 
-**Migranci** to w tym badaniu:
-- migranci, imigranci, uchodźcy, osoby ubiegające się o azyl, cudzoziemcy przyjeżdżający do Polski lub Europy albo w nich mieszkający,
-- **Ukraińcy** jako ludzie i naród, w tym uchodźcy z Ukrainy,
-- grupy kojarzone w dyskusji z migracją: muzułmanie, Arabowie, osoby z Afryki, osoby czarnoskóre i „śniade”, a także pracownicy z Azji, Gruzji, Ameryki Łacińskiej.
+**Kto jest „migrantem” w tym badaniu:**
+
+| Zaliczają się do migrantów (`hate_migrants` możliwe) | Nie zaliczają się (hejt wobec nich to `hate=1`, `hate_migrants=0`) |
+|---|---|
+| migranci, imigranci, uchodźcy, osoby ubiegające się o azyl, osoby przekraczające granicę nielegalnie | **Rosjanie**: jako naród, armia, władze („kacapy”, „orki”, „ruskie”) |
+| cudzoziemcy przyjeżdżający do Polski lub Europy albo w nich mieszkający | **Polacy za granicą**: emigranci, „polonusi”, Polacy w Niemczech czy UK |
+| **Ukraińcy zawsze**: w Polsce i w Ukrainie, jako ludzie, naród, żołnierze, uchodźcy | **państwo ukraińskie i jego władze** jako instytucje (rząd, „reżim Zełeńskiego”); ale ludzie i naród ukraiński – tak (kolumna obok) |
+| grupy kojarzone w dyskusji z migracją: muzułmanie, Arabowie, osoby z Afryki, osoby czarnoskóre i „śniade”, pracownicy z Azji, Gruzji, Ameryki Łacińskiej | **Żydzi** (antysemityzm to `hate=1`, ale poza zakresem `hate_migrants`) |
+| | **władze i instytucje obcych państw** (Turcja, Iran, ajatollahowie, rządy UE) |
+| | **historyczne formacje** (UPA, naziści), dopóki autor nie przenosi wrogości na dzisiejszych Ukraińców |
+| | Polacy, politycy, partie, użytkownicy, osoby LGBT+, kobiety i inne grupy niezwiązane z migracją |
+
+Jeśli komentarz atakuje naraz grupę z lewej i z prawej kolumny, wpisz `hate_migrants=1` (wystarczy jeden fragment).
 
 ### 3.3 Kiedy `0`
 
@@ -86,7 +95,7 @@ Komentarz dostaje `hate_migrants=1`, gdy ma `hate=1` i atak jest skierowany do m
 - **cytuje lub relacjonuje** cudzą nienawiść, żeby ją skrytykować albo ośmieszyć (kontrmowa bez własnych wyzwisk),
 - jest nie po polsku, nieczytelny albo składa się z samych emotikon. Wtedy wpisz też `uncertain=1` i `note=nieczytelny` albo `note=jezyk`.
 
-`hate=1`, ale `hate_migrants=0`, gdy atak dotyczy **kogoś innego niż migranci**: innego użytkownika, polityka, partii, „lewaków”, „faszystów”, Rosjan jako strony wojny, osób LGBT+ – albo migranta **za jego czyn**, bez odwołania do pochodzenia (np. wyzwisko „bandyta” wobec sprawcy bez uogólnienia na grupę).
+`hate=1`, ale `hate_migrants=0`, gdy atak dotyczy **grupy z prawej kolumny tabeli w pkt 3.2** (np. użytkownika, polityka, partii, „lewaków”, „faszystów”, Rosjan, Polaków za granicą) – albo migranta **za jego czyn**, bez odwołania do pochodzenia (np. wyzwisko „bandyta” wobec sprawcy bez uogólnienia na grupę).
 
 ## 4. Zasady kodowania
 
@@ -101,6 +110,7 @@ Komentarz dostaje `hate_migrants=1`, gdy ma `hate=1` i atak jest skierowany do m
 9. **Nie zgaduj ukrytych intencji.** Koduj to, co da się odczytać z tekstu. Nie dopowiadaj, „co autor na pewno miał na myśli”.
 10. **Nie korzystaj z niczego poza arkuszem.** Nie szukaj wpisu na platformie i nie sprawdzaj autora. Platforma ani poglądy autora nie wpływają na kod.
 11. **Wątpliwość:** wybierz najbardziej oczywiste odczytanie, wpisz `uncertain=1` i jednym zdaniem opisz problem w `note`. Nie zostawiaj pustego `hate` ani `hate_migrants`.
+12. **Obelga etniczna to zawsze `1/1`, także w życzliwym komentarzu.** Użycie obelgi wobec migrantów lub Ukraińców („ukry”, „ciapaci”, „nachodźcy”, „banderowcy” o dzisiejszych Ukraińcach) obraża całą grupę niezależnie od intencji autora: „ukry to akurat spoko ludzie” to `1/1`. W arkuszu takie komentarze mają już wpisane `1/1` (słownik `src/lexicon/slurs.py`). Zmień kod tylko przy fałszywym trafieniu: słowo ma inne znaczenie albo jest nazwą własną. Słowa zależne od kontekstu (np. „UPA” w dyskusji historycznej, „hołota” o politykach) nie są wpisywane z góry; koduj je według pozostałych zasad.
 
 ## 5. Kolejność decyzji
 
@@ -139,7 +149,12 @@ Jeśli uważasz, że nie da się rozstrzygnąć -> wybierz najbardziej oczywiste
 | „Banderowska onuca” albo „rublarz” jako wyzwisko dla użytkownika | 1 | 0 | wyzwisko polityczne wobec rozmówcy |
 | Rzeczowa wrogość wobec państwa ukraińskiego („państwo, które nas nie szanuje”) | 0 | 0 | państwo, nie ludzie |
 | Wyzwiska wobec władz Ukrainy („Zełenski to złodziej i błazen”) | 1 | 0 | atak na polityka, nie na migrantów |
-| Rosjanie jako strona wojny („kacapy”, „orkowie”) | 1 | 0 | obelga, ale poza grupą migrantów |
+| Rosjanie jako strona wojny („kacapy”, „orkowie”, „ruskie = zwierzęta”) | 1 | 0 | obelga, ale poza grupą migrantów (pkt 3.2) |
+| Hejt wobec Polaków za granicą („polonusi”, „nasi złodzieje w UK”) | 1 | 0 | poza grupą migrantów (pkt 3.2) |
+| Wezwanie do przemocy wobec przekraczających granicę („powinni strzelać za nielegalne przekroczenie granicy”) | 1 | 1 | przemoc; status „nielegalny” nie zmienia oceny |
+| Pochwała lub aprobata przemocy wobec migrantów („dobrze, że wreszcie strzelają do bandziorów na granicy”, „kiedyś do nich strzelali, a teraz się boją”) | 1 | 1 | przemoc; aprobata liczy się jak wezwanie |
+| Groźba lub życzenie krzywdy wobec migrantów („oby ich tam pozabijali”) | 1 | 1 | przemoc |
+| Przemoc wobec grupy spoza migrantów („rozstrzelać tych kacapów”) | 1 | 0 | przemoc, ale poza grupą migrantów (pkt 3.2) |
 | Statystyka przestępczości podana rzeczowo | 0 | 0 | informacja |
 | Statystyka jako dowód, że „oni” są gorsi („liczby pokazują, że to dzikusy”) | 1 | 1 | dehumanizacja i stereotyp |
 | Doświadczenie osobiste bez uogólnienia („pracowałem z Ukraińcami, różnie bywało”) | 0 | 0 | relacja |
@@ -181,10 +196,12 @@ Przykłady są parafrazami komentarzy z danych.
 | „Ukraina to nasz wróg, tak samo jak Rosja, kraje mafijne.” | 0, `uncertain=1` | 0 | wrogość wobec państwa; granica z ludźmi niejasna |
 | „Szkoda tych ludzi, ale to nie znaczy, że mają się tu panoszyć i wymagać.” | 1, `uncertain=1` | 1 | łagodny stereotyp „roszczeniowych” Ukraińców |
 | „1. Wrocław 2. Ukrainiec 3. Pijany 4. Awantura 5. Robi z siebie ofiarę xD” | 1 | 1 | ironiczna „lista” sugerująca stały schemat zachowania grupy |
+| Obelga etniczna w życzliwym tonie („ukry to akurat pracowici ludzie”, „lubię tych ciapaków z kebabu”) | 1 | 1 | samo użycie obelgi obraża grupę (pkt 4.12) |
+| Obelga przytoczona tylko po to, żeby ją skrytykować („nie nazywaj ich ukrami”) | 0 | 0 | to nie słowa autora (pkt 4.1); popraw wpisane `1/1` |
 
 ## 8. Słownik kodów spotykanych w danych
 
-Te słowa **same nie przesądzają** o kodzie. Pomagają rozpoznać intencję i znaczą tyle, ile znaczą w zdaniu.
+Wyzwiska etniczne (wiersze z „ciapaci”, „nachodźcy”, „ukry”) to zawsze `1/1` (pkt 4.12). Pozostałe słowa **same nie przesądzają** o kodzie: pomagają rozpoznać intencję i znaczą tyle, ile znaczą w zdaniu. Pełna lista wyszukiwanych słów jest w `src/lexicon/slurs.py`.
 
 | Kod | Znaczenie w danych | Zwykle `hate` / `hate_migrants` |
 |---|---|---|
@@ -202,7 +219,7 @@ Te słowa **same nie przesądzają** o kodzie. Pomagają rozpoznać intencję i 
 ## 9. Procedura i kontrola jakości
 
 1. Wszystkie osoby kodują ten sam zestaw (po 50–100 komentarzy z każdej platformy).
-2. Arkusz nie pokazuje platformy, wydarzenia ani trafień słownika. Nie ustalaj ich.
+2. Arkusz nie pokazuje platformy, wydarzenia ani trafień słownika. Nie ustalaj ich. Komentarze z obelgą etniczną mają wpisane `1/1` (pkt 4.12).
 3. **Arkusz:** wartości wybieraj z listy rozwijanej. Nie zmieniaj kolumn z danymi ani nazwy pliku.
 4. **Zgodność:** `scripts/annotation_agreement.py` liczy zgodność osobno dla `hate` i `hate_migrants`.
 5. **Rozbieżności:** omawiane są na spotkaniu zespołu. Decyzję i ewentualną zmianę reguły zapisz poniżej.
@@ -213,3 +230,5 @@ Te słowa **same nie przesądzają** o kodzie. Pomagają rozpoznać intencję i 
 |---|---|---|
 | 0.1 | 2026-10-14 | Szkic z kodowaniem binarnym, zakres, definicje kategorii 1 i 0, zasady kodowania, kolejność decyzji, przypadki graniczne, przykłady typowe i nietypowe |
 | 0.2 | 2026-10-15 | Dwie zmienne: `hate` (mowa nienawiści wobec kogokolwiek) i `hate_migrants` (skierowana do migrantów); przypadki graniczne, przykłady i słownik z obiema etykietami |
+| 0.3 | 2026-10-16 | Tabela grup zaliczanych i niezaliczanych do migrantów (pkt 3.2); przemoc obejmuje namawianie i aprobatę, także wobec „nielegalnych” (pkt 3.1, przypadki graniczne) |
+| 0.4 | 2026-10-16 | Decyzja zespołu: obelga etniczna wobec migrantów to `1/1` także w "życzliwym" komentarzu (pkt 4.12). Słownik obelg (`src/lexicon/slurs.py`) wstępnie oznacza takie komentarze `1/1` w arkuszu, a kodujący weryfikuje |
