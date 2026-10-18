@@ -72,3 +72,14 @@ stages:
         - data/interim/wykop/${item}/filtered
       outs:
         - data/interim/wykop/${item}/clean
+
+  collect_youtube:
+    cmd: python scripts/youtube.py events.json --out data/raw/youtube
+    deps:
+      - scripts/youtube.py
+      - events.json
+    params:
+      - youtube
+    outs:
+      - data/raw/youtube:
+          persist: true

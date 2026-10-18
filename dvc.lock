@@ -149,3 +149,26 @@ stages:
       md5: bedb2077dbdb5637d59258e63ba97933.dir
       size: 22018970
       nfiles: 2
+  collect_youtube:
+    cmd: python scripts/youtube.py events.json --out data/raw/youtube
+    deps:
+    - path: events.json
+      hash: md5
+      md5: df389cb5d3ca755f071a21b3192d3785
+      size: 421
+    - path: scripts/youtube.py
+      hash: md5
+      md5: 556d599da72e147ddfae6d61a396d702
+      size: 28511
+    params:
+      params.yaml:
+        youtube:
+          days_before: 28
+          days_after: 28
+          material_max_age: 4
+    outs:
+    - path: data/raw/youtube
+      hash: md5
+      md5: 8d924790cb1fd89928827943fc9ff8e1.dir
+      size: 472080784
+      nfiles: 80
