@@ -73,6 +73,29 @@ stages:
       outs:
         - data/interim/wykop/${item}/clean
 
+  # step 3: slur lexicon (src/lexicon) on the cleaned text; a match pre-labels 1/1 for annotation
+  slurs_bluesky:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/preprocess_slurs.py --platform bluesky --event ${item}
+      deps:
+        - scripts/preprocess_slurs.py
+        - src/lexicon
+        - data/interim/bluesky/${item}/clean
+      outs:
+        - data/interim/bluesky/${item}/slurs
+
+  slurs_wykop:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/preprocess_slurs.py --platform wykop --event ${item}
+      deps:
+        - scripts/preprocess_slurs.py
+        - src/lexicon
+        - data/interim/wykop/${item}/clean
+      outs:
+        - data/interim/wykop/${item}/slurs
+
   collect_youtube:
     cmd: python scripts/youtube.py events.json --out data/raw/youtube
     deps:

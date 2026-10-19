@@ -212,6 +212,23 @@ dvc repro "filter_bluesky@2024-04-10_Pakt_Azyl_PE" "clean_bluesky@2024-04-10_Pak
 - Zmiana `preprocess.filter` w `params.yaml` przelicza oba etapy dla wszystkich wydarzeń z listy.
 - Klasyfikacja tematu (migracja) i zapis do `data/processed/` dojdą jako kolejny etap.
 
+### Etap 3: słownik obelg (`slurs_bluesky`, `slurs_wykop`)
+
+`scripts/preprocess_slurs.py` szuka w oczyszczonym `text` (tylko słowa autora, bez cytatów) słów ze słownika `src/lexicon/slurs.py` (wielkość liter i polskie znaki nie mają znaczenia). Wynik trafia do `data/interim/<platforma>/<event>/slurs/`:
+
+| Kolumna | Znaczenie |
+|---|---|
+| `post_id` / `comment_id` | klucz do `clean/*.csv` |
+| `slurs`, `slur_categories` | znalezione słowa i ich kategorie, rozdzielone `; ` |
+| `slur_needs_context` | `1`, gdy wszystkie znalezione słowa zależą od kontekstu (np. „UPA”, „hołota”) |
+| `hate_auto`, `hate_migrants_auto` | `1/1` z reguły 4.12 codebooka: jest obelga, która nie zależy od kontekstu |
+
+Plik ma te same wiersze co `clean/*.csv` i łączy się z nim po `comment_id` / `post_id`. Korzysta z niego `scripts/annotation_sample.py` (wpisuje `1/1` w arkuszach). Dla wydarzeń bez tego etapu arkusze liczą słownik same, z tym samym wynikiem. `report.json` podaje liczbę trafień dla każdego słowa. Zmiana słownika przelicza tylko ten etap, bez filtra i czyszczenia.
+
+```powershell
+dvc repro slurs_bluesky slurs_wykop
+```
+
 ---
 
 ## 9. Wykop
@@ -222,11 +239,11 @@ Wykop jest zbierany przez API v3. W repo ten dane są **źródłem**, a podział
 |---|---|
 | `data/external/wykop/` (`dvc add`) | eksport kolektora: `items.csv`, `comments.csv`, `events.csv`, `window_events.csv`, `daily_coverage.csv` |
 | `collect_wykop` | `scripts/wykop.py` dzieli eksport na `data/raw/wykop/<data>_<wydarzenie>/` z tymi samymi plikami i regułami co `collect_bluesky`: okno ±28 dni, materiał do 4 dni starszy od komentarza, tylko PL, `posts.csv`, `comments.csv`, `excluded.csv`, `daily.csv`, `report.json` |
-| `filter_wykop`, `clean_wykop` | te same skrypty preprocessingu co dla Bluesky (`--platform wykop`), ta sama lista `preprocess.events` |
+| `filter_wykop`, `clean_wykop`, `slurs_wykop` | te same skrypty preprocessingu co dla Bluesky (`--platform wykop`), ta sama lista `preprocess.events` |
 
 ```powershell
 dvc pull collect_wykop                     # tylko dane Wykopu
-dvc repro collect_wykop filter_wykop clean_wykop
+dvc repro collect_wykop filter_wykop clean_wykop slurs_wykop
 ```
 
 Nowy eksport z kolektora: podmień pliki w `data/external/wykop/`, potem `dvc add data/external/wykop` i `dvc repro collect_wykop filter_wykop clean_wykop`.

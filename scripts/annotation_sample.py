@@ -13,6 +13,7 @@ from openpyxl.worksheet.datavalidation import DataValidation
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from src.lexicon.slurs import TERMS, find_slurs  # noqa: E402
 from src.preprocessing.text import QUOTE_RE, normalize_whitespace  # noqa: E402
 
 OUT_ROOT = ROOT / 'data/annotation'
@@ -47,6 +48,10 @@ INSTRUCTION = [
     '1. Czy AUTOR (nie cytat) atakuje jakąś osobę lub grupę?        nie -> 0/0, tak -> hate = 1',
     '2. Czy atak dotyczy migrantów ze względu na pochodzenie/status,',
     '   a nie czyn konkretnej osoby?                                tak -> hate_migrants = 1, nie -> 0',
+    '',
+    'Komentarze z obelgą etniczną mają już wpisane hate = 1 i hate_migrants = 1',
+    'Zmień je tylko przy fałszywym trafieniu (inne znaczenie słowa, nazwa własna)',
+    'i wtedy opisz to w note.',
     '',
     'Kontekst (context_post, context_parent, context_quote) służy tylko do ustalenia adresata.',
     'context_quote to cytat z innego komentarza - nie jest słowami autora i nie wpływa na kody.',
@@ -86,6 +91,10 @@ def load_platform(platform):
         c['context_parent'] = c['reply_to'].map(by_id).fillna('') if 'reply_to' in c else ''
         c['post_migration'] = c['context_post'].map(lambda t: bool(MIGRATION.search(fold(t))))
         c['source'] = 'clean' if src == clean else 'raw'
+        flags = clean.parent / 'slurs' / 'comments.csv'   # stage slurs_<platform>, same rows as clean
+        if src == clean and flags.exists():
+            s = read_csv(flags)
+            c['slurs'] = c['comment_id'].map(dict(zip(s['comment_id'], s['slurs'].map(mark_context))))
         rows.append(c.assign(platform=platform, event_folder=raw_dir.name))
     return pd.concat(rows, ignore_index=True) if rows else None
 
@@ -105,12 +114,31 @@ def load_youtube_csv(path):
     return y.assign(platform='youtube', event_folder=y['event_name'], source='csv')
 
 
+_CONTEXT = {t.name: t.needs_context for t in TERMS}
+
+
+def mark_context(names):
+    """'ukry; bandera' -> 'ukry; bandera (?)'; (?) marks terms that depend on context."""
+    return '; '.join(n + (' (?)' if _CONTEXT.get(n) else '') for n in names.split('; ') if n)
+
+
+def slur_label(text):
+    return mark_context('; '.join(t.name for t in find_slurs(text)))
+
+
 def pick(df, n, seed):
-    """40% migration + hostile word, 40% migration only, 20% hostile word under a migration post."""
+    """40% migration + hostile word, 40% migration only, 20% hostile word under a migration post.
+    Comments with a slur stay in the draw and count as migration + hostile."""
     df = df[df['shown'].str.len().between(20, 1200)]
     df = df[df['shown'].map(lambda t: len(re.findall(r'[^\W\d_]{2,}', t)) >= 3)].drop_duplicates('shown')
+    if 'slurs' not in df:
+        df = df.assign(slurs=pd.NA)
+    todo = df['slurs'].isna()   # events without slurs/ output (stage not run yet)
+    df = df.assign(slurs=df['slurs'].where(~todo, df.loc[todo, 'shown'].map(slur_label)))
     f = df['shown'].map(fold)
-    mig, hostile = f.map(lambda t: bool(MIGRATION.search(t))), f.map(lambda t: bool(HOSTILE.search(t)))
+    slur = df['slurs'] != ''
+    mig = f.map(lambda t: bool(MIGRATION.search(t))) | slur
+    hostile = f.map(lambda t: bool(HOSTILE.search(t))) | slur
     pools = {'mig_hostile': df[mig & hostile], 'mig_other': df[mig & ~hostile],
              'ambiguous': df[~mig & hostile & df['post_migration']]}
     want = {k: round(n * share) for k, share in POOLS.items()}
@@ -119,14 +147,22 @@ def pick(df, n, seed):
     return pd.concat(pools[k].sample(n=min(want[k], len(pools[k])), random_state=seed).assign(pool=k) for k in pools)
 
 
-def write_sheet(items, path, annotator, version):
+def prefilled(slurs, mode):
+    """'1' for hate and hate_migrants when the sheet should start at 1/1 (codebook pkt 4.12)."""
+    if not slurs or mode == 'none':
+        return ''
+    return '1' if mode == 'all' or any(not s.endswith('(?)') for s in slurs.split('; ')) else ''
+
+
+def write_sheet(items, path, annotator, version, prefill='strict'):
     wb = Workbook()
     ws = wb.active
     ws.title = 'anotacja'
     ws.append(SHEET_COLUMNS)
     for _, r in items.iterrows():
+        auto = prefilled(r['slurs'], prefill)
         ws.append([r['item_id'], r['context_post'][:600], r['context_parent'][:600], r['context_quote'][:600],
-                   r['shown']] + [''] * (len(SHEET_COLUMNS) - 5))
+                   r['shown'], auto, auto, '', ''])
     n = len(items) + 1
     widths = {'item_id': 9, 'context_post': 40, 'context_parent': 35, 'context_quote': 35, 'text': 70, 'hate': 8,
               'hate_migrants': 14, 'uncertain': 11, 'note': 35}
@@ -165,6 +201,8 @@ def main():
     ap.add_argument('--platforms', nargs='+', default=['wykop', 'bluesky', 'youtube'])
     ap.add_argument('--youtube-csv', help='YouTube CSV if data/raw/youtube does not exist yet')
     ap.add_argument('--seed', type=int, default=2026)
+    ap.add_argument('--prefill', choices=['strict', 'all', 'none'], default='strict',
+                    help='1/1 for slur matches: all, strict (skip context-only terms) or none')
     ap.add_argument('--force', action='store_true')
     args = ap.parse_args()
 
@@ -180,7 +218,8 @@ def main():
                   f'{" or pass --youtube-csv" if platform == "youtube" else ""}); skipped')
             continue
         s = pick(df, args.n_per_platform, args.seed)
-        print(f'{platform}: {len(df):,} comments -> {len(s)} picked {s["pool"].value_counts().to_dict()}')
+        print(f'{platform}: {len(df):,} comments -> {len(s)} picked {s["pool"].value_counts().to_dict()}, '
+              f'{(s["slurs"] != "").sum()} with a slur')
         picked.append(s)
     if not picked:
         sys.exit('Nothing to sample.')
@@ -189,11 +228,11 @@ def main():
     items['item_id'] = [f'P{i + 1:04d}' for i in range(len(items))]
     out.mkdir(parents=True, exist_ok=True)
     items[['item_id', 'platform', 'event_folder', 'comment_id', 'post_id', 'pool', 'source', 'context_post',
-           'context_parent', 'context_quote', 'shown']].rename(columns={'shown': 'text'}) \
+           'context_parent', 'context_quote', 'shown', 'slurs']].rename(columns={'shown': 'text'}) \
         .to_csv(out / 'manifest.csv', index=False, encoding='utf-8-sig')
     version = codebook_version()
     for a in args.annotators:
-        write_sheet(items, out / 'sheets' / f'{args.name}_{a}.xlsx', a, version)
+        write_sheet(items, out / 'sheets' / f'{args.name}_{a}.xlsx', a, version, args.prefill)
     (out / 'annotated').mkdir(exist_ok=True)
     print(f'\n{len(items)} comments for {len(args.annotators)} annotators -> {out / "sheets"}')
     print(f'Filled sheets go to {out / "annotated"}, then: python scripts/annotation_agreement.py --name {args.name}')
