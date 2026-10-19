@@ -1,0 +1,2090 @@
+schema: '2.0'
+stages:
+  collect_bluesky:
+    cmd: python scripts/bluesky.py events.json --out data/raw/bluesky
+    deps:
+    - path: events.json
+      hash: md5
+      md5: df389cb5d3ca755f071a21b3192d3785
+      size: 421
+    - path: scripts/bluesky.py
+      hash: md5
+      md5: 0588708fd401e3630146deff78a88bbc
+      size: 41435
+    params:
+      params.yaml:
+        bluesky:
+          days_before: 28
+          days_after: 28
+          material_max_age: 4
+    outs:
+    - path: data/raw/bluesky
+      hash: md5
+      md5: 2ad31da02ce7b0b9ba5629e4c480685c.dir
+      size: 186513944
+      nfiles: 55
+  filter_bluesky@2024-05-28_Atak_Zolnierz_Granica:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2024-05-28_Atak_Zolnierz_Granica
+    deps:
+    - path: data/raw/bluesky/2024-05-28_Atak_Zolnierz_Granica/comments.csv
+      hash: md5
+      md5: dc87bfa4afa5575f68d7a6525f10e66b
+      size: 39901
+      isexec: true
+    - path: data/raw/bluesky/2024-05-28_Atak_Zolnierz_Granica/posts.csv
+      hash: md5
+      md5: a69c2f40363f0e04e8d83225ce320cd0
+      size: 313447
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/bluesky/2024-05-28_Atak_Zolnierz_Granica/filtered
+      hash: md5
+      md5: 577c898134a191579f7ddc0e78a8da8a.dir
+      size: 358720
+      nfiles: 5
+  clean_bluesky@2024-05-28_Atak_Zolnierz_Granica:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2024-05-28_Atak_Zolnierz_Granica
+    deps:
+    - path: data/interim/bluesky/2024-05-28_Atak_Zolnierz_Granica/filtered
+      hash: md5
+      md5: 577c898134a191579f7ddc0e78a8da8a.dir
+      size: 358720
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/bluesky/2024-05-28_Atak_Zolnierz_Granica/clean
+      hash: md5
+      md5: 21114080c0d8b8131f11bf09f91ac3c5.dir
+      size: 232337
+      nfiles: 2
+  filter_bluesky@2026-09-15_Atak_Jaroslaw:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2026-09-15_Atak_Jaroslaw
+    deps:
+    - path: data/raw/bluesky/2026-09-15_Atak_Jaroslaw/comments.csv
+      hash: md5
+      md5: 772e5ec3380a390753dc2b804a1c32cc
+      size: 9087187
+      isexec: true
+    - path: data/raw/bluesky/2026-09-15_Atak_Jaroslaw/posts.csv
+      hash: md5
+      md5: 877fe4af0008a9bbcaa0f030384416eb
+      size: 10130685
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/bluesky/2026-09-15_Atak_Jaroslaw/filtered
+      hash: md5
+      md5: 8502c6b8c4f156866fa365a49902204a.dir
+      size: 19279155
+      nfiles: 5
+  clean_bluesky@2026-09-15_Atak_Jaroslaw:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2026-09-15_Atak_Jaroslaw
+    deps:
+    - path: data/interim/bluesky/2026-09-15_Atak_Jaroslaw/filtered
+      hash: md5
+      md5: 8502c6b8c4f156866fa365a49902204a.dir
+      size: 19279155
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/bluesky/2026-09-15_Atak_Jaroslaw/clean
+      hash: md5
+      md5: 5596f636afeb5394c980635c491008dd.dir
+      size: 21974330
+      nfiles: 2
+  collect_wykop:
+    cmd: python scripts/wykop.py events.json --source data/external/wykop --out 
+      data/raw/wykop
+    deps:
+    - path: data/external/wykop
+      hash: md5
+      md5: 8d349fe88ed7eb50a259396ed7f8f8f8.dir
+      size: 195957577
+      nfiles: 5
+    - path: events.json
+      hash: md5
+      md5: df389cb5d3ca755f071a21b3192d3785
+      size: 421
+      isexec: true
+    - path: scripts/wykop.py
+      hash: md5
+      md5: 419f7cbb965ac16b9680896131ce5cc5
+      size: 11121
+      isexec: true
+    params:
+      params.yaml:
+        wykop:
+          days_before: 28
+          days_after: 28
+          material_max_age: 4
+    outs:
+    - path: data/raw/wykop
+      hash: md5
+      md5: 1c8bbd2c2fb09edc6b9433b76a117ac4.dir
+      size: 143706437
+      nfiles: 55
+  filter_wykop@2024-04-10_Pakt_Azyl_PE:
+    cmd: python scripts/preprocess_filter.py --platform wykop --event 
+      2024-04-10_Pakt_Azyl_PE
+    deps:
+    - path: data/raw/wykop/2024-04-10_Pakt_Azyl_PE/comments.csv
+      hash: md5
+      md5: 53c9d3dc2e5957893febaf072af873bb
+      size: 11593422
+      isexec: true
+    - path: data/raw/wykop/2024-04-10_Pakt_Azyl_PE/posts.csv
+      hash: md5
+      md5: 40b06dd1665fa51d76506df9199879ab
+      size: 1004668
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/wykop/2024-04-10_Pakt_Azyl_PE/filtered
+      hash: md5
+      md5: d1706adf59b98a2a521836b67045f6e8.dir
+      size: 12610732
+      nfiles: 5
+  filter_wykop@2024-05-28_Atak_Zolnierz_Granica:
+    cmd: python scripts/preprocess_filter.py --platform wykop --event 
+      2024-05-28_Atak_Zolnierz_Granica
+    deps:
+    - path: data/raw/wykop/2024-05-28_Atak_Zolnierz_Granica/comments.csv
+      hash: md5
+      md5: 83abcbfe6a39443a6fa4b5bef30fc110
+      size: 11962750
+      isexec: true
+    - path: data/raw/wykop/2024-05-28_Atak_Zolnierz_Granica/posts.csv
+      hash: md5
+      md5: c113849f98b61602b0e5c0bdcd3473b9
+      size: 731613
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/wykop/2024-05-28_Atak_Zolnierz_Granica/filtered
+      hash: md5
+      md5: 2283c93c93505d5d864dcb7730fabb2d.dir
+      size: 12706440
+      nfiles: 5
+  filter_wykop@2024-06-06_Smierc_Zolnierza:
+    cmd: python scripts/preprocess_filter.py --platform wykop --event 
+      2024-06-06_Smierc_Zolnierza
+    deps:
+    - path: data/raw/wykop/2024-06-06_Smierc_Zolnierza/comments.csv
+      hash: md5
+      md5: f2822f0720466ae60766df8aef0ead7a
+      size: 11565001
+      isexec: true
+    - path: data/raw/wykop/2024-06-06_Smierc_Zolnierza/posts.csv
+      hash: md5
+      md5: 4a5d9d4675a448bf90aea52c437a0efa
+      size: 679068
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/wykop/2024-06-06_Smierc_Zolnierza/filtered
+      hash: md5
+      md5: 69a58c7ebfb3b2762ae6b6b1cc7df1c5.dir
+      size: 12256375
+      nfiles: 5
+  filter_wykop@2024-09-08_Bojka_Srem:
+    cmd: python scripts/preprocess_filter.py --platform wykop --event 
+      2024-09-08_Bojka_Srem
+    deps:
+    - path: data/raw/wykop/2024-09-08_Bojka_Srem/comments.csv
+      hash: md5
+      md5: 148764bab21fbf68a8795815b96f6aa5
+      size: 8702355
+      isexec: true
+    - path: data/raw/wykop/2024-09-08_Bojka_Srem/posts.csv
+      hash: md5
+      md5: e923653cd75dfe12c0c1728b1319240c
+      size: 894633
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/wykop/2024-09-08_Bojka_Srem/filtered
+      hash: md5
+      md5: 69eedf1ebe4cc6c2b49dc2336074aa98.dir
+      size: 9608829
+      nfiles: 5
+  filter_wykop@2024-10-12_Strategia_Migracyjna:
+    cmd: python scripts/preprocess_filter.py --platform wykop --event 
+      2024-10-12_Strategia_Migracyjna
+    deps:
+    - path: data/raw/wykop/2024-10-12_Strategia_Migracyjna/comments.csv
+      hash: md5
+      md5: 69a611a9223e80cbb4b68942ce4d0c8b
+      size: 11184795
+      isexec: true
+    - path: data/raw/wykop/2024-10-12_Strategia_Migracyjna/posts.csv
+      hash: md5
+      md5: 560dc60bedf257fd12974fb6418699a3
+      size: 804339
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/wykop/2024-10-12_Strategia_Migracyjna/filtered
+      hash: md5
+      md5: 52f1e8308e18ae28902933a5afba29a5.dir
+      size: 12000891
+      nfiles: 5
+  filter_wykop@2025-06-06_Naloty_ICE_Los_Angeles:
+    cmd: python scripts/preprocess_filter.py --platform wykop --event 
+      2025-06-06_Naloty_ICE_Los_Angeles
+    deps:
+    - path: data/raw/wykop/2025-06-06_Naloty_ICE_Los_Angeles/comments.csv
+      hash: md5
+      md5: 1aa60e836c0720e2ced04f755a9fb7bd
+      size: 11763655
+      isexec: true
+    - path: data/raw/wykop/2025-06-06_Naloty_ICE_Los_Angeles/posts.csv
+      hash: md5
+      md5: 57531dd478296d09e3f43991a2fb068a
+      size: 1021127
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/wykop/2025-06-06_Naloty_ICE_Los_Angeles/filtered
+      hash: md5
+      md5: e9ca02e719b74f06801ce6046ccedb6a.dir
+      size: 12797410
+      nfiles: 5
+  filter_wykop@2025-10-15_Dezinformacja_Krakow:
+    cmd: python scripts/preprocess_filter.py --platform wykop --event 
+      2025-10-15_Dezinformacja_Krakow
+    deps:
+    - path: data/raw/wykop/2025-10-15_Dezinformacja_Krakow/comments.csv
+      hash: md5
+      md5: f6c70cea5ed2db20d33763d692cf38a1
+      size: 8448086
+      isexec: true
+    - path: data/raw/wykop/2025-10-15_Dezinformacja_Krakow/posts.csv
+      hash: md5
+      md5: 7e1d0cf35099672c95b668f09e21f28a
+      size: 668490
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/wykop/2025-10-15_Dezinformacja_Krakow/filtered
+      hash: md5
+      md5: 16672cc44d73e0c683eb79ff87b01bb3.dir
+      size: 9130215
+      nfiles: 5
+  filter_wykop@2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie:
+    cmd: python scripts/preprocess_filter.py --platform wykop --event 
+      2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie
+    deps:
+    - path: 
+        data/raw/wykop/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/comments.csv
+      hash: md5
+      md5: 74f181cc5abfd547c467621744625629
+      size: 11954664
+      isexec: true
+    - path: data/raw/wykop/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/posts.csv
+      hash: md5
+      md5: b9bdd6b0e9a6890b46d3e645f5cf7be4
+      size: 1187995
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: 
+        data/interim/wykop/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/filtered
+      hash: md5
+      md5: 8fcb9bbbb4ff003608843634b30cd25a.dir
+      size: 13160889
+      nfiles: 5
+  filter_wykop@2026-07-30_Ceuta_Masowe_Przekroczenie:
+    cmd: python scripts/preprocess_filter.py --platform wykop --event 
+      2026-07-30_Ceuta_Masowe_Przekroczenie
+    deps:
+    - path: data/raw/wykop/2026-07-30_Ceuta_Masowe_Przekroczenie/comments.csv
+      hash: md5
+      md5: 883b66a68eaebb2e8acac38adb9e9f96
+      size: 11641778
+      isexec: true
+    - path: data/raw/wykop/2026-07-30_Ceuta_Masowe_Przekroczenie/posts.csv
+      hash: md5
+      md5: 08b616fc33fb26af6ccb33471d77780b
+      size: 1312248
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/wykop/2026-07-30_Ceuta_Masowe_Przekroczenie/filtered
+      hash: md5
+      md5: c7fc34f1aa5057be35c4a3212a2d412d.dir
+      size: 12973476
+      nfiles: 5
+  filter_wykop@2026-08-15_Atak_Kamienna_Gora:
+    cmd: python scripts/preprocess_filter.py --platform wykop --event 
+      2026-08-15_Atak_Kamienna_Gora
+    deps:
+    - path: data/raw/wykop/2026-08-15_Atak_Kamienna_Gora/comments.csv
+      hash: md5
+      md5: c77367c349da4a0f300deb0e343e15c6
+      size: 11148209
+      isexec: true
+    - path: data/raw/wykop/2026-08-15_Atak_Kamienna_Gora/posts.csv
+      hash: md5
+      md5: 27194d26979d1a9dcdb96218d3dd2431
+      size: 1403416
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/wykop/2026-08-15_Atak_Kamienna_Gora/filtered
+      hash: md5
+      md5: 2239cd1fbe50a8559c09b10d8b0c053b.dir
+      size: 12569479
+      nfiles: 5
+  filter_wykop@2026-09-15_Atak_Jaroslaw:
+    cmd: python scripts/preprocess_filter.py --platform wykop --event 
+      2026-09-15_Atak_Jaroslaw
+    deps:
+    - path: data/raw/wykop/2026-09-15_Atak_Jaroslaw/comments.csv
+      hash: md5
+      md5: 33daeede10deb77670ca0fe00cd13ddd
+      size: 9985816
+      isexec: true
+    - path: data/raw/wykop/2026-09-15_Atak_Jaroslaw/posts.csv
+      hash: md5
+      md5: d5ad5988a8ba30350db08745a421f219
+      size: 1397974
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/wykop/2026-09-15_Atak_Jaroslaw/filtered
+      hash: md5
+      md5: 93ee3f8c655ba974e7f2f596ec5bc592.dir
+      size: 11398144
+      nfiles: 5
+  clean_wykop@2024-04-10_Pakt_Azyl_PE:
+    cmd: python scripts/preprocess_clean.py --platform wykop --event 
+      2024-04-10_Pakt_Azyl_PE
+    deps:
+    - path: data/interim/wykop/2024-04-10_Pakt_Azyl_PE/filtered
+      hash: md5
+      md5: d1706adf59b98a2a521836b67045f6e8.dir
+      size: 12610732
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/wykop/2024-04-10_Pakt_Azyl_PE/clean
+      hash: md5
+      md5: 081ea2e9e4adaa5edc53427ecbd297f0.dir
+      size: 17119509
+      nfiles: 2
+  clean_wykop@2024-05-28_Atak_Zolnierz_Granica:
+    cmd: python scripts/preprocess_clean.py --platform wykop --event 
+      2024-05-28_Atak_Zolnierz_Granica
+    deps:
+    - path: data/interim/wykop/2024-05-28_Atak_Zolnierz_Granica/filtered
+      hash: md5
+      md5: 2283c93c93505d5d864dcb7730fabb2d.dir
+      size: 12706440
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/wykop/2024-05-28_Atak_Zolnierz_Granica/clean
+      hash: md5
+      md5: f831a88adb13c5af1fd3b4a9a2b54eb8.dir
+      size: 17146372
+      nfiles: 2
+  clean_wykop@2024-06-06_Smierc_Zolnierza:
+    cmd: python scripts/preprocess_clean.py --platform wykop --event 
+      2024-06-06_Smierc_Zolnierza
+    deps:
+    - path: data/interim/wykop/2024-06-06_Smierc_Zolnierza/filtered
+      hash: md5
+      md5: 69a58c7ebfb3b2762ae6b6b1cc7df1c5.dir
+      size: 12256375
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/wykop/2024-06-06_Smierc_Zolnierza/clean
+      hash: md5
+      md5: 1b9e28602378557362678fb24efc3073.dir
+      size: 16525908
+      nfiles: 2
+  clean_wykop@2024-09-08_Bojka_Srem:
+    cmd: python scripts/preprocess_clean.py --platform wykop --event 
+      2024-09-08_Bojka_Srem
+    deps:
+    - path: data/interim/wykop/2024-09-08_Bojka_Srem/filtered
+      hash: md5
+      md5: 69eedf1ebe4cc6c2b49dc2336074aa98.dir
+      size: 9608829
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/wykop/2024-09-08_Bojka_Srem/clean
+      hash: md5
+      md5: 44c627b396eccafbcc4790234866b5ce.dir
+      size: 12932831
+      nfiles: 2
+  clean_wykop@2024-10-12_Strategia_Migracyjna:
+    cmd: python scripts/preprocess_clean.py --platform wykop --event 
+      2024-10-12_Strategia_Migracyjna
+    deps:
+    - path: data/interim/wykop/2024-10-12_Strategia_Migracyjna/filtered
+      hash: md5
+      md5: 52f1e8308e18ae28902933a5afba29a5.dir
+      size: 12000891
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/wykop/2024-10-12_Strategia_Migracyjna/clean
+      hash: md5
+      md5: 6b5ece15a463f2494f2279232237bca8.dir
+      size: 16198268
+      nfiles: 2
+  clean_wykop@2025-06-06_Naloty_ICE_Los_Angeles:
+    cmd: python scripts/preprocess_clean.py --platform wykop --event 
+      2025-06-06_Naloty_ICE_Los_Angeles
+    deps:
+    - path: data/interim/wykop/2025-06-06_Naloty_ICE_Los_Angeles/filtered
+      hash: md5
+      md5: e9ca02e719b74f06801ce6046ccedb6a.dir
+      size: 12797410
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/wykop/2025-06-06_Naloty_ICE_Los_Angeles/clean
+      hash: md5
+      md5: b8abb8a9845a3d7f4bf73231569b94e4.dir
+      size: 17370922
+      nfiles: 2
+  clean_wykop@2025-10-15_Dezinformacja_Krakow:
+    cmd: python scripts/preprocess_clean.py --platform wykop --event 
+      2025-10-15_Dezinformacja_Krakow
+    deps:
+    - path: data/interim/wykop/2025-10-15_Dezinformacja_Krakow/filtered
+      hash: md5
+      md5: 16672cc44d73e0c683eb79ff87b01bb3.dir
+      size: 9130215
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/wykop/2025-10-15_Dezinformacja_Krakow/clean
+      hash: md5
+      md5: a9bdc1f361c2018349ecdccd97b68bc2.dir
+      size: 11927400
+      nfiles: 2
+  clean_wykop@2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie:
+    cmd: python scripts/preprocess_clean.py --platform wykop --event 
+      2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie
+    deps:
+    - path: 
+        data/interim/wykop/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/filtered
+      hash: md5
+      md5: 8fcb9bbbb4ff003608843634b30cd25a.dir
+      size: 13160889
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/wykop/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/clean
+      hash: md5
+      md5: 21c701ee751feddb6d8e670ebd1bec25.dir
+      size: 17388309
+      nfiles: 2
+  clean_wykop@2026-07-30_Ceuta_Masowe_Przekroczenie:
+    cmd: python scripts/preprocess_clean.py --platform wykop --event 
+      2026-07-30_Ceuta_Masowe_Przekroczenie
+    deps:
+    - path: data/interim/wykop/2026-07-30_Ceuta_Masowe_Przekroczenie/filtered
+      hash: md5
+      md5: c7fc34f1aa5057be35c4a3212a2d412d.dir
+      size: 12973476
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/wykop/2026-07-30_Ceuta_Masowe_Przekroczenie/clean
+      hash: md5
+      md5: 35f98f3363416079a4789c63de8c567f.dir
+      size: 17030067
+      nfiles: 2
+  clean_wykop@2026-08-15_Atak_Kamienna_Gora:
+    cmd: python scripts/preprocess_clean.py --platform wykop --event 
+      2026-08-15_Atak_Kamienna_Gora
+    deps:
+    - path: data/interim/wykop/2026-08-15_Atak_Kamienna_Gora/filtered
+      hash: md5
+      md5: 2239cd1fbe50a8559c09b10d8b0c053b.dir
+      size: 12569479
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/wykop/2026-08-15_Atak_Kamienna_Gora/clean
+      hash: md5
+      md5: 786ac059c112d1fcfcf80382fea7aa7c.dir
+      size: 16619681
+      nfiles: 2
+  clean_wykop@2026-09-15_Atak_Jaroslaw:
+    cmd: python scripts/preprocess_clean.py --platform wykop --event 
+      2026-09-15_Atak_Jaroslaw
+    deps:
+    - path: data/interim/wykop/2026-09-15_Atak_Jaroslaw/filtered
+      hash: md5
+      md5: 93ee3f8c655ba974e7f2f596ec5bc592.dir
+      size: 11398144
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/wykop/2026-09-15_Atak_Jaroslaw/clean
+      hash: md5
+      md5: 18013d9e59030a38a4df223ab284079b.dir
+      size: 15247136
+      nfiles: 2
+  filter_bluesky@2024-04-10_Pakt_Azyl_PE:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2024-04-10_Pakt_Azyl_PE
+    deps:
+    - path: data/raw/bluesky/2024-04-10_Pakt_Azyl_PE/comments.csv
+      hash: md5
+      md5: 4c01ede7fa902283f08644f433aaaa56
+      size: 79862
+      isexec: true
+    - path: data/raw/bluesky/2024-04-10_Pakt_Azyl_PE/posts.csv
+      hash: md5
+      md5: 2215dc05378da824bca66a3336db4ae5
+      size: 294545
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/bluesky/2024-04-10_Pakt_Azyl_PE/filtered
+      hash: md5
+      md5: e6dfd35957d06f2bb5d29b7e8774cb40.dir
+      size: 378761
+      nfiles: 5
+  filter_bluesky@2024-06-06_Smierc_Zolnierza:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2024-06-06_Smierc_Zolnierza
+    deps:
+    - path: data/raw/bluesky/2024-06-06_Smierc_Zolnierza/comments.csv
+      hash: md5
+      md5: 52d176e0e6ebf4ff9974a68652424d0d
+      size: 48025
+      isexec: true
+    - path: data/raw/bluesky/2024-06-06_Smierc_Zolnierza/posts.csv
+      hash: md5
+      md5: fbcfc4a2c7928d0753385968bd1c0b33
+      size: 294801
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/bluesky/2024-06-06_Smierc_Zolnierza/filtered
+      hash: md5
+      md5: 2f090a29084f23d9a3494c7edd4e8d64.dir
+      size: 348398
+      nfiles: 5
+  filter_bluesky@2024-09-08_Bojka_Srem:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2024-09-08_Bojka_Srem
+    deps:
+    - path: data/raw/bluesky/2024-09-08_Bojka_Srem/comments.csv
+      hash: md5
+      md5: 1a33fd9bfa2f53fb2985fb61dfa1e669
+      size: 90887
+      isexec: true
+    - path: data/raw/bluesky/2024-09-08_Bojka_Srem/posts.csv
+      hash: md5
+      md5: 7de12f5da128d2d1126ef5741d54ee6d
+      size: 239413
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/bluesky/2024-09-08_Bojka_Srem/filtered
+      hash: md5
+      md5: 71ebc33e822e7e23c8503aaf464f6210.dir
+      size: 335162
+      nfiles: 5
+  filter_bluesky@2024-10-12_Strategia_Migracyjna:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2024-10-12_Strategia_Migracyjna
+    deps:
+    - path: data/raw/bluesky/2024-10-12_Strategia_Migracyjna/comments.csv
+      hash: md5
+      md5: fcb011ad49787a31cb1407990246dbeb
+      size: 285460
+      isexec: true
+    - path: data/raw/bluesky/2024-10-12_Strategia_Migracyjna/posts.csv
+      hash: md5
+      md5: 026b52fe765d7a58a0f6a2bf773f6d68
+      size: 529438
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/bluesky/2024-10-12_Strategia_Migracyjna/filtered
+      hash: md5
+      md5: c0e86149b86437dce8561e73ab1d7eb6.dir
+      size: 823193
+      nfiles: 5
+  filter_bluesky@2025-06-06_Naloty_ICE_Los_Angeles:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2025-06-06_Naloty_ICE_Los_Angeles
+    deps:
+    - path: data/raw/bluesky/2025-06-06_Naloty_ICE_Los_Angeles/comments.csv
+      hash: md5
+      md5: 74efd7e33e725fa7ea7005756875c602
+      size: 22556989
+      isexec: true
+    - path: data/raw/bluesky/2025-06-06_Naloty_ICE_Los_Angeles/posts.csv
+      hash: md5
+      md5: b920b4e4a935fab3ed86f743087887d9
+      size: 18511347
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/bluesky/2025-06-06_Naloty_ICE_Los_Angeles/filtered
+      hash: md5
+      md5: 86a1e6791d727c7045a512a89d31c605.dir
+      size: 41147008
+      nfiles: 5
+  filter_bluesky@2025-10-15_Dezinformacja_Krakow:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2025-10-15_Dezinformacja_Krakow
+    deps:
+    - path: data/raw/bluesky/2025-10-15_Dezinformacja_Krakow/comments.csv
+      hash: md5
+      md5: 7caf2532297acaf95baad75f9c53416e
+      size: 11415664
+      isexec: true
+    - path: data/raw/bluesky/2025-10-15_Dezinformacja_Krakow/posts.csv
+      hash: md5
+      md5: a8c1398abeb475717e5d4ee01b36078f
+      size: 11840297
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/bluesky/2025-10-15_Dezinformacja_Krakow/filtered
+      hash: md5
+      md5: 7f6ae1f428d806acbb2cac1c894f22ec.dir
+      size: 23319333
+      nfiles: 5
+  filter_bluesky@2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie
+    deps:
+    - path: 
+        data/raw/bluesky/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/comments.csv
+      hash: md5
+      md5: 189505ff6b088698378feef89f56a4e1
+      size: 13386038
+      isexec: true
+    - path: 
+        data/raw/bluesky/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/posts.csv
+      hash: md5
+      md5: b042dbfef5b4906c043a1db1c89684e9
+      size: 12823628
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: 
+        data/interim/bluesky/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/filtered
+      hash: md5
+      md5: 956e6d7ac224d6c6c3936c781f9b3b10.dir
+      size: 26268393
+      nfiles: 5
+  filter_bluesky@2026-07-30_Ceuta_Masowe_Przekroczenie:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2026-07-30_Ceuta_Masowe_Przekroczenie
+    deps:
+    - path: data/raw/bluesky/2026-07-30_Ceuta_Masowe_Przekroczenie/comments.csv
+      hash: md5
+      md5: 44417e401752d7067839a8e4c051cf3b
+      size: 11841502
+      isexec: true
+    - path: data/raw/bluesky/2026-07-30_Ceuta_Masowe_Przekroczenie/posts.csv
+      hash: md5
+      md5: bdf03adb76f458d960ad20a98af09051
+      size: 11486875
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/bluesky/2026-07-30_Ceuta_Masowe_Przekroczenie/filtered
+      hash: md5
+      md5: 5d223f94bdddd2054192bf855d0e293c.dir
+      size: 23387266
+      nfiles: 5
+  filter_bluesky@2026-08-15_Atak_Kamienna_Gora:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2026-08-15_Atak_Kamienna_Gora
+    deps:
+    - path: data/raw/bluesky/2026-08-15_Atak_Kamienna_Gora/comments.csv
+      hash: md5
+      md5: 6ba8ae5e4b6a66183dd769d6202f7e42
+      size: 10751246
+      isexec: true
+    - path: data/raw/bluesky/2026-08-15_Atak_Kamienna_Gora/posts.csv
+      hash: md5
+      md5: 51c3afe70863e8094e79eda1e7f0194c
+      size: 10760320
+      isexec: true
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/bluesky/2026-08-15_Atak_Kamienna_Gora/filtered
+      hash: md5
+      md5: 9220e87dff397fc55035403c6b303477.dir
+      size: 21567739
+      nfiles: 5
+  clean_bluesky@2024-04-10_Pakt_Azyl_PE:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2024-04-10_Pakt_Azyl_PE
+    deps:
+    - path: data/interim/bluesky/2024-04-10_Pakt_Azyl_PE/filtered
+      hash: md5
+      md5: e6dfd35957d06f2bb5d29b7e8774cb40.dir
+      size: 378761
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/bluesky/2024-04-10_Pakt_Azyl_PE/clean
+      hash: md5
+      md5: 557a2db85ec7c5a8b8e9d271cc8eeef1.dir
+      size: 325747
+      nfiles: 2
+  clean_bluesky@2024-06-06_Smierc_Zolnierza:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2024-06-06_Smierc_Zolnierza
+    deps:
+    - path: data/interim/bluesky/2024-06-06_Smierc_Zolnierza/filtered
+      hash: md5
+      md5: 2f090a29084f23d9a3494c7edd4e8d64.dir
+      size: 348398
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/bluesky/2024-06-06_Smierc_Zolnierza/clean
+      hash: md5
+      md5: c52ffbbadeb5bdd48f879f99660e9cd7.dir
+      size: 210177
+      nfiles: 2
+  clean_bluesky@2024-09-08_Bojka_Srem:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2024-09-08_Bojka_Srem
+    deps:
+    - path: data/interim/bluesky/2024-09-08_Bojka_Srem/filtered
+      hash: md5
+      md5: 71ebc33e822e7e23c8503aaf464f6210.dir
+      size: 335162
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/bluesky/2024-09-08_Bojka_Srem/clean
+      hash: md5
+      md5: f1684d8dcaaad4fc2736f103e4bd2b6f.dir
+      size: 235459
+      nfiles: 2
+  clean_bluesky@2024-10-12_Strategia_Migracyjna:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2024-10-12_Strategia_Migracyjna
+    deps:
+    - path: data/interim/bluesky/2024-10-12_Strategia_Migracyjna/filtered
+      hash: md5
+      md5: c0e86149b86437dce8561e73ab1d7eb6.dir
+      size: 823193
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/bluesky/2024-10-12_Strategia_Migracyjna/clean
+      hash: md5
+      md5: 6b08b29d2246eafc86d2abef783f57d4.dir
+      size: 667101
+      nfiles: 2
+  clean_bluesky@2025-06-06_Naloty_ICE_Los_Angeles:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2025-06-06_Naloty_ICE_Los_Angeles
+    deps:
+    - path: data/interim/bluesky/2025-06-06_Naloty_ICE_Los_Angeles/filtered
+      hash: md5
+      md5: 86a1e6791d727c7045a512a89d31c605.dir
+      size: 41147008
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/bluesky/2025-06-06_Naloty_ICE_Los_Angeles/clean
+      hash: md5
+      md5: c3db041e68ca9e7a01ffeef0acc6d72b.dir
+      size: 49136842
+      nfiles: 2
+  clean_bluesky@2025-10-15_Dezinformacja_Krakow:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2025-10-15_Dezinformacja_Krakow
+    deps:
+    - path: data/interim/bluesky/2025-10-15_Dezinformacja_Krakow/filtered
+      hash: md5
+      md5: 7f6ae1f428d806acbb2cac1c894f22ec.dir
+      size: 23319333
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/bluesky/2025-10-15_Dezinformacja_Krakow/clean
+      hash: md5
+      md5: a0bf8d15ca89f6b8e7cbe0c455cb0835.dir
+      size: 26915042
+      nfiles: 2
+  clean_bluesky@2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie
+    deps:
+    - path: 
+        data/interim/bluesky/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/filtered
+      hash: md5
+      md5: 956e6d7ac224d6c6c3936c781f9b3b10.dir
+      size: 26268393
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: 
+        data/interim/bluesky/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/clean
+      hash: md5
+      md5: 447e971b3a69625400d27d950538220e.dir
+      size: 30670124
+      nfiles: 2
+  clean_bluesky@2026-07-30_Ceuta_Masowe_Przekroczenie:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2026-07-30_Ceuta_Masowe_Przekroczenie
+    deps:
+    - path: data/interim/bluesky/2026-07-30_Ceuta_Masowe_Przekroczenie/filtered
+      hash: md5
+      md5: 5d223f94bdddd2054192bf855d0e293c.dir
+      size: 23387266
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/bluesky/2026-07-30_Ceuta_Masowe_Przekroczenie/clean
+      hash: md5
+      md5: 044ae2aecd9ddcb34e3e12cabeaf1662.dir
+      size: 27013253
+      nfiles: 2
+  clean_bluesky@2026-08-15_Atak_Kamienna_Gora:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2026-08-15_Atak_Kamienna_Gora
+    deps:
+    - path: data/interim/bluesky/2026-08-15_Atak_Kamienna_Gora/filtered
+      hash: md5
+      md5: 9220e87dff397fc55035403c6b303477.dir
+      size: 21567739
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+      isexec: true
+    - path: src/preprocessing
+      hash: md5
+      md5: e4b84cc7a9893d3c87a3c13272e27fb4.dir
+      size: 15907
+      nfiles: 12
+    outs:
+    - path: data/interim/bluesky/2026-08-15_Atak_Kamienna_Gora/clean
+      hash: md5
+      md5: 85940947f5b54ff90bd3c49255d48bc1.dir
+      size: 25045861
+      nfiles: 2
+  slurs_bluesky@2024-04-10_Pakt_Azyl_PE:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2024-04-10_Pakt_Azyl_PE
+    deps:
+    - path: data/interim/bluesky/2024-04-10_Pakt_Azyl_PE/clean
+      hash: md5
+      md5: 557a2db85ec7c5a8b8e9d271cc8eeef1.dir
+      size: 325747
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/bluesky/2024-04-10_Pakt_Azyl_PE/slurs
+      hash: md5
+      md5: ce148e0ea79e592525833527763b2270.dir
+      size: 9135
+      nfiles: 3
+  slurs_bluesky@2024-05-28_Atak_Zolnierz_Granica:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2024-05-28_Atak_Zolnierz_Granica
+    deps:
+    - path: data/interim/bluesky/2024-05-28_Atak_Zolnierz_Granica/clean
+      hash: md5
+      md5: 21114080c0d8b8131f11bf09f91ac3c5.dir
+      size: 232337
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/bluesky/2024-05-28_Atak_Zolnierz_Granica/slurs
+      hash: md5
+      md5: 32c38530871e62067ba87135f33f1898.dir
+      size: 6490
+      nfiles: 3
+  slurs_bluesky@2024-06-06_Smierc_Zolnierza:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2024-06-06_Smierc_Zolnierza
+    deps:
+    - path: data/interim/bluesky/2024-06-06_Smierc_Zolnierza/clean
+      hash: md5
+      md5: c52ffbbadeb5bdd48f879f99660e9cd7.dir
+      size: 210177
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/bluesky/2024-06-06_Smierc_Zolnierza/slurs
+      hash: md5
+      md5: 84fa6e05dfda6fc3e6ca16c405357ae1.dir
+      size: 6130
+      nfiles: 3
+  slurs_bluesky@2024-09-08_Bojka_Srem:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2024-09-08_Bojka_Srem
+    deps:
+    - path: data/interim/bluesky/2024-09-08_Bojka_Srem/clean
+      hash: md5
+      md5: f1684d8dcaaad4fc2736f103e4bd2b6f.dir
+      size: 235459
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/bluesky/2024-09-08_Bojka_Srem/slurs
+      hash: md5
+      md5: 110303c090f8943a661f906f629cc406.dir
+      size: 7002
+      nfiles: 3
+  slurs_bluesky@2024-10-12_Strategia_Migracyjna:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2024-10-12_Strategia_Migracyjna
+    deps:
+    - path: data/interim/bluesky/2024-10-12_Strategia_Migracyjna/clean
+      hash: md5
+      md5: 6b08b29d2246eafc86d2abef783f57d4.dir
+      size: 667101
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/bluesky/2024-10-12_Strategia_Migracyjna/slurs
+      hash: md5
+      md5: e6ab1506d53211117623eb3fb5894bdc.dir
+      size: 18953
+      nfiles: 3
+  slurs_bluesky@2025-06-06_Naloty_ICE_Los_Angeles:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2025-06-06_Naloty_ICE_Los_Angeles
+    deps:
+    - path: data/interim/bluesky/2025-06-06_Naloty_ICE_Los_Angeles/clean
+      hash: md5
+      md5: c3db041e68ca9e7a01ffeef0acc6d72b.dir
+      size: 49136842
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/bluesky/2025-06-06_Naloty_ICE_Los_Angeles/slurs
+      hash: md5
+      md5: b56abf91eb3f53c357e252a22ba9a977.dir
+      size: 1356239
+      nfiles: 3
+  slurs_bluesky@2025-10-15_Dezinformacja_Krakow:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2025-10-15_Dezinformacja_Krakow
+    deps:
+    - path: data/interim/bluesky/2025-10-15_Dezinformacja_Krakow/clean
+      hash: md5
+      md5: a0bf8d15ca89f6b8e7cbe0c455cb0835.dir
+      size: 26915042
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/bluesky/2025-10-15_Dezinformacja_Krakow/slurs
+      hash: md5
+      md5: 15589583795bbeecaf3bc6edc83da619.dir
+      size: 752809
+      nfiles: 3
+  slurs_bluesky@2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie
+    deps:
+    - path: 
+        data/interim/bluesky/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/clean
+      hash: md5
+      md5: 447e971b3a69625400d27d950538220e.dir
+      size: 30670124
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: 
+        data/interim/bluesky/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/slurs
+      hash: md5
+      md5: 09c7f99d0ff51e1ac90d1db016600c70.dir
+      size: 828559
+      nfiles: 3
+  slurs_bluesky@2026-07-30_Ceuta_Masowe_Przekroczenie:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2026-07-30_Ceuta_Masowe_Przekroczenie
+    deps:
+    - path: data/interim/bluesky/2026-07-30_Ceuta_Masowe_Przekroczenie/clean
+      hash: md5
+      md5: 044ae2aecd9ddcb34e3e12cabeaf1662.dir
+      size: 27013253
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/bluesky/2026-07-30_Ceuta_Masowe_Przekroczenie/slurs
+      hash: md5
+      md5: 6fd2608491d7d002646f0b7676b826e2.dir
+      size: 742834
+      nfiles: 3
+  slurs_bluesky@2026-08-15_Atak_Kamienna_Gora:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2026-08-15_Atak_Kamienna_Gora
+    deps:
+    - path: data/interim/bluesky/2026-08-15_Atak_Kamienna_Gora/clean
+      hash: md5
+      md5: 85940947f5b54ff90bd3c49255d48bc1.dir
+      size: 25045861
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/bluesky/2026-08-15_Atak_Kamienna_Gora/slurs
+      hash: md5
+      md5: 8770173cf2259827f8e70bcae216656a.dir
+      size: 698318
+      nfiles: 3
+  slurs_bluesky@2026-09-15_Atak_Jaroslaw:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2026-09-15_Atak_Jaroslaw
+    deps:
+    - path: data/interim/bluesky/2026-09-15_Atak_Jaroslaw/clean
+      hash: md5
+      md5: 5596f636afeb5394c980635c491008dd.dir
+      size: 21974330
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/bluesky/2026-09-15_Atak_Jaroslaw/slurs
+      hash: md5
+      md5: 44e4440ce19cde3664dcfba8f4719bfd.dir
+      size: 619934
+      nfiles: 3
+  slurs_wykop@2024-04-10_Pakt_Azyl_PE:
+    cmd: python scripts/preprocess_slurs.py --platform wykop --event 
+      2024-04-10_Pakt_Azyl_PE
+    deps:
+    - path: data/interim/wykop/2024-04-10_Pakt_Azyl_PE/clean
+      hash: md5
+      md5: 081ea2e9e4adaa5edc53427ecbd297f0.dir
+      size: 17119509
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/wykop/2024-04-10_Pakt_Azyl_PE/slurs
+      hash: md5
+      md5: 02d593380ab212190487ec4d2c79a27b.dir
+      size: 498737
+      nfiles: 3
+  slurs_wykop@2024-05-28_Atak_Zolnierz_Granica:
+    cmd: python scripts/preprocess_slurs.py --platform wykop --event 
+      2024-05-28_Atak_Zolnierz_Granica
+    deps:
+    - path: data/interim/wykop/2024-05-28_Atak_Zolnierz_Granica/clean
+      hash: md5
+      md5: f831a88adb13c5af1fd3b4a9a2b54eb8.dir
+      size: 17146372
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/wykop/2024-05-28_Atak_Zolnierz_Granica/slurs
+      hash: md5
+      md5: 3e893afb9a2372538b52365009afcd21.dir
+      size: 504027
+      nfiles: 3
+  slurs_wykop@2024-06-06_Smierc_Zolnierza:
+    cmd: python scripts/preprocess_slurs.py --platform wykop --event 
+      2024-06-06_Smierc_Zolnierza
+    deps:
+    - path: data/interim/wykop/2024-06-06_Smierc_Zolnierza/clean
+      hash: md5
+      md5: 1b9e28602378557362678fb24efc3073.dir
+      size: 16525908
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/wykop/2024-06-06_Smierc_Zolnierza/slurs
+      hash: md5
+      md5: 1b9b20e186fda0b090372c76677578fc.dir
+      size: 492588
+      nfiles: 3
+  slurs_wykop@2024-09-08_Bojka_Srem:
+    cmd: python scripts/preprocess_slurs.py --platform wykop --event 
+      2024-09-08_Bojka_Srem
+    deps:
+    - path: data/interim/wykop/2024-09-08_Bojka_Srem/clean
+      hash: md5
+      md5: 44c627b396eccafbcc4790234866b5ce.dir
+      size: 12932831
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/wykop/2024-09-08_Bojka_Srem/slurs
+      hash: md5
+      md5: 1297a8c5395e26feffd8a75c1c6cbb99.dir
+      size: 396543
+      nfiles: 3
+  slurs_wykop@2024-10-12_Strategia_Migracyjna:
+    cmd: python scripts/preprocess_slurs.py --platform wykop --event 
+      2024-10-12_Strategia_Migracyjna
+    deps:
+    - path: data/interim/wykop/2024-10-12_Strategia_Migracyjna/clean
+      hash: md5
+      md5: 6b5ece15a463f2494f2279232237bca8.dir
+      size: 16198268
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/wykop/2024-10-12_Strategia_Migracyjna/slurs
+      hash: md5
+      md5: d4edde7da68f5d397629eb9e22a65629.dir
+      size: 481424
+      nfiles: 3
+  slurs_wykop@2025-06-06_Naloty_ICE_Los_Angeles:
+    cmd: python scripts/preprocess_slurs.py --platform wykop --event 
+      2025-06-06_Naloty_ICE_Los_Angeles
+    deps:
+    - path: data/interim/wykop/2025-06-06_Naloty_ICE_Los_Angeles/clean
+      hash: md5
+      md5: b8abb8a9845a3d7f4bf73231569b94e4.dir
+      size: 17370922
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/wykop/2025-06-06_Naloty_ICE_Los_Angeles/slurs
+      hash: md5
+      md5: 6a68f105a6c3c8c491e613d3869cd8ec.dir
+      size: 492443
+      nfiles: 3
+  slurs_wykop@2025-10-15_Dezinformacja_Krakow:
+    cmd: python scripts/preprocess_slurs.py --platform wykop --event 
+      2025-10-15_Dezinformacja_Krakow
+    deps:
+    - path: data/interim/wykop/2025-10-15_Dezinformacja_Krakow/clean
+      hash: md5
+      md5: a9bdc1f361c2018349ecdccd97b68bc2.dir
+      size: 11927400
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/wykop/2025-10-15_Dezinformacja_Krakow/slurs
+      hash: md5
+      md5: 74755f315136620f01886f924a1cdc80.dir
+      size: 369115
+      nfiles: 3
+  slurs_wykop@2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie:
+    cmd: python scripts/preprocess_slurs.py --platform wykop --event 
+      2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie
+    deps:
+    - path: data/interim/wykop/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/clean
+      hash: md5
+      md5: 21c701ee751feddb6d8e670ebd1bec25.dir
+      size: 17388309
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/wykop/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/slurs
+      hash: md5
+      md5: 28e9d873c76e1b1633e5bf480a0fd211.dir
+      size: 523812
+      nfiles: 3
+  slurs_wykop@2026-07-30_Ceuta_Masowe_Przekroczenie:
+    cmd: python scripts/preprocess_slurs.py --platform wykop --event 
+      2026-07-30_Ceuta_Masowe_Przekroczenie
+    deps:
+    - path: data/interim/wykop/2026-07-30_Ceuta_Masowe_Przekroczenie/clean
+      hash: md5
+      md5: 35f98f3363416079a4789c63de8c567f.dir
+      size: 17030067
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/wykop/2026-07-30_Ceuta_Masowe_Przekroczenie/slurs
+      hash: md5
+      md5: da0214f30ee946a58248c2f703993c35.dir
+      size: 518003
+      nfiles: 3
+  slurs_wykop@2026-08-15_Atak_Kamienna_Gora:
+    cmd: python scripts/preprocess_slurs.py --platform wykop --event 
+      2026-08-15_Atak_Kamienna_Gora
+    deps:
+    - path: data/interim/wykop/2026-08-15_Atak_Kamienna_Gora/clean
+      hash: md5
+      md5: 786ac059c112d1fcfcf80382fea7aa7c.dir
+      size: 16619681
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/wykop/2026-08-15_Atak_Kamienna_Gora/slurs
+      hash: md5
+      md5: 4f650193899de2fdfa055639b1e321fc.dir
+      size: 503575
+      nfiles: 3
+  slurs_wykop@2026-09-15_Atak_Jaroslaw:
+    cmd: python scripts/preprocess_slurs.py --platform wykop --event 
+      2026-09-15_Atak_Jaroslaw
+    deps:
+    - path: data/interim/wykop/2026-09-15_Atak_Jaroslaw/clean
+      hash: md5
+      md5: 18013d9e59030a38a4df223ab284079b.dir
+      size: 15247136
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+      isexec: true
+    - path: src/lexicon
+      hash: md5
+      md5: e240df8035fc641a9cae514be329bc8f.dir
+      size: 12275
+      nfiles: 4
+    outs:
+    - path: data/interim/wykop/2026-09-15_Atak_Jaroslaw/slurs
+      hash: md5
+      md5: ee8bfd68a1ee22e8fcd7ca1ff0bee3f1.dir
+      size: 463352
+      nfiles: 3

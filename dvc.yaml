@@ -1,0 +1,97 @@
+stages:
+  collect_bluesky:
+    cmd: python scripts/bluesky.py events.json --out data/raw/bluesky
+    deps:
+      - scripts/bluesky.py
+      - events.json
+    params:
+      - bluesky
+    outs:
+      - data/raw/bluesky:
+          persist: true
+
+  filter_bluesky:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/preprocess_filter.py --platform bluesky --event ${item}
+      deps:
+        - scripts/preprocess_filter.py
+        - src/preprocessing
+        - data/raw/bluesky/${item}/posts.csv
+        - data/raw/bluesky/${item}/comments.csv
+      params:
+        - preprocess.filter
+      outs:
+        - data/interim/bluesky/${item}/filtered
+
+  clean_bluesky:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/preprocess_clean.py --platform bluesky --event ${item}
+      deps:
+        - scripts/preprocess_clean.py
+        - src/preprocessing
+        - data/interim/bluesky/${item}/filtered
+      outs:
+        - data/interim/bluesky/${item}/clean
+
+  collect_wykop:
+    # data/external/wykop = export of the Wykop API collector (`dvc add`); this stage only splits it
+    # into event folders with the same window rules as collect_bluesky
+    cmd: python scripts/wykop.py events.json --source data/external/wykop --out data/raw/wykop
+    deps:
+      - scripts/wykop.py
+      - events.json
+      - data/external/wykop
+    params:
+      - wykop
+    outs:
+      - data/raw/wykop
+
+  filter_wykop:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/preprocess_filter.py --platform wykop --event ${item}
+      deps:
+        - scripts/preprocess_filter.py
+        - src/preprocessing
+        - data/raw/wykop/${item}/posts.csv
+        - data/raw/wykop/${item}/comments.csv
+      params:
+        - preprocess.filter
+      outs:
+        - data/interim/wykop/${item}/filtered
+
+  clean_wykop:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/preprocess_clean.py --platform wykop --event ${item}
+      deps:
+        - scripts/preprocess_clean.py
+        - src/preprocessing
+        - data/interim/wykop/${item}/filtered
+      outs:
+        - data/interim/wykop/${item}/clean
+
+  # step 3: slur lexicon (src/lexicon) on the cleaned text; a match pre-labels 1/1 for annotation
+  slurs_bluesky:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/preprocess_slurs.py --platform bluesky --event ${item}
+      deps:
+        - scripts/preprocess_slurs.py
+        - src/lexicon
+        - data/interim/bluesky/${item}/clean
+      outs:
+        - data/interim/bluesky/${item}/slurs
+
+  slurs_wykop:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/preprocess_slurs.py --platform wykop --event ${item}
+      deps:
+        - scripts/preprocess_slurs.py
+        - src/lexicon
+        - data/interim/wykop/${item}/clean
+      outs:
+        - data/interim/wykop/${item}/slurs

@@ -1,0 +1,29 @@
+bluesky:
+  days_before: 28
+  days_after: 28
+  material_max_age: 4
+
+wykop:
+  days_before: 28
+  days_after: 28
+  material_max_age: 4
+
+preprocess:
+  # Event folders (data/raw/<platform>/<event>) to run filter_* / clean_* for.
+  events:
+    - 2024-04-10_Pakt_Azyl_PE
+    - 2024-05-28_Atak_Zolnierz_Granica
+    - 2024-06-06_Smierc_Zolnierza
+    - 2024-09-08_Bojka_Srem
+    - 2024-10-12_Strategia_Migracyjna
+    - 2025-06-06_Naloty_ICE_Los_Angeles
+    - 2025-10-15_Dezinformacja_Krakow
+    - 2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie
+    - 2026-07-30_Ceuta_Masowe_Przekroczenie
+    - 2026-08-15_Atak_Kamienna_Gora
+    - 2026-09-15_Atak_Jaroslaw
+  filter:
+    min_words: 3                        # fewer letter-words (after removing links/@/#) -> very_short
+    languages: [pl, en, de, ru, uk]     # candidate languages for lingua
+    min_pl_confidence: 0.5              # below -> non_polish
+    drop_duplicates: true               # same normalised text within an event file -> duplicate

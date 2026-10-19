@@ -8,11 +8,12 @@ from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
-
+import yaml
 import requests
 
 EVENTS_FILE = Path(__file__).with_name('events.json')
-OUTPUT_ROOT = Path('output2/')
+OUTPUT_ROOT = Path('data/raw/bluesky')
+PARAMS_FILE = Path('params.yaml')
 SKIP_DONE = True                   # skip events whose folder already contains report.json
 
 DAYS_BEFORE = 28                   # baseline window
@@ -799,12 +800,24 @@ def run_event(ev):
 # ---------- main ----------
 
 def main():
+    global OUTPUT_ROOT, DAYS_BEFORE, DAYS_AFTER, MATERIAL_MAX_AGE
+
     parser = argparse.ArgumentParser(description='Collect Bluesky posts and comments around events.')
     parser.add_argument('events', nargs='?', help='JSON file {"name": "YYYY-MM-DD", ...} '
                                                   f'(default: {EVENTS_FILE.name})')
+    parser.add_argument('--out', default=str(OUTPUT_ROOT),
+                        help=f'output folder (default: {OUTPUT_ROOT})')
     parser.add_argument('--check-keywords', action='store_true',
                         help='only test whether stem* wildcards work in Bluesky search')
     args = parser.parse_args()
+
+    # time windows come from params.yaml (tracked by DVC), falling back to the constants above
+    OUTPUT_ROOT = Path(args.out)
+    if PARAMS_FILE.exists():
+        params = (yaml.safe_load(PARAMS_FILE.read_text(encoding='utf-8')) or {}).get('bluesky', {})
+        DAYS_BEFORE = params.get('days_before', DAYS_BEFORE)
+        DAYS_AFTER = params.get('days_after', DAYS_AFTER)
+        MATERIAL_MAX_AGE = params.get('material_max_age', MATERIAL_MAX_AGE)
 
     if args.check_keywords:
         check_keywords()
