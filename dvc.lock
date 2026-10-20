@@ -2088,3 +2088,976 @@ stages:
       md5: ee8bfd68a1ee22e8fcd7ca1ff0bee3f1.dir
       size: 463352
       nfiles: 3
+  collect_youtube:
+    cmd: python scripts/youtube.py events.json --out data/raw/youtube
+    deps:
+    - path: events.json
+      hash: md5
+      md5: df389cb5d3ca755f071a21b3192d3785
+      size: 421
+    - path: scripts/youtube.py
+      hash: md5
+      md5: 556d599da72e147ddfae6d61a396d702
+      size: 28511
+    params:
+      params.yaml:
+        youtube:
+          days_before: 28
+          days_after: 28
+          material_max_age: 4
+    outs:
+    - path: data/raw/youtube
+      hash: md5
+      md5: 8d924790cb1fd89928827943fc9ff8e1.dir
+      size: 472080784
+      nfiles: 80
+  filter_youtube@2024-04-10_Pakt_Azyl_PE:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2024-04-10_Pakt_Azyl_PE
+    deps:
+    - path: data/raw/youtube/2024-04-10_Pakt_Azyl_PE/comments.csv
+      hash: md5
+      md5: f8edfcb17243fb02f50c714e857e27fa
+      size: 29530379
+    - path: data/raw/youtube/2024-04-10_Pakt_Azyl_PE/posts.csv
+      hash: md5
+      md5: 296a260b7167b9b92c18752d8ba6a6fb
+      size: 165374
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/youtube/2024-04-10_Pakt_Azyl_PE/filtered
+      hash: md5
+      md5: 8f61a3c5d5a1c2cbb17e56fd213dd36d.dir
+      size: 29801349
+      nfiles: 5
+  clean_youtube@2024-04-10_Pakt_Azyl_PE:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2024-04-10_Pakt_Azyl_PE
+    deps:
+    - path: data/interim/youtube/2024-04-10_Pakt_Azyl_PE/filtered
+      hash: md5
+      md5: 8f61a3c5d5a1c2cbb17e56fd213dd36d.dir
+      size: 29801349
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2024-04-10_Pakt_Azyl_PE/clean
+      hash: md5
+      md5: 8fd5f24c855da8e389f7507d427f5db4.dir
+      size: 41334039
+      nfiles: 2
+  filter_youtube@2024-05-28_Atak_Zolnierz_Granica:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2024-05-28_Atak_Zolnierz_Granica
+    deps:
+    - path: data/raw/youtube/2024-05-28_Atak_Zolnierz_Granica/comments.csv
+      hash: md5
+      md5: 9bbca12f56bda7e9c54296deba05724e
+      size: 34197219
+    - path: data/raw/youtube/2024-05-28_Atak_Zolnierz_Granica/posts.csv
+      hash: md5
+      md5: 2b548d40926efb1ded6165f30e817236
+      size: 193890
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/youtube/2024-05-28_Atak_Zolnierz_Granica/filtered
+      hash: md5
+      md5: 9caf5441a0135323707b4452437edcef.dir
+      size: 34513408
+      nfiles: 5
+  filter_youtube@2026-08-15_Atak_Kamienna_Gora:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2026-08-15_Atak_Kamienna_Gora
+    deps:
+    - path: data/raw/youtube/2026-08-15_Atak_Kamienna_Gora/comments.csv
+      hash: md5
+      md5: 34880b126317ebe4882cd38837f0bbe1
+      size: 34786305
+    - path: data/raw/youtube/2026-08-15_Atak_Kamienna_Gora/posts.csv
+      hash: md5
+      md5: 1cb5838f50483ee9aab9c2c313506596
+      size: 313125
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/youtube/2026-08-15_Atak_Kamienna_Gora/filtered
+      hash: md5
+      md5: 1e929a1f670b326d97123653c3d311a9.dir
+      size: 35235585
+      nfiles: 5
+  filter_youtube@2022-02-24_Atak_Rosji_Ukraina:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2022-02-24_Atak_Rosji_Ukraina
+    deps:
+    - path: data/raw/youtube/2022-02-24_Atak_Rosji_Ukraina/comments.csv
+      hash: md5
+      md5: 72639faf5c6947b307dc83cd5ea107a1
+      size: 17471320
+    - path: data/raw/youtube/2022-02-24_Atak_Rosji_Ukraina/posts.csv
+      hash: md5
+      md5: 663a775b2374e80d929e1c22aa30c52c
+      size: 213660
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/youtube/2022-02-24_Atak_Rosji_Ukraina/filtered
+      hash: md5
+      md5: 3c86339b27c0d48f7a199156a42a2fee.dir
+      size: 17763845
+      nfiles: 5
+  clean_youtube@2022-02-24_Atak_Rosji_Ukraina:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2022-02-24_Atak_Rosji_Ukraina
+    deps:
+    - path: data/interim/youtube/2022-02-24_Atak_Rosji_Ukraina/filtered
+      hash: md5
+      md5: 3c86339b27c0d48f7a199156a42a2fee.dir
+      size: 17763845
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2022-02-24_Atak_Rosji_Ukraina/clean
+      hash: md5
+      md5: 02f172add165b20ff3221ecfeff21864.dir
+      size: 23181786
+      nfiles: 2
+  filter_youtube@2024-10-12_Strategia_Migracyjna:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2024-10-12_Strategia_Migracyjna
+    deps:
+    - path: data/raw/youtube/2024-10-12_Strategia_Migracyjna/comments.csv
+      hash: md5
+      md5: a68709c47f757127bc9e8656ec492a0a
+      size: 38916171
+    - path: data/raw/youtube/2024-10-12_Strategia_Migracyjna/posts.csv
+      hash: md5
+      md5: 5e2253a72d21f9a780061f77d7bb5282
+      size: 301621
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/youtube/2024-10-12_Strategia_Migracyjna/filtered
+      hash: md5
+      md5: 7c5ef2a463418960f6456af70f7b7118.dir
+      size: 39373859
+      nfiles: 5
+  clean_youtube@2024-10-12_Strategia_Migracyjna:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2024-10-12_Strategia_Migracyjna
+    deps:
+    - path: data/interim/youtube/2024-10-12_Strategia_Migracyjna/filtered
+      hash: md5
+      md5: 7c5ef2a463418960f6456af70f7b7118.dir
+      size: 39373859
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2024-10-12_Strategia_Migracyjna/clean
+      hash: md5
+      md5: 6a16cef84d6053836fd00b6bca1494eb.dir
+      size: 52862951
+      nfiles: 2
+  filter_youtube@2026-07-30_Ceuta_Masowe_Przekroczenie:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2026-07-30_Ceuta_Masowe_Przekroczenie
+    deps:
+    - path: data/raw/youtube/2026-07-30_Ceuta_Masowe_Przekroczenie/comments.csv
+      hash: md5
+      md5: e13acc10de86a632e74d821d3a987902
+      size: 21802261
+    - path: data/raw/youtube/2026-07-30_Ceuta_Masowe_Przekroczenie/posts.csv
+      hash: md5
+      md5: 196727f190dd687b9e642c474313749c
+      size: 210381
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/youtube/2026-07-30_Ceuta_Masowe_Przekroczenie/filtered
+      hash: md5
+      md5: be70275314865fb2f98f9c17fc277a01.dir
+      size: 22104277
+      nfiles: 5
+  clean_youtube@2026-07-30_Ceuta_Masowe_Przekroczenie:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2026-07-30_Ceuta_Masowe_Przekroczenie
+    deps:
+    - path: data/interim/youtube/2026-07-30_Ceuta_Masowe_Przekroczenie/filtered
+      hash: md5
+      md5: be70275314865fb2f98f9c17fc277a01.dir
+      size: 22104277
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2026-07-30_Ceuta_Masowe_Przekroczenie/clean
+      hash: md5
+      md5: 4afb41a739590b3dcdb70b7759f2986b.dir
+      size: 28837574
+      nfiles: 2
+  filter_youtube@2023-10-15_Referendum_Wybory:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2023-10-15_Referendum_Wybory
+    deps:
+    - path: data/raw/youtube/2023-10-15_Referendum_Wybory/comments.csv
+      hash: md5
+      md5: 81216a13b1c0cadb110e748f87be395a
+      size: 24550345
+    - path: data/raw/youtube/2023-10-15_Referendum_Wybory/posts.csv
+      hash: md5
+      md5: 8b04ee191cc22f068cbcb87a48a32f67
+      size: 245027
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/youtube/2023-10-15_Referendum_Wybory/filtered
+      hash: md5
+      md5: 31fc82ff97e03b736e43fe3ed598a135.dir
+      size: 24882713
+      nfiles: 5
+  clean_youtube@2024-05-28_Atak_Zolnierz_Granica:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2024-05-28_Atak_Zolnierz_Granica
+    deps:
+    - path: data/interim/youtube/2024-05-28_Atak_Zolnierz_Granica/filtered
+      hash: md5
+      md5: 9caf5441a0135323707b4452437edcef.dir
+      size: 34513408
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2024-05-28_Atak_Zolnierz_Granica/clean
+      hash: md5
+      md5: 3533d0e7a8023c0bab4c31a5bd1153d3.dir
+      size: 46494321
+      nfiles: 2
+  filter_youtube@2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie
+    deps:
+    - path: 
+        data/raw/youtube/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/comments.csv
+      hash: md5
+      md5: ecbf993b7f47ea9d069f689a79564d84
+      size: 30629925
+    - path: 
+        data/raw/youtube/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/posts.csv
+      hash: md5
+      md5: 69f46425aeba4c2e82994c53091c62e9
+      size: 206102
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: 
+        data/interim/youtube/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/filtered
+      hash: md5
+      md5: e8261c28f637e8ab02d07702838f7d07.dir
+      size: 30939684
+      nfiles: 5
+  clean_youtube@2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie
+    deps:
+    - path: 
+        data/interim/youtube/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/filtered
+      hash: md5
+      md5: e8261c28f637e8ab02d07702838f7d07.dir
+      size: 30939684
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: 
+        data/interim/youtube/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/clean
+      hash: md5
+      md5: a103dd19020f22ed066ab35068d43f14.dir
+      size: 41510798
+      nfiles: 2
+  filter_youtube@2022-05-08_Zabojstwo_Nowy_Swiat:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2022-05-08_Zabojstwo_Nowy_Swiat
+    deps:
+    - path: data/raw/youtube/2022-05-08_Zabojstwo_Nowy_Swiat/comments.csv
+      hash: md5
+      md5: 59627a942fcd2c895e4a8879c6bf2a6a
+      size: 6889602
+    - path: data/raw/youtube/2022-05-08_Zabojstwo_Nowy_Swiat/posts.csv
+      hash: md5
+      md5: 024fd6cdf5f1e41bc97eb33dcac5595b
+      size: 154895
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/youtube/2022-05-08_Zabojstwo_Nowy_Swiat/filtered
+      hash: md5
+      md5: a5c9b9903a2f3cf5735c8f5e3dba86cb.dir
+      size: 7080635
+      nfiles: 5
+  filter_youtube@2024-09-08_Bojka_Srem:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2024-09-08_Bojka_Srem
+    deps:
+    - path: data/raw/youtube/2024-09-08_Bojka_Srem/comments.csv
+      hash: md5
+      md5: f808f119923143eea3bcb8e612caf735
+      size: 34899255
+    - path: data/raw/youtube/2024-09-08_Bojka_Srem/posts.csv
+      hash: md5
+      md5: 4bad8e08d6b33e8fed121e592b2be6e1
+      size: 276336
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/youtube/2024-09-08_Bojka_Srem/filtered
+      hash: md5
+      md5: cec1b75dc6ea92f88f80e6ffb87684e1.dir
+      size: 35322855
+      nfiles: 5
+  clean_youtube@2024-09-08_Bojka_Srem:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2024-09-08_Bojka_Srem
+    deps:
+    - path: data/interim/youtube/2024-09-08_Bojka_Srem/filtered
+      hash: md5
+      md5: cec1b75dc6ea92f88f80e6ffb87684e1.dir
+      size: 35322855
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2024-09-08_Bojka_Srem/clean
+      hash: md5
+      md5: a438a04f1a4f6c1c3856a54aa67799ea.dir
+      size: 47775887
+      nfiles: 2
+  filter_youtube@2024-06-06_Smierc_Zolnierza:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2024-06-06_Smierc_Zolnierza
+    deps:
+    - path: data/raw/youtube/2024-06-06_Smierc_Zolnierza/comments.csv
+      hash: md5
+      md5: df863bc17d97d9da338ef85b38d0218e
+      size: 12286913
+    - path: data/raw/youtube/2024-06-06_Smierc_Zolnierza/posts.csv
+      hash: md5
+      md5: e410e95d16498f53fbfa191ddd040941
+      size: 75131
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/youtube/2024-06-06_Smierc_Zolnierza/filtered
+      hash: md5
+      md5: 92f5eb6b66dcb693a840331d690ac1e6.dir
+      size: 12403324
+      nfiles: 5
+  clean_youtube@2022-05-08_Zabojstwo_Nowy_Swiat:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2022-05-08_Zabojstwo_Nowy_Swiat
+    deps:
+    - path: data/interim/youtube/2022-05-08_Zabojstwo_Nowy_Swiat/filtered
+      hash: md5
+      md5: a5c9b9903a2f3cf5735c8f5e3dba86cb.dir
+      size: 7080635
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2022-05-08_Zabojstwo_Nowy_Swiat/clean
+      hash: md5
+      md5: 55cf9f1dfd4ff55b8659f9b06dfef934.dir
+      size: 8969412
+      nfiles: 2
+  filter_youtube@2025-06-06_Naloty_ICE_Los_Angeles:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2025-06-06_Naloty_ICE_Los_Angeles
+    deps:
+    - path: data/raw/youtube/2025-06-06_Naloty_ICE_Los_Angeles/comments.csv
+      hash: md5
+      md5: d5d445753337f62517ec8ec4209c2bdf
+      size: 36417175
+    - path: data/raw/youtube/2025-06-06_Naloty_ICE_Los_Angeles/posts.csv
+      hash: md5
+      md5: 25f1dadcbf81327d05b6a8be8d9e2795
+      size: 207343
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/youtube/2025-06-06_Naloty_ICE_Los_Angeles/filtered
+      hash: md5
+      md5: 74275408b08b21c72d8a31b02cd3394f.dir
+      size: 36760112
+      nfiles: 5
+  clean_youtube@2025-06-06_Naloty_ICE_Los_Angeles:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2025-06-06_Naloty_ICE_Los_Angeles
+    deps:
+    - path: data/interim/youtube/2025-06-06_Naloty_ICE_Los_Angeles/filtered
+      hash: md5
+      md5: 74275408b08b21c72d8a31b02cd3394f.dir
+      size: 36760112
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2025-06-06_Naloty_ICE_Los_Angeles/clean
+      hash: md5
+      md5: 68a8043cafa299b8abdeb12ffc2e2000.dir
+      size: 49122893
+      nfiles: 2
+  clean_youtube@2023-10-15_Referendum_Wybory:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2023-10-15_Referendum_Wybory
+    deps:
+    - path: data/interim/youtube/2023-10-15_Referendum_Wybory/filtered
+      hash: md5
+      md5: 31fc82ff97e03b736e43fe3ed598a135.dir
+      size: 24882713
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2023-10-15_Referendum_Wybory/clean
+      hash: md5
+      md5: c752c82e5516b629918f401fb1947349.dir
+      size: 33433135
+      nfiles: 2
+  clean_youtube@2024-06-06_Smierc_Zolnierza:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2024-06-06_Smierc_Zolnierza
+    deps:
+    - path: data/interim/youtube/2024-06-06_Smierc_Zolnierza/filtered
+      hash: md5
+      md5: 92f5eb6b66dcb693a840331d690ac1e6.dir
+      size: 12403324
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2024-06-06_Smierc_Zolnierza/clean
+      hash: md5
+      md5: 9fae8ea1347a98bc34f398eebb91abd9.dir
+      size: 17001564
+      nfiles: 2
+  filter_youtube@2025-10-15_Dezinformacja_Krakow:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2025-10-15_Dezinformacja_Krakow
+    deps:
+    - path: data/raw/youtube/2025-10-15_Dezinformacja_Krakow/comments.csv
+      hash: md5
+      md5: 844c27b730c3db64ecd8c263657b133e
+      size: 19169535
+    - path: data/raw/youtube/2025-10-15_Dezinformacja_Krakow/posts.csv
+      hash: md5
+      md5: faf814e8fb8ae11796bd0bab99fdb2d3
+      size: 219024
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/youtube/2025-10-15_Dezinformacja_Krakow/filtered
+      hash: md5
+      md5: 0a863eb6e7535ce1df4d3c66851fd946.dir
+      size: 19453714
+      nfiles: 5
+  clean_youtube@2025-10-15_Dezinformacja_Krakow:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2025-10-15_Dezinformacja_Krakow
+    deps:
+    - path: data/interim/youtube/2025-10-15_Dezinformacja_Krakow/filtered
+      hash: md5
+      md5: 0a863eb6e7535ce1df4d3c66851fd946.dir
+      size: 19453714
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2025-10-15_Dezinformacja_Krakow/clean
+      hash: md5
+      md5: 7a12d99982e9e38d0832ce53b12d3831.dir
+      size: 26478015
+      nfiles: 2
+  filter_youtube@2026-09-15_Atak_Jaroslaw:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2026-09-15_Atak_Jaroslaw
+    deps:
+    - path: data/raw/youtube/2026-09-15_Atak_Jaroslaw/comments.csv
+      hash: md5
+      md5: a879569bc0762e3f92a8a0652dc7aef1
+      size: 42967608
+    - path: data/raw/youtube/2026-09-15_Atak_Jaroslaw/posts.csv
+      hash: md5
+      md5: c6cd297d5868a2f70b82ff14134cb6e7
+      size: 422013
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/youtube/2026-09-15_Atak_Jaroslaw/filtered
+      hash: md5
+      md5: eee8f160e1efbf69a986c86773b73ca7.dir
+      size: 43559306
+      nfiles: 5
+  filter_youtube@2023-09-22_Premiera_Zielona_Granica:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2023-09-22_Premiera_Zielona_Granica
+    deps:
+    - path: data/raw/youtube/2023-09-22_Premiera_Zielona_Granica/comments.csv
+      hash: md5
+      md5: 5ebba215b8396c31428631ad3b2edb26
+      size: 18330256
+    - path: data/raw/youtube/2023-09-22_Premiera_Zielona_Granica/posts.csv
+      hash: md5
+      md5: ed5b005796eb8cdccdd0eb4e9e5acd21
+      size: 159687
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/youtube/2023-09-22_Premiera_Zielona_Granica/filtered
+      hash: md5
+      md5: bdaa712c211562d008ae19ddbe89336b.dir
+      size: 18566393
+      nfiles: 5
+  clean_youtube@2026-09-15_Atak_Jaroslaw:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2026-09-15_Atak_Jaroslaw
+    deps:
+    - path: data/interim/youtube/2026-09-15_Atak_Jaroslaw/filtered
+      hash: md5
+      md5: eee8f160e1efbf69a986c86773b73ca7.dir
+      size: 43559306
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2026-09-15_Atak_Jaroslaw/clean
+      hash: md5
+      md5: 0a21d3751d12df8d1928bcdbc27341ee.dir
+      size: 58551647
+      nfiles: 2
+  clean_youtube@2026-08-15_Atak_Kamienna_Gora:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2026-08-15_Atak_Kamienna_Gora
+    deps:
+    - path: data/interim/youtube/2026-08-15_Atak_Kamienna_Gora/filtered
+      hash: md5
+      md5: 1e929a1f670b326d97123653c3d311a9.dir
+      size: 35235585
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2026-08-15_Atak_Kamienna_Gora/clean
+      hash: md5
+      md5: 7727cb07c1955172b4fcfdf9ec4a70e4.dir
+      size: 47002597
+      nfiles: 2
+  clean_youtube@2023-09-22_Premiera_Zielona_Granica:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2023-09-22_Premiera_Zielona_Granica
+    deps:
+    - path: data/interim/youtube/2023-09-22_Premiera_Zielona_Granica/filtered
+      hash: md5
+      md5: bdaa712c211562d008ae19ddbe89336b.dir
+      size: 18566393
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2023-09-22_Premiera_Zielona_Granica/clean
+      hash: md5
+      md5: 5245ba4db3eb191e6a03995ed9bd6efb.dir
+      size: 24637581
+      nfiles: 2

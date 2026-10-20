@@ -95,3 +95,39 @@ stages:
         - data/interim/wykop/${item}/clean
       outs:
         - data/interim/wykop/${item}/slurs
+
+  collect_youtube:
+    cmd: python scripts/youtube.py events.json --out data/raw/youtube
+    deps:
+      - scripts/youtube.py
+      - events.json
+    params:
+      - youtube
+    outs:
+      - data/raw/youtube:
+          persist: true
+
+  filter_youtube:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/preprocess_filter.py --platform youtube --event ${item}
+      deps:
+        - scripts/preprocess_filter.py
+        - src/preprocessing
+        - data/raw/youtube/${item}/posts.csv
+        - data/raw/youtube/${item}/comments.csv
+      params:
+        - preprocess.filter
+      outs:
+        - data/interim/youtube/${item}/filtered
+
+  clean_youtube:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/preprocess_clean.py --platform youtube --event ${item}
+      deps:
+        - scripts/preprocess_clean.py
+        - src/preprocessing
+        - data/interim/youtube/${item}/filtered
+      outs:
+        - data/interim/youtube/${item}/clean
