@@ -3061,3 +3061,234 @@ stages:
       md5: 5245ba4db3eb191e6a03995ed9bd6efb.dir
       size: 24637581
       nfiles: 2
+  topic_wykop@2024-04-10_Pakt_Azyl_PE:
+    cmd: python scripts/topic_filter.py --platform wykop --event 
+      2024-04-10_Pakt_Azyl_PE
+    deps:
+    - path: data/interim/wykop/2024-04-10_Pakt_Azyl_PE/clean
+      hash: md5
+      md5: 081ea2e9e4adaa5edc53427ecbd297f0.dir
+      size: 17119509
+      nfiles: 2
+    - path: data/interim/wykop/2024-04-10_Pakt_Azyl_PE/slurs
+      hash: md5
+      md5: 02d593380ab212190487ec4d2c79a27b.dir
+      size: 498737
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: e80db52b3f288fa0d103e32826867195
+      size: 16787
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/wykop/2024-04-10_Pakt_Azyl_PE/topic
+      hash: md5
+      md5: c99adf04d8cf92b71cda479aadfdae60.dir
+      size: 5180766
+      nfiles: 3
+  topic_wykop@2024-06-06_Smierc_Zolnierza:
+    cmd: python scripts/topic_filter.py --platform wykop --event 
+      2024-06-06_Smierc_Zolnierza
+    deps:
+    - path: data/interim/wykop/2024-06-06_Smierc_Zolnierza/clean
+      hash: md5
+      md5: 1b9e28602378557362678fb24efc3073.dir
+      size: 16525908
+      nfiles: 2
+    - path: data/interim/wykop/2024-06-06_Smierc_Zolnierza/slurs
+      hash: md5
+      md5: 1b9b20e186fda0b090372c76677578fc.dir
+      size: 492588
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: e80db52b3f288fa0d103e32826867195
+      size: 16787
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/wykop/2024-06-06_Smierc_Zolnierza/topic
+      hash: md5
+      md5: 872f36b34ccadcc265d8b549f2b0e7a9.dir
+      size: 5182371
+      nfiles: 3
+  topic_wykop@2024-09-08_Bojka_Srem:
+    cmd: python scripts/topic_filter.py --platform wykop --event 
+      2024-09-08_Bojka_Srem
+    deps:
+    - path: data/interim/wykop/2024-09-08_Bojka_Srem/clean
+      hash: md5
+      md5: 44c627b396eccafbcc4790234866b5ce.dir
+      size: 12932831
+      nfiles: 2
+    - path: data/interim/wykop/2024-09-08_Bojka_Srem/slurs
+      hash: md5
+      md5: 1297a8c5395e26feffd8a75c1c6cbb99.dir
+      size: 396543
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: e80db52b3f288fa0d103e32826867195
+      size: 16787
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/wykop/2024-09-08_Bojka_Srem/topic
+      hash: md5
+      md5: 4126b3cf996e6f5153fd371dceda97fc.dir
+      size: 3804302
+      nfiles: 3
+  topic_wykop@2024-10-12_Strategia_Migracyjna:
+    cmd: python scripts/topic_filter.py --platform wykop --event 
+      2024-10-12_Strategia_Migracyjna
+    deps:
+    - path: data/interim/wykop/2024-10-12_Strategia_Migracyjna/clean
+      hash: md5
+      md5: 6b5ece15a463f2494f2279232237bca8.dir
+      size: 16198268
+      nfiles: 2
+    - path: data/interim/wykop/2024-10-12_Strategia_Migracyjna/slurs
+      hash: md5
+      md5: d4edde7da68f5d397629eb9e22a65629.dir
+      size: 481424
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: e80db52b3f288fa0d103e32826867195
+      size: 16787
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/wykop/2024-10-12_Strategia_Migracyjna/topic
+      hash: md5
+      md5: 7a18ec339b67916d0046863d1df23c7d.dir
+      size: 5111085
+      nfiles: 3
+  topic_wykop@2025-10-15_Dezinformacja_Krakow:
+    cmd: python scripts/topic_filter.py --platform wykop --event 
+      2025-10-15_Dezinformacja_Krakow
+    deps:
+    - path: data/interim/wykop/2025-10-15_Dezinformacja_Krakow/clean
+      hash: md5
+      md5: a9bdc1f361c2018349ecdccd97b68bc2.dir
+      size: 11927400
+      nfiles: 2
+    - path: data/interim/wykop/2025-10-15_Dezinformacja_Krakow/slurs
+      hash: md5
+      md5: 74755f315136620f01886f924a1cdc80.dir
+      size: 369115
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: e80db52b3f288fa0d103e32826867195
+      size: 16787
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/wykop/2025-10-15_Dezinformacja_Krakow/topic
+      hash: md5
+      md5: 8b757911d26a8c4851c8dc018553270c.dir
+      size: 3715595
+      nfiles: 3
+  topic_wykop@2026-07-30_Ceuta_Masowe_Przekroczenie:
+    cmd: python scripts/topic_filter.py --platform wykop --event 
+      2026-07-30_Ceuta_Masowe_Przekroczenie
+    deps:
+    - path: data/interim/wykop/2026-07-30_Ceuta_Masowe_Przekroczenie/clean
+      hash: md5
+      md5: 35f98f3363416079a4789c63de8c567f.dir
+      size: 17030067
+      nfiles: 2
+    - path: data/interim/wykop/2026-07-30_Ceuta_Masowe_Przekroczenie/slurs
+      hash: md5
+      md5: da0214f30ee946a58248c2f703993c35.dir
+      size: 518003
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: e80db52b3f288fa0d103e32826867195
+      size: 16787
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/wykop/2026-07-30_Ceuta_Masowe_Przekroczenie/topic
+      hash: md5
+      md5: 73d89574efb0a1a1249cb030cb50501b.dir
+      size: 5313280
+      nfiles: 3
+  topic_wykop@2026-08-15_Atak_Kamienna_Gora:
+    cmd: python scripts/topic_filter.py --platform wykop --event 
+      2026-08-15_Atak_Kamienna_Gora
+    deps:
+    - path: data/interim/wykop/2026-08-15_Atak_Kamienna_Gora/clean
+      hash: md5
+      md5: 786ac059c112d1fcfcf80382fea7aa7c.dir
+      size: 16619681
+      nfiles: 2
+    - path: data/interim/wykop/2026-08-15_Atak_Kamienna_Gora/slurs
+      hash: md5
+      md5: 4f650193899de2fdfa055639b1e321fc.dir
+      size: 503575
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: e80db52b3f288fa0d103e32826867195
+      size: 16787
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/wykop/2026-08-15_Atak_Kamienna_Gora/topic
+      hash: md5
+      md5: d46da57d3f5b5f02e67f9d0d0305a92f.dir
+      size: 4943490
+      nfiles: 3
