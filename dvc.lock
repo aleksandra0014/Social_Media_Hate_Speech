@@ -3114,8 +3114,8 @@ stages:
       size: 2938
     - path: scripts/topic_sample.py
       hash: md5
-      md5: e80db52b3f288fa0d103e32826867195
-      size: 16787
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
     - path: src/preprocessing
       hash: md5
       md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
@@ -3147,8 +3147,8 @@ stages:
       size: 2938
     - path: scripts/topic_sample.py
       hash: md5
-      md5: e80db52b3f288fa0d103e32826867195
-      size: 16787
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
     - path: src/preprocessing
       hash: md5
       md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
@@ -3180,8 +3180,8 @@ stages:
       size: 2938
     - path: scripts/topic_sample.py
       hash: md5
-      md5: e80db52b3f288fa0d103e32826867195
-      size: 16787
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
     - path: src/preprocessing
       hash: md5
       md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
@@ -3213,8 +3213,8 @@ stages:
       size: 2938
     - path: scripts/topic_sample.py
       hash: md5
-      md5: e80db52b3f288fa0d103e32826867195
-      size: 16787
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
     - path: src/preprocessing
       hash: md5
       md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
@@ -3246,8 +3246,8 @@ stages:
       size: 2938
     - path: scripts/topic_sample.py
       hash: md5
-      md5: e80db52b3f288fa0d103e32826867195
-      size: 16787
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
     - path: src/preprocessing
       hash: md5
       md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
@@ -3279,8 +3279,8 @@ stages:
       size: 2938
     - path: scripts/topic_sample.py
       hash: md5
-      md5: e80db52b3f288fa0d103e32826867195
-      size: 16787
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
     - path: src/preprocessing
       hash: md5
       md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
@@ -3291,4 +3291,235 @@ stages:
       hash: md5
       md5: d46da57d3f5b5f02e67f9d0d0305a92f.dir
       size: 4943490
+      nfiles: 3
+  topic_bluesky@2024-04-10_Pakt_Azyl_PE:
+    cmd: python scripts/topic_filter.py --platform bluesky --event 
+      2024-04-10_Pakt_Azyl_PE
+    deps:
+    - path: data/interim/bluesky/2024-04-10_Pakt_Azyl_PE/clean
+      hash: md5
+      md5: 557a2db85ec7c5a8b8e9d271cc8eeef1.dir
+      size: 325747
+      nfiles: 2
+    - path: data/interim/bluesky/2024-04-10_Pakt_Azyl_PE/slurs
+      hash: md5
+      md5: ce148e0ea79e592525833527763b2270.dir
+      size: 9135
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/bluesky/2024-04-10_Pakt_Azyl_PE/topic
+      hash: md5
+      md5: a3a1f15f30bdd65e3f3b0961d8be3e65.dir
+      size: 26610
+      nfiles: 3
+  topic_bluesky@2024-06-06_Smierc_Zolnierza:
+    cmd: python scripts/topic_filter.py --platform bluesky --event 
+      2024-06-06_Smierc_Zolnierza
+    deps:
+    - path: data/interim/bluesky/2024-06-06_Smierc_Zolnierza/clean
+      hash: md5
+      md5: c52ffbbadeb5bdd48f879f99660e9cd7.dir
+      size: 210177
+      nfiles: 2
+    - path: data/interim/bluesky/2024-06-06_Smierc_Zolnierza/slurs
+      hash: md5
+      md5: 84fa6e05dfda6fc3e6ca16c405357ae1.dir
+      size: 6130
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/bluesky/2024-06-06_Smierc_Zolnierza/topic
+      hash: md5
+      md5: 90a90dff45832cf4e0b043fc805416dc.dir
+      size: 15767
+      nfiles: 3
+  topic_bluesky@2024-09-08_Bojka_Srem:
+    cmd: python scripts/topic_filter.py --platform bluesky --event 
+      2024-09-08_Bojka_Srem
+    deps:
+    - path: data/interim/bluesky/2024-09-08_Bojka_Srem/clean
+      hash: md5
+      md5: f1684d8dcaaad4fc2736f103e4bd2b6f.dir
+      size: 235459
+      nfiles: 2
+    - path: data/interim/bluesky/2024-09-08_Bojka_Srem/slurs
+      hash: md5
+      md5: 110303c090f8943a661f906f629cc406.dir
+      size: 7002
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/bluesky/2024-09-08_Bojka_Srem/topic
+      hash: md5
+      md5: 651d42e68a769d18cd69d59664034c53.dir
+      size: 29468
+      nfiles: 3
+  topic_bluesky@2024-10-12_Strategia_Migracyjna:
+    cmd: python scripts/topic_filter.py --platform bluesky --event 
+      2024-10-12_Strategia_Migracyjna
+    deps:
+    - path: data/interim/bluesky/2024-10-12_Strategia_Migracyjna/clean
+      hash: md5
+      md5: 6b08b29d2246eafc86d2abef783f57d4.dir
+      size: 667101
+      nfiles: 2
+    - path: data/interim/bluesky/2024-10-12_Strategia_Migracyjna/slurs
+      hash: md5
+      md5: e6ab1506d53211117623eb3fb5894bdc.dir
+      size: 18953
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/bluesky/2024-10-12_Strategia_Migracyjna/topic
+      hash: md5
+      md5: 984beba043bd85ac3d41027de340cd56.dir
+      size: 99791
+      nfiles: 3
+  topic_bluesky@2025-10-15_Dezinformacja_Krakow:
+    cmd: python scripts/topic_filter.py --platform bluesky --event 
+      2025-10-15_Dezinformacja_Krakow
+    deps:
+    - path: data/interim/bluesky/2025-10-15_Dezinformacja_Krakow/clean
+      hash: md5
+      md5: a0bf8d15ca89f6b8e7cbe0c455cb0835.dir
+      size: 26915042
+      nfiles: 2
+    - path: data/interim/bluesky/2025-10-15_Dezinformacja_Krakow/slurs
+      hash: md5
+      md5: 15589583795bbeecaf3bc6edc83da619.dir
+      size: 752809
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/bluesky/2025-10-15_Dezinformacja_Krakow/topic
+      hash: md5
+      md5: e5654319dcee8ee64ef3984dbdb5a12d.dir
+      size: 3822665
+      nfiles: 3
+  topic_bluesky@2026-07-30_Ceuta_Masowe_Przekroczenie:
+    cmd: python scripts/topic_filter.py --platform bluesky --event 
+      2026-07-30_Ceuta_Masowe_Przekroczenie
+    deps:
+    - path: data/interim/bluesky/2026-07-30_Ceuta_Masowe_Przekroczenie/clean
+      hash: md5
+      md5: 044ae2aecd9ddcb34e3e12cabeaf1662.dir
+      size: 27013253
+      nfiles: 2
+    - path: data/interim/bluesky/2026-07-30_Ceuta_Masowe_Przekroczenie/slurs
+      hash: md5
+      md5: 6fd2608491d7d002646f0b7676b826e2.dir
+      size: 742834
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/bluesky/2026-07-30_Ceuta_Masowe_Przekroczenie/topic
+      hash: md5
+      md5: bc3bdb70da7bcb521a801645931c411d.dir
+      size: 4190682
+      nfiles: 3
+  topic_bluesky@2026-08-15_Atak_Kamienna_Gora:
+    cmd: python scripts/topic_filter.py --platform bluesky --event 
+      2026-08-15_Atak_Kamienna_Gora
+    deps:
+    - path: data/interim/bluesky/2026-08-15_Atak_Kamienna_Gora/clean
+      hash: md5
+      md5: 85940947f5b54ff90bd3c49255d48bc1.dir
+      size: 25045861
+      nfiles: 2
+    - path: data/interim/bluesky/2026-08-15_Atak_Kamienna_Gora/slurs
+      hash: md5
+      md5: 8770173cf2259827f8e70bcae216656a.dir
+      size: 698318
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/bluesky/2026-08-15_Atak_Kamienna_Gora/topic
+      hash: md5
+      md5: bf2ce88f6fe556086e059b4ad4d53fce.dir
+      size: 3670259
       nfiles: 3
