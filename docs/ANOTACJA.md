@@ -42,7 +42,7 @@ W `data/annotation/pilot_v1/results/` powstają:
   - osobno dla `hate` i `hate_migrants`, dla wszystkich komentarzy, bez komentarzy oznaczonych `uncertain` oraz osobno według platformy, puli i słownika (komentarze wstępnie oznaczone `1/1` podnoszą zgodność, więc ważniejszy jest wynik `bez obelgi`): α Krippendorffa z 95% przedziałem ufności, κ Fleissa, średnia κ Cohena z par, pełna zgodność i udział kodu `1`,
   - κ Cohena dla każdej pary,
   - dla każdej osoby: zgodność z większością pozostałych i udział kodu `1`,
-- `disagreements.csv`: komentarze, w których kody się różnią (w `hate` lub `hate_migrants`), z kodami `hate/hate_migrants` i notatkami wszystkich osób. Na spotkaniu uzupełnij kolumny `decision` i `codebook_change`,
+- `disagreements.csv`: komentarze, w których kody się różnią (w `hate` lub `hate_migrants`), z kodami `hate/hate_migrants` i notatkami wszystkich osób. Do rozstrzygania w Excelu zamień go na arkusz z listami rozwijanymi: `python scripts/disagreements_xlsx.py --name <runda>` (powstaje `disagreements.xlsx` z kolumnami `hate`, `hate_migrants`, `note`, `codebook_change`; ponowne uruchomienie zachowuje wpisane decyzje),
 - `problems.csv`: brakujące albo niedozwolone wartości, para `hate=0` + `hate_migrants=1` oraz `uncertain=1` bez notatki. Niedozwolona albo brakująca wartość liczy się jako brak kodu.
 
 **Wyniki:**
@@ -73,7 +73,6 @@ Model jest traktowany jak kolejna osoba kodująca: dostaje cały `docs/CODEBOOK.
 
 Zasady:
 - **Każdy model koduje cały zestaw ze wszystkich platform.** Jeden model na platformę miesza różnice między platformami z różnicami między modelami (H4).
-- **Najpierw walidacja na pilotażach** (`pilot_v1`, `pilot_v2` mają po 4 osoby): model nadaje się do gold standardu, jeśli jego zgodność z większością osób jest co najmniej taka jak zgodność osób między sobą.
 - **Gold standard:** etykieta to głos większości trzech modeli, a komentarze sporne i z `uncertain` rozstrzyga człowiek.
 - Model, data i codebook (wersja w `docs/CODEBOOK.md` w danym commicie) opisują przebieg; podaj je w preprincie.
 
@@ -85,8 +84,9 @@ Zasady:
    ```bash
    python scripts/gold_build.py --names gold_v1
    ```
-   - Komentarz, przy którym wszystkie modele dały tę samą parę i żaden nie zaznaczył `uncertain`, trafia od razu do `data/annotation/gold/gold.csv` (`label_source = unanimous`).
-   - Reszta trafia do `<runda>/results/adjudication.xlsx` z powodem: `niezgoda`, `uncertain`, `brak kodu` albo `kontrola` (losowe 10% jednogłośnych, `--check-share`).
+   - Komentarz, przy którym wszystkie modele dały tę samą parę, trafia od razu do `data/annotation/gold/gold.csv` (`label_source = unanimous`; `unanimous_uncertain`, gdy któryś model zaznaczył `uncertain`). Z `--review-uncertain` takie komentarze idą do rozstrzygania.
+   - Decyzje wpisane już w `results/disagreements.csv` / `.xlsx` są brane pod uwagę (i przenoszone do arkusza rozstrzygania).
+   - Reszta trafia do `<runda>/results/adjudication.xlsx` z powodem: `niezgoda`, `brak kodu` albo `kontrola` (losowe 10% jednogłośnych, `--check-share`).
 4. W `adjudication.xlsx` wpisz `hate`, `hate_migrants` i krótką `note` według codebooka, nie według większości modeli. Zapisz, zamknij Excela i uruchom krok 3 ponownie: decyzje się zachowują, a `gold.csv` się uzupełnia (`adjudicated`, `checked`).
 5. `data/annotation/gold/report.md` podaje do preprintu: liczbę sporów, udział decyzji zgodnych z większością modeli i ile jednogłośnych etykiet modeli człowiek poprawił przy kontroli.
 6. Gotowy gold standard: `dvc add data/annotation/gold data/annotation/gold_v1`, `dvc push`, commit plików `.dvc`.
