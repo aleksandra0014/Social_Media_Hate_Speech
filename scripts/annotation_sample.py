@@ -203,12 +203,19 @@ def main():
     ap.add_argument('--seed', type=int, default=2026)
     ap.add_argument('--prefill', choices=['strict', 'all', 'none'], default='strict',
                     help='1/1 for slur matches: all, strict (skip context-only terms) or none')
+    ap.add_argument('--append', action='store_true',
+                    help='add items (e.g. a new platform) to an existing round; old item_ids stay')
     ap.add_argument('--force', action='store_true')
     args = ap.parse_args()
 
     out = OUT_ROOT / args.name
-    if (out / 'manifest.csv').exists() and not args.force:
-        sys.exit(f'{out} already exists - annotations refer to its item_ids. Use another --name.')
+    existing = None
+    if (out / 'manifest.csv').exists():
+        if args.append:
+            existing = read_csv(out / 'manifest.csv').rename(columns={'text': 'shown'})
+        elif not args.force:
+            sys.exit(f'{out} already exists - annotations refer to its item_ids. '
+                     'Use another --name, or --append to add items to it.')
 
     picked = []
     for platform in args.platforms:
@@ -225,7 +232,15 @@ def main():
         sys.exit('Nothing to sample.')
 
     items = pd.concat(picked).sample(frac=1, random_state=args.seed).reset_index(drop=True)
-    items['item_id'] = [f'P{i + 1:04d}' for i in range(len(items))]
+    start = 0
+    if existing is not None:
+        seen = set(zip(existing['platform'], existing['comment_id']))
+        items = items[[k not in seen for k in zip(items['platform'], items['comment_id'])]]
+        start = int(existing['item_id'].str[1:].astype(int).max())
+        print(f'appending {len(items)} items to the {len(existing)} already in {args.name}')
+    items['item_id'] = [f'P{start + i + 1:04d}' for i in range(len(items))]
+    if existing is not None:
+        items = pd.concat([existing, items], ignore_index=True).fillna('')
     out.mkdir(parents=True, exist_ok=True)
     items[['item_id', 'platform', 'event_folder', 'comment_id', 'post_id', 'pool', 'source', 'context_post',
            'context_parent', 'context_quote', 'shown', 'slurs']].rename(columns={'shown': 'text'}) \

@@ -6,3 +6,5 @@ __pycache__/
 # annotation sheets contain comment texts - track them with `dvc add data/annotation/<round>`, never with git
 data/annotation/**/*.xlsx
 data/annotation/**/*.csv
+.env
+data/annotation/**/*.jsonl
