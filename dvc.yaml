@@ -131,3 +131,30 @@ stages:
         - data/interim/youtube/${item}/filtered
       outs:
         - data/interim/youtube/${item}/clean
+
+  topic_wykop:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/topic_filter.py --platform wykop --event ${item}
+      deps:
+        - scripts/topic_filter.py
+        - scripts/topic_sample.py
+        - src/preprocessing
+        - data/interim/wykop/${item}/clean
+        - data/interim/wykop/${item}/slurs
+      outs:
+        - data/interim/wykop/${item}/topic
+
+
+  topic_bluesky:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/topic_filter.py --platform bluesky --event ${item}
+      deps:
+        - scripts/topic_filter.py
+        - scripts/topic_sample.py
+        - src/preprocessing
+        - data/interim/bluesky/${item}/clean
+        - data/interim/bluesky/${item}/slurs
+      outs:
+        - data/interim/bluesky/${item}/topic

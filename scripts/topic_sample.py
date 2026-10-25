@@ -79,11 +79,11 @@ def read_csv(path):
         return list(csv.DictReader(f))
 
 
-def is_potential_migration(text: str, post_context: str = "") -> bool:
+def is_potential_migration(text: str, post_context: str = "", parent_context: str = "") -> bool:
     """Błyskawiczny filtr słownikowy w Pythonie (<0.0001s/item).
-    Sprawdza, czy komentarz LUB wpis nadrzędny zawiera rdzenie słów migracyjnych.
+    Sprawdza, czy komentarz, wpis lub komentarz nadrzędny zawiera rdzenie słów migracyjnych.
     """
-    full_text = f"{post_context} {text}"
+    full_text = f"{post_context} {parent_context} {text}"
     return bool(MIGRATION_REGEX.search(full_text))
 
 
@@ -138,7 +138,9 @@ def build_batch_messages(batch, codebook_text=None):
         '========================\n\n'
         'ZASADY SELEKCJI I OCENY:\n'
         '1. `is_about_migration`: Wpisz "1", jeśli komentarz dotyczy migracji, uchodźców, cudzoziemców, ochrony granic, '
-        'deportacji lub polityki migracyjnej (nawet pośrednio). Jeśli NIE dotyczy tego tematu, wpisz "0".\n'
+        'deportacji lub polityki migracyjnej (nawet pośrednio). Oceniaj komentarz razem z kontekstem: '
+        'jeśli odpowiada na wpis lub komentarz o migracji i odnosi się do jego treści, wpisz "1", '
+        'nawet gdy sam nie zawiera słów kluczowych. Jeśli NIE dotyczy tego tematu, wpisz "0".\n'
         '2. Jeśli `is_about_migration` to "0", wpisz automatycznie `hate`: "0" i `hate_migrants`: "0".\n'
         '3. Jeśli `is_about_migration` to "1", dokonaj pełnej oceny `hate` oraz `hate_migrants` zgodnie z codebookiem.\n\n'
         'Dla każdego numerowanego elementu zwróć wynik jako obiekt w tablicy JSON w DOKŁADNIE tej samej kolejności:\n'
@@ -155,6 +157,7 @@ def build_batch_messages(batch, codebook_text=None):
         items_text.append(
             f"--- ELEMENT {item['index']} ---\n"
             f"Wpis kontekstowy: {item['post_context']}\n"
+            f"Komentarz nadrzędny (na który odpowiada): {item['parent_context'] or '(brak - odpowiedź na wpis)'}\n"
             f"Komentarz do oceny: {item['text'][:1000]}"
         )
 
@@ -266,6 +269,10 @@ def main():
     folder = Path(args.folder)
     posts = {p['post_id']: p for p in read_csv(folder / 'posts.csv')}
     comments = [c for c in read_csv(folder / 'comments.csv') if (c.get('text') or '').strip()]
+    by_id = {c.get('comment_id', ''): c.get('text', '') for c in comments}
+
+    def parent_ctx(c, limit=300):
+        return (by_id.get(c.get('reply_to') or '', '')).strip().replace('\n', ' ')[:limit]
 
     if args.n > 0:
         random.Random(args.seed).shuffle(comments)
@@ -286,6 +293,7 @@ def main():
         p = posts.get(c['post_id'], {})
         post_ctx = (p.get('title') or p.get('text') or '').strip().replace('\n', ' ')[:300]
         text = c.get('text', '')
+        par_ctx = parent_ctx(c)
 
         # A. Przypisanie 1/1 z pre-labeli
         if cid in prelabeled_ids:
@@ -293,6 +301,7 @@ def main():
                 'comment_id': cid,
                 'post_id': c['post_id'],
                 'post_context': post_ctx,
+                'parent_context': par_ctx,
                 'text': text,
                 'model_hate': '1',
                 'model_hate_migrants': '1',
@@ -304,7 +313,9 @@ def main():
             continue
 
         # B. Odsiew w Pythonie (komentarze niemające nic wspólnego z migracją)
-        if not is_potential_migration(text, post_ctx):
+        # regex działa na pełnych tekstach (tanio); obcięcie 300 znaków dotyczy tylko promptu LLM
+        post_full = (p.get('title') or p.get('text') or '').strip().replace('\n', ' ')
+        if not is_potential_migration(text, post_full, parent_ctx(c, None)):
             quick_skipped_count += 1
             continue
 
@@ -330,6 +341,7 @@ def main():
                 'comment_id': c['comment_id'],
                 'post_id': c['post_id'],
                 'post_context': post_ctx,
+                'parent_context': parent_ctx(c),
                 'text': c['text'],
             })
 
@@ -357,6 +369,7 @@ def main():
                 'comment_id': item['comment_id'],
                 'post_id': item['post_id'],
                 'post_context': item['post_context'],
+                'parent_context': item['parent_context'],
                 'text': item['text'],
                 'model_hate': hate,
                 'model_hate_migrants': hate_migrants,

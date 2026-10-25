@@ -12,6 +12,9 @@ lingua-language-detector
 emoji
 pytest
 openpyxl
+scipy
+statsmodels
+wordcloud
 anthropic
 openai
 google-genai
