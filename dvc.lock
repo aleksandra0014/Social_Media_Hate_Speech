@@ -3523,3 +3523,102 @@ stages:
       md5: bf2ce88f6fe556086e059b4ad4d53fce.dir
       size: 3670259
       nfiles: 3
+  topic_wykop@2024-05-28_Atak_Zolnierz_Granica:
+    cmd: python scripts/topic_filter.py --platform wykop --event 
+      2024-05-28_Atak_Zolnierz_Granica
+    deps:
+    - path: data/interim/wykop/2024-05-28_Atak_Zolnierz_Granica/clean
+      hash: md5
+      md5: f831a88adb13c5af1fd3b4a9a2b54eb8.dir
+      size: 17146372
+      nfiles: 2
+    - path: data/interim/wykop/2024-05-28_Atak_Zolnierz_Granica/slurs
+      hash: md5
+      md5: 3e893afb9a2372538b52365009afcd21.dir
+      size: 504027
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/wykop/2024-05-28_Atak_Zolnierz_Granica/topic
+      hash: md5
+      md5: 351185681c7f16290b1df992be0ec18d.dir
+      size: 5470165
+      nfiles: 3
+  topic_wykop@2025-06-06_Naloty_ICE_Los_Angeles:
+    cmd: python scripts/topic_filter.py --platform wykop --event 
+      2025-06-06_Naloty_ICE_Los_Angeles
+    deps:
+    - path: data/interim/wykop/2025-06-06_Naloty_ICE_Los_Angeles/clean
+      hash: md5
+      md5: b8abb8a9845a3d7f4bf73231569b94e4.dir
+      size: 17370922
+      nfiles: 2
+    - path: data/interim/wykop/2025-06-06_Naloty_ICE_Los_Angeles/slurs
+      hash: md5
+      md5: 6a68f105a6c3c8c491e613d3869cd8ec.dir
+      size: 492443
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/wykop/2025-06-06_Naloty_ICE_Los_Angeles/topic
+      hash: md5
+      md5: 3d1fcf3db5d89e8b0a6c458ceae989e7.dir
+      size: 5438209
+      nfiles: 3
+  topic_wykop@2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie:
+    cmd: python scripts/topic_filter.py --platform wykop --event 
+      2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie
+    deps:
+    - path: data/interim/wykop/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/clean
+      hash: md5
+      md5: 21c701ee751feddb6d8e670ebd1bec25.dir
+      size: 17388309
+      nfiles: 2
+    - path: data/interim/wykop/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/slurs
+      hash: md5
+      md5: 28e9d873c76e1b1633e5bf480a0fd211.dir
+      size: 523812
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 326960ee1f45f79af12eaf847b763dc5
+      size: 2938
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: adaeced88b548748a8bd3235bc1ac587
+      size: 17764
+    - path: src/preprocessing
+      hash: md5
+      md5: 5a8c287628e8b6fd23c6e60faca09ef3.dir
+      size: 24820
+      nfiles: 16
+    outs:
+    - path: data/interim/wykop/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/topic
+      hash: md5
+      md5: 75867889ffd61ab0de5e59cc4ce9d3c3.dir
+      size: 5627475
+      nfiles: 3
