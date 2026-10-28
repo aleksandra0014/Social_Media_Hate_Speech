@@ -91,4 +91,6 @@ Zasady:
 5. `data/annotation/gold/report.md` podaje do preprintu: liczbę sporów, udział decyzji zgodnych z większością modeli i ile jednogłośnych etykiet modeli człowiek poprawił przy kontroli.
 6. Gotowy gold standard: `dvc add data/annotation/gold data/annotation/gold_v1`, `dvc push`, commit plików `.dvc`.
 
+Tylko wybrane wydarzenia: losuj z `--events` (nazwy jak w `events.json`) i `--exclude` (rundy, których komentarze pominąć), a N podaj osobno dla platform, np. `--n-per-platform bluesky=133 wykop=90`. `gold_build.py --events ...` zostawia w `gold.csv` tylko te wydarzenia; arkusze rozstrzygania zostają pełne.
+
 Jeśli rozstrzyganie zmienia codebook, podnieś jego wersję i zakoduj modelami całość od nowa (usuń `llm/<model>.jsonl`), żeby wszystkie etykiety wynikały z jednej wersji.

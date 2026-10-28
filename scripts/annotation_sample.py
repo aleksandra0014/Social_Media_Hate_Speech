@@ -74,10 +74,40 @@ def read_csv(path):
     return pd.read_csv(path, encoding='utf-8-sig', dtype=str, keep_default_na=False)
 
 
-def load_platform(platform):
+def in_events(folder, events):
+    """'2024-04-10_Pakt_Azyl_PE' matches 'Pakt_Azyl_PE' or the full folder name; no events = all."""
+    return not events or any(folder == e or folder.endswith('_' + e) for e in events)
+
+
+def parse_n(values, platforms):
+    """['200'] or ['bluesky=133', 'wykop=90'] -> {platform: n}."""
+    n = {p: int(values[0]) for p in platforms} if len(values) == 1 and '=' not in values[0] else {}
+    for v in values:
+        if '=' in v:
+            k, _, x = v.partition('=')
+            n[k] = int(x)
+    return n
+
+
+def excluded_ids(rounds):
+    """(platform, event_folder, comment_id) of items already in other rounds; Bluesky ids are per event."""
+    seen = set()
+    for r in rounds:
+        m = OUT_ROOT / r / 'manifest.csv'
+        if m.exists():
+            d = read_csv(m)
+            seen |= set(zip(d['platform'], d['event_folder'], d['comment_id']))
+        else:
+            print(f'WARNING: {m} not found, nothing excluded from {r}')
+    return seen
+
+
+def load_platform(platform, events=None):
     """Comments with post and parent context"""
     rows = []
     for raw_dir in sorted((ROOT / 'data/raw' / platform).glob('*/')):
+        if not in_events(raw_dir.name, events):
+            continue
         clean = ROOT / 'data/interim' / platform / raw_dir.name / 'clean'
         src = clean if (clean / 'comments.csv').exists() else raw_dir
         if not (src / 'comments.csv').exists():
@@ -196,7 +226,10 @@ def codebook_version():
 def main():
     ap = argparse.ArgumentParser(description='Draw a shared annotation set.')
     ap.add_argument('--name', required=True, help='annotation round, e.g. pilot_v1')
-    ap.add_argument('--n-per-platform', type=int, default=100)
+    ap.add_argument('--n-per-platform', nargs='+', default=['100'],
+                    help='one number for all platforms or platform=n, e.g. bluesky=133 wykop=90')
+    ap.add_argument('--events', nargs='+', help='only these events, e.g. Pakt_Azyl_PE Bojka_Srem')
+    ap.add_argument('--exclude', nargs='+', default=[], help='skip comments already in these rounds')
     ap.add_argument('--annotators', nargs='+', default=['A', 'B', 'C', 'D'])
     ap.add_argument('--platforms', nargs='+', default=['wykop', 'bluesky', 'youtube'])
     ap.add_argument('--youtube-csv', help='YouTube CSV if data/raw/youtube does not exist yet')
@@ -217,14 +250,20 @@ def main():
             sys.exit(f'{out} already exists - annotations refer to its item_ids. '
                      'Use another --name, or --append to add items to it.')
 
+    n_per, skip = parse_n(args.n_per_platform, args.platforms), excluded_ids(args.exclude)
     picked = []
     for platform in args.platforms:
-        df = load_youtube_csv(args.youtube_csv) if platform == 'youtube' and args.youtube_csv else load_platform(platform)
+        if platform not in n_per:
+            sys.exit(f'--n-per-platform has no value for {platform}')
+        df = load_youtube_csv(args.youtube_csv) if platform == 'youtube' and args.youtube_csv             else load_platform(platform, args.events)
+        if df is not None and (args.events or skip):
+            df = df[df['event_folder'].map(lambda f: in_events(f, args.events))]
+            df = df[[k not in skip for k in zip(df['platform'], df['event_folder'], df['comment_id'])]]
         if df is None or df.empty:
             print(f'WARNING: no data for {platform} (run `dvc pull`'
                   f'{" or pass --youtube-csv" if platform == "youtube" else ""}); skipped')
             continue
-        s = pick(df, args.n_per_platform, args.seed)
+        s = pick(df, n_per[platform], args.seed)
         print(f'{platform}: {len(df):,} comments -> {len(s)} picked {s["pool"].value_counts().to_dict()}, '
               f'{(s["slurs"] != "").sum()} with a slur')
         picked.append(s)
@@ -234,8 +273,8 @@ def main():
     items = pd.concat(picked).sample(frac=1, random_state=args.seed).reset_index(drop=True)
     start = 0
     if existing is not None:
-        seen = set(zip(existing['platform'], existing['comment_id']))
-        items = items[[k not in seen for k in zip(items['platform'], items['comment_id'])]]
+        seen = set(zip(existing['platform'], existing['event_folder'], existing['comment_id']))
+        items = items[[k not in seen for k in zip(items['platform'], items['event_folder'], items['comment_id'])]]
         start = int(existing['item_id'].str[1:].astype(int).max())
         print(f'appending {len(items)} items to the {len(existing)} already in {args.name}')
     items['item_id'] = [f'P{start + i + 1:04d}' for i in range(len(items))]
