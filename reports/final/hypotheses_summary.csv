@@ -1,0 +1,5 @@
+﻿hipoteza,wynik,uzasadnienie
+H1 wpływ wydarzeń,częściowo / TBD,"Wilcoxon (pary przed/po, n=31): p=0.809, r=-0.05; metaanaliza wszystkich par: OR=1.03 [0.97; 1.10], p=0.344; istotne zmiany w 7 z 31 par (bluesky/Atak_Kamienna_Gora -4.4pp, bluesky/Naloty_ICE_Los_Angeles +4.1pp, bluesky/Pakt_Migracyjny_Wejscie_w_Zycie +4.7pp, wykop/Naloty_ICE_Los_Angeles +5.5pp, youtube/Atak_Rosji_Ukraina -8.9pp, youtube/Naloty_ICE_Los_Angeles +13.6pp, youtube/Referendum_Wybory +7.3pp); istotny łączny efekt na platformie: wykop"
+H2 charakter wydarzenia,odrzucona / brak dowodów,Kruskal–Wallis (typ): p=0.104; typy ≈ pojedyncze wydarzenia – wynik opisowy
+H3 trwałość efektu,odrzucona / brak dowodów,Friedman p=0.444; dni 0–3: +0.26 pp (p Holm=1); dni 4–7: -1.27 pp (p Holm=0.822); dni 8–14: +0.77 pp (p Holm=1); dni 15–28: +0.98 pp (p Holm=1)
+H4 różnice między platformami,potwierdzona,poziom hate: K–W p=1.88e-06; reakcja na wydarzenie: K–W p=0.0908

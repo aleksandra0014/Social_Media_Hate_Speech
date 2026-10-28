@@ -1,0 +1,12 @@
+﻿platform,event,clean,topic,slownik_1_1,model_scored,model_hate,hate_final,share_hate_final,windowed,lexicon_from
+wykop,2024-04-10_Pakt_Azyl_PE,24718,17917,499,17418,5069,5568,0.3108,22,slurs/ (DVC)
+wykop,2024-05-28_Atak_Zolnierz_Granica,25349,20946,566,20380,6583,7149,0.3413,18,slurs/ (DVC)
+wykop,2024-06-06_Smierc_Zolnierza,24841,20542,531,20011,6562,7093,0.3453,19,slurs/ (DVC)
+wykop,2024-09-08_Bojka_Srem,19293,14799,470,14329,4384,4854,0.328,19,slurs/ (DVC)
+wykop,2024-10-12_Strategia_Migracyjna,23861,18515,606,17909,5746,6352,0.3431,24,slurs/ (DVC)
+wykop,2025-06-06_Naloty_ICE_Los_Angeles,24340,18491,451,18040,5330,5781,0.3126,30,slurs/ (DVC)
+wykop,2025-10-15_Dezinformacja_Krakow,18301,13571,300,13271,3934,4234,0.312,21,slurs/ (DVC)
+wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,24516,18843,793,18050,5964,6757,0.3586,22,slurs/ (DVC)
+wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,24634,19312,689,18623,6133,6822,0.3533,22,slurs/ (DVC)
+wykop,2026-08-15_Atak_Kamienna_Gora,24048,18539,534,18005,5868,6402,0.3453,21,slurs/ (DVC)
+wykop,2026-09-15_Atak_Jaroslaw,21956,16676,387,16289,5315,5702,0.3419,22,slurs/ (DVC)

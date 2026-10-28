@@ -1,0 +1,12 @@
+﻿platform,event,clean,topic,slownik_1_1,model_scored,model_hate,hate_final,share_hate_final,windowed,lexicon_from
+bluesky,2024-04-10_Pakt_Azyl_PE,190,34,0,34,1,1,0.0294,0,slurs/ (DVC)
+bluesky,2024-05-28_Atak_Zolnierz_Granica,91,14,0,14,0,0,0.0,0,slurs/ (DVC)
+bluesky,2024-06-06_Smierc_Zolnierza,114,12,0,12,0,0,0.0,0,slurs/ (DVC)
+bluesky,2024-09-08_Bojka_Srem,189,23,0,23,1,1,0.0435,0,slurs/ (DVC)
+bluesky,2024-10-12_Strategia_Migracyjna,614,64,0,64,3,3,0.0469,0,slurs/ (DVC)
+bluesky,2025-06-06_Naloty_ICE_Los_Angeles,50395,11019,19,11000,2049,2068,0.1877,0,slurs/ (DVC)
+bluesky,2025-10-15_Dezinformacja_Krakow,25623,5573,11,5562,1045,1056,0.1895,0,slurs/ (DVC)
+bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,28250,10302,76,10226,1949,2025,0.1966,0,slurs/ (DVC)
+bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,25463,7539,70,7469,1493,1563,0.2073,0,slurs/ (DVC)
+bluesky,2026-08-15_Atak_Kamienna_Gora,23717,6896,47,6849,1330,1377,0.1997,0,slurs/ (DVC)
+bluesky,2026-09-15_Atak_Jaroslaw,20457,5483,16,5467,985,1001,0.1826,0,slurs/ (DVC)
