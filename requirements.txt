@@ -18,3 +18,4 @@ wordcloud
 anthropic
 openai
 google-genai
+simplemma
