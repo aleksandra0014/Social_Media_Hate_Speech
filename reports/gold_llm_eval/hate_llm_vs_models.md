@@ -1,8 +1,12 @@
-Na wspólnym podzbiorze (n = 262) najwyższe F1 dla hate ma HerBERT-HS: 0.775 [0.721, 0.825] (MCC 0.458).
-- LLM (Ollama, labeled/) vs HerBERT-HS: ΔF1 = -0.178 [-0.25, -0.114], różnica istotna (p Holm = 0.002; McNemar p Holm = 0.00111)
-- LLM (Ollama, labeled/) vs Polbert-CB: ΔF1 = -0.038 [-0.123, 0.045], różnica nieistotna (p Holm = 0.397; McNemar p Holm = 0.711)
-- LLM (Ollama, labeled/) vs RoBERTa-BAN-PL: ΔF1 = +0.052 [-0.027, 0.13], różnica nieistotna (p Holm = 0.362; McNemar p Holm = 0.896)
-- LLM (Ollama, labeled/) vs sam słownik: ΔF1 = +0.306 [0.228, 0.392], różnica istotna (p Holm = 0.002; McNemar p Holm = 0.000231)
-- wykop (n = 102): najlepsze F1 – HerBERT-HS 0.803; LLM 0.734, HerBERT 0.803
-- bluesky (n = 67): najlepsze F1 – Polbert-CB 0.741; LLM 0.381, HerBERT 0.633
-- youtube (n = 93): najlepsze F1 – HerBERT-HS 0.816; LLM 0.536, HerBERT 0.816
+Na wspólnym podzbiorze (n = 600) najwyższe F1 dla hate ma HerBERT-HS: 0.780 [0.745, 0.814] (MCC 0.516).
+- LLM + słownik vs sam LLM: ΔF1 = +0.095 [0.064, 0.129], różnica istotna (p Holm = 0.004; McNemar p Holm = 3.71e-05)
+- LLM + słownik vs HerBERT-HS: ΔF1 = -0.156 [-0.204, -0.11], różnica istotna (p Holm = 0.004; McNemar p Holm = 0.000196)
+- LLM + słownik vs HerBERT-HS (sam model): ΔF1 = -0.135 [-0.186, -0.083], różnica istotna (p Holm = 0.004; McNemar p Holm = 0.005)
+- LLM + słownik vs Polbert-CB: ΔF1 = -0.020 [-0.072, 0.034], różnica nieistotna (p Holm = 0.447; McNemar p Holm = 0.582)
+- LLM + słownik vs Polbert-CB (sam model): ΔF1 = +0.064 [0.0, 0.13], różnica nieistotna (p Holm = 0.1; McNemar p Holm = 0.362)
+- LLM + słownik vs RoBERTa-BAN-PL: ΔF1 = +0.089 [0.033, 0.148], różnica istotna (p Holm = 0.015; McNemar p Holm = 0.303)
+- LLM + słownik vs RoBERTa-BAN-PL (sam model): ΔF1 = +0.233 [0.16, 0.305], różnica istotna (p Holm = 0.004; McNemar p Holm = 0.000249)
+- LLM + słownik vs sam słownik: ΔF1 = +0.364 [0.309, 0.421], różnica istotna (p Holm = 0.004; McNemar p Holm = 7.52e-12)
+- wykop (n = 200): najlepsze F1 – HerBERT-HS 0.771; LLM + słownik 0.667, HerBERT 0.771
+- bluesky (n = 200): najlepsze F1 – Polbert-CB 0.708; LLM + słownik 0.467, HerBERT 0.688
+- youtube (n = 200): najlepsze F1 – HerBERT-HS 0.844; LLM + słownik 0.673, HerBERT 0.844

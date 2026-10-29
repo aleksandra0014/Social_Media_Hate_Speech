@@ -10,7 +10,7 @@ Dokument opisuje, jak porównać mowę nienawiści wobec migrantów na trzech pl
 
 Techniki statystyczne użyte w tym dokumencie (RR, meta-analiza, korekta Holma itd.) są wyjaśnione w [METODY_ANALIZY.md](METODY_ANALIZY.md).
 
-Stary notebook `notebooks/hate_analysis/all_platforms_hate_analysis.ipynb` zostaje bez zmian. Analiza powstanie w nowym notebooku.
+Stary notebook `notebooks/4_analizy_llm_hate_migrant/all_platforms_hate_analysis.ipynb` zostaje bez zmian. Analiza powstanie w nowym notebooku.
 
 ---
 
@@ -377,7 +377,7 @@ Opisane w [§4.3](#43-h2--charakter-wydarzenia).
 
 ## 7. Struktura notebooka
 
-Notebook: [`notebooks/hate_analysis/cross_platform_hate_analysis.ipynb`](../notebooks/hate_analysis/cross_platform_hate_analysis.ipynb).
+Notebook: [`notebooks/4_analizy_llm_hate_migrant/cross_platform_hate_analysis.ipynb`](../notebooks/4_analizy_llm_hate_migrant/cross_platform_hate_analysis.ipynb).
 
 1. Konfiguracja: ścieżki, okno, `EVENT_META`, `TARGET_GROUPS`, kolory.
 2. Wczytanie i ujednolicenie danych: łączenie `labeled` z `clean` po `comment_id`, definicje `migrant` i `hate_migrant`, przycięcie do okna.

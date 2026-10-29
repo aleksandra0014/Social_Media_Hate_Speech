@@ -1,6 +1,6 @@
-"""Execute notebooks in place (e.g. all hate analyses for the best model) – notebooks/hate_analysis_models/README.
-    python scripts/run_notebooks.py notebooks/hate_analysis_models            # all, every platform
-    python scripts/run_notebooks.py notebooks/hate_analysis_models/wykop      # one platform
+"""Execute notebooks in place (e.g. all hate analyses for the best model) – notebooks/5_analizy_herbert_hate/README.
+    python scripts/run_notebooks.py notebooks/5_analizy_herbert_hate            # all, every platform
+    python scripts/run_notebooks.py notebooks/5_analizy_herbert_hate/wykop      # one platform
 Each notebook runs in its own folder (like opening it in Jupyter); errors are listed at the end, the rest keeps going.
 Needs: pip install nbclient ipykernel
 """
@@ -14,7 +14,7 @@ from nbclient.exceptions import CellExecutionError
 
 
 def main():
-    targets = [Path(a) for a in sys.argv[1:]] or [Path('notebooks/hate_analysis_models')]
+    targets = [Path(a) for a in sys.argv[1:]] or [Path('notebooks/5_analizy_herbert_hate')]
     notebooks = sorted(p for t in targets for p in ([t] if t.suffix == '.ipynb' else t.rglob('*.ipynb'))
                        if '.ipynb_checkpoints' not in p.parts)
     # per-event notebooks first, platform summaries last

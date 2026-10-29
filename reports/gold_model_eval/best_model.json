@@ -4,13 +4,13 @@
   "variant": "słownik + model",
   "label_column": "hate_final",
   "selected_by": "f1",
-  "f1": 0.794,
+  "f1": 0.78,
   "f1_ci95": [
-    0.758,
-    0.826
+    0.745,
+    0.814
   ],
-  "accuracy": 0.772,
-  "mcc": 0.538,
+  "accuracy": 0.76,
+  "mcc": 0.516,
   "models_compared": [
     "HerBERT-HS",
     "Polbert-CB",

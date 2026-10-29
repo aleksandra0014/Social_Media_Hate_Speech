@@ -1,23 +1,40 @@
 {
-  "covered": 262,
+  "llm_file": "data/gold_600_ollama.csv",
   "n_gold": 600,
-  "ollama_for_missing": false,
-  "hate": {
-    "n": 262,
-    "f1": 0.597,
+  "sam LLM · hate": {
+    "n": 600,
+    "f1": 0.529,
     "f1_ci95": [
-      0.524,
-      0.664
+      0.478,
+      0.581
     ],
-    "mcc": 0.318
+    "mcc": 0.314
   },
-  "hate_migrant": {
-    "n": 262,
-    "f1": 0.536,
+  "sam LLM · hate_migrant": {
+    "n": 600,
+    "f1": 0.358,
     "f1_ci95": [
-      0.446,
-      0.622
+      0.284,
+      0.431
     ],
-    "mcc": 0.318
+    "mcc": 0.238
+  },
+  "LLM + słownik · hate": {
+    "n": 600,
+    "f1": 0.624,
+    "f1_ci95": [
+      0.579,
+      0.67
+    ],
+    "mcc": 0.385
+  },
+  "LLM + słownik · hate_migrant": {
+    "n": 600,
+    "f1": 0.526,
+    "f1_ci95": [
+      0.458,
+      0.589
+    ],
+    "mcc": 0.374
   }
 }

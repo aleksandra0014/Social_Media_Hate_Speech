@@ -1,0 +1,4 @@
+Dane: 16 komórek wydarzenie × platforma (wykop: 7, youtube: 6, bluesky: 3), 46,545 komentarzy w oknie -7…+14 dni.
+- hejt wobec migrantów (LLM): wzrost w 7/16 komórek, istotnie ↑/↓ 1/2; łączny OR 0.83 [0.67; 1.04], p = 0.096; Wilcoxon p = 0.23
+- hejt (HerBERT): wzrost w 6/16 komórek, istotnie ↑/↓ 0/0; łączny OR 0.90 [0.77; 1.05], p = 0.15; Wilcoxon p = 0.35
+Największe zmiany (miara główna): youtube:Atak_Kamienna_Gora +25.5 pp (↑); youtube:Pakt_Azyl_PE -23.8 pp (↓); youtube:Ceuta_Masowe_Przekroczenie -19.6 pp (–)

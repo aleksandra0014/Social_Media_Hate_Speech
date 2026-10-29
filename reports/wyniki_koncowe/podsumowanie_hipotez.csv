@@ -1,0 +1,9 @@
+﻿hipoteza,miara,werdykt,uzasadnienie
+H1,hejt wobec migrantów (LLM),częściowo,"brak efektu łącznego (Wilcoxon p=0.23, OR meta 0.83); istotne zmiany w 3/16 komórek (1/2 ↑/↓)"
+H1,hejt (HerBERT),brak dowodów,Wilcoxon p=0.35; brak istotnych komórek
+H2,hejt wobec migrantów (LLM),brak dowodów,"K–W p=0.067, ε²=0.35; największa mediana: dezinformacja (+2.21 pp)"
+H2,hejt (HerBERT),brak dowodów,"K–W p=0.12, ε²=0.24; największa mediana: dezinformacja (+5.24 pp)"
+H3,hejt wobec migrantów (LLM),brak dowodów,"Friedman p=0.17; średnio 0–3: -6.01, 4–7: -6.90, 8–14: -2.67 pp"
+H3,hejt (HerBERT),brak dowodów,"Friedman p=0.57; średnio 0–3: -2.09, 4–7: -4.45, 8–14: -2.20 pp"
+H4,hejt wobec migrantów (LLM),częściowo,reakcja K–W p=0.66; poziom K–W p=0.039
+H4,hejt (HerBERT),częściowo,reakcja K–W p=0.52; poziom K–W p=0.0044

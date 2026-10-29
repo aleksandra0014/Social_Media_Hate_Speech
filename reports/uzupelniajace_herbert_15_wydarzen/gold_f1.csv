@@ -1,0 +1,5 @@
+﻿model,ogółem,wykop,bluesky,youtube
+HerBERT-HS,0.78,0.771,0.688,0.844
+Polbert-CB,0.644,0.628,0.708,0.615
+RoBERTa-BAN-PL,0.535,0.55,0.534,0.521
+sam słownik,0.26,0.294,0.145,0.289

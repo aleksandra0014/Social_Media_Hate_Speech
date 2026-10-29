@@ -1,4 +1,4 @@
-"""Hate speech predictions with ready-made / fine-tuned classifiers (notebooks/models/04, 05, 07).
+"""Hate speech predictions with ready-made / fine-tuned classifiers (notebooks/2_modele_hate/04, 05, 07).
 
 The same rules as in the earlier project (AMC_Hate_Speech, notebooks 04-07), applied to the comment set the team uses:
 
