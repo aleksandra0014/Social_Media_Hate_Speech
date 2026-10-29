@@ -1,0 +1,601 @@
+﻿item_id,platform,event_folder,comment_id,pool,gold_hate,gold_hate_migrant,llm_hate,llm_hate_migrant,llm_migrant,llm_status,llm_covered
+P0001,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P09622,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0002,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,E297620345,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0003,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131902337,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0004,wykop,2024-05-28_Atak_Zolnierz_Granica,L124300713,mig_other,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0005,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K008362,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0006,wykop,2025-06-06_Naloty_ICE_Los_Angeles,E282655023,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0007,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P00816,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0008,wykop,2026-09-15_Atak_Jaroslaw,L138844801,mig_other,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0009,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P00614,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0010,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131272569,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0011,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137137787,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0012,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P09402,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0013,wykop,2024-09-08_Bojka_Srem,L125949005,mig_other,0,0,0.0,0.0,0.0,etykieta LLM,True
+P0014,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P08063,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0015,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,K029128,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0016,bluesky,2026-09-15_Atak_Jaroslaw,K000423,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0017,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,E298159105,mig_other,0,0,1.0,1.0,1.0,etykieta LLM,True
+P0018,wykop,2024-09-08_Bojka_Srem,L126816251,mig_hostile,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0019,bluesky,2026-08-15_Atak_Kamienna_Gora,P01019,mig_other,0,0,1.0,1.0,1.0,etykieta LLM,True
+P0020,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P00459,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0021,wykop,2024-10-12_Strategia_Migracyjna,L127358147,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0022,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,L137827861,mig_other,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0023,bluesky,2026-09-15_Atak_Jaroslaw,K022275,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0024,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P10605,ambiguous,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0025,wykop,2026-09-15_Atak_Jaroslaw,E299763065,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0026,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P00206,mig_other,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0027,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,K034675,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0028,wykop,2025-10-15_Dezinformacja_Krakow,L133678863,ambiguous,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0029,bluesky,2025-10-15_Dezinformacja_Krakow,P01356,mig_hostile,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0030,wykop,2024-10-12_Strategia_Migracyjna,L127144369,mig_other,1,0,0.0,0.0,1.0,etykieta LLM,True
+P0031,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P07610,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0032,wykop,2024-09-08_Bojka_Srem,L126627381,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0033,bluesky,2025-10-15_Dezinformacja_Krakow,K028474,mig_hostile,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0034,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P39513,mig_other,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0035,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,L138021937,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0036,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K000671,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0037,wykop,2025-10-15_Dezinformacja_Krakow,L133449651,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0038,bluesky,2026-09-15_Atak_Jaroslaw,K006880,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0039,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,K015953,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0040,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131182969,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0041,wykop,2024-09-08_Bojka_Srem,L126505307,ambiguous,1,0,1.0,0.0,0.0,etykieta LLM,True
+P0042,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137309125,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0043,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P07028,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0044,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P00845,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0045,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137214655,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0046,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K000907,ambiguous,1,0,1.0,0.0,1.0,etykieta LLM,True
+P0047,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,L138119487,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0048,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K010035,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0049,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,L137728097,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0050,wykop,2024-05-28_Atak_Zolnierz_Granica,L124107583,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0051,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137278691,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0052,wykop,2026-08-15_Atak_Kamienna_Gora,E299156353,mig_hostile,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0053,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131502595,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0054,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K008388,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0055,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P09526,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0056,bluesky,2025-10-15_Dezinformacja_Krakow,P29676,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0057,bluesky,2026-09-15_Atak_Jaroslaw,K004149,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0058,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137284907,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0059,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K007311,ambiguous,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0060,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,E298010497,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0061,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,L138112009,mig_other,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0062,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K007317,ambiguous,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0063,bluesky,2025-10-15_Dezinformacja_Krakow,K000056,ambiguous,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0064,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P00488,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0065,wykop,2024-04-10_Pakt_Azyl_PE,L123736145,mig_other,1,0,0.0,0.0,1.0,etykieta LLM,True
+P0066,bluesky,2025-10-15_Dezinformacja_Krakow,P01093,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0067,bluesky,2026-08-15_Atak_Kamienna_Gora,P02339,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0068,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P31951,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0069,bluesky,2026-09-15_Atak_Jaroslaw,P00074,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0070,bluesky,2025-10-15_Dezinformacja_Krakow,P00475,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0071,bluesky,2026-09-15_Atak_Jaroslaw,K000124,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0072,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,E298932097,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0073,wykop,2025-10-15_Dezinformacja_Krakow,L133353455,ambiguous,1,0,,,,brak w labeled (Wykop),False
+P0074,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P00094,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0075,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K000221,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0076,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P30197,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0077,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131057221,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0078,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P21774,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0079,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,L137781993,mig_hostile,0,0,1.0,1.0,1.0,etykieta LLM,True
+P0080,wykop,2025-10-15_Dezinformacja_Krakow,L133358653,mig_hostile,0,0,0.0,0.0,0.0,etykieta LLM,True
+P0081,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P29391,mig_hostile,0,0,1.0,1.0,1.0,etykieta LLM,True
+P0082,wykop,2026-09-15_Atak_Jaroslaw,L138737547,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0083,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137590585,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0084,wykop,2024-04-10_Pakt_Azyl_PE,L123648027,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0085,bluesky,2025-10-15_Dezinformacja_Krakow,K004415,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0086,bluesky,2026-08-15_Atak_Kamienna_Gora,P00451,mig_other,0,0,1.0,1.0,1.0,etykieta LLM,True
+P0087,wykop,2024-05-28_Atak_Zolnierz_Granica,L124899101,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0088,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K007640,ambiguous,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0089,wykop,2025-10-15_Dezinformacja_Krakow,L133129011,mig_hostile,1,1,,,,brak w labeled (Wykop),False
+P0090,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P06425,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0091,wykop,2026-09-15_Atak_Jaroslaw,E299764895,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0092,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P07792,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0093,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P00727,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0094,bluesky,2026-09-15_Atak_Jaroslaw,K005360,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0095,wykop,2024-05-28_Atak_Zolnierz_Granica,L124178263,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0096,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P08141,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0097,wykop,2024-04-10_Pakt_Azyl_PE,E267251223,mig_hostile,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0098,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P08166,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0099,wykop,2024-05-28_Atak_Zolnierz_Granica,L124489405,ambiguous,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0100,wykop,2026-09-15_Atak_Jaroslaw,E299846563,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0101,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K008408,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0102,wykop,2024-10-12_Strategia_Migracyjna,L127268675,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0103,wykop,2025-10-15_Dezinformacja_Krakow,L133226201,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0104,bluesky,2026-09-15_Atak_Jaroslaw,K010740,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0105,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,E296445213,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0106,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P00537,mig_hostile,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0107,wykop,2024-09-08_Bojka_Srem,L126781017,mig_other,1,0,0.0,0.0,1.0,etykieta LLM,True
+P0108,wykop,2025-06-06_Naloty_ICE_Los_Angeles,E284850205,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0109,bluesky,2025-10-15_Dezinformacja_Krakow,K008408,mig_hostile,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0110,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,K038050,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0111,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P00555,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0112,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131752255,mig_other,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0113,wykop,2024-09-08_Bojka_Srem,L126259881,mig_hostile,0,0,0.0,0.0,0.0,etykieta LLM,True
+P0114,wykop,2024-04-10_Pakt_Azyl_PE,L123221651,mig_hostile,1,1,0.0,0.0,0.0,etykieta LLM,True
+P0115,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131602403,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0116,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P07332,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0117,wykop,2024-10-12_Strategia_Migracyjna,L127094929,mig_other,1,0,0.0,0.0,1.0,etykieta LLM,True
+P0118,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P00676,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0119,wykop,2024-10-12_Strategia_Migracyjna,L127096765,ambiguous,1,0,,,,brak w labeled (Wykop),False
+P0120,bluesky,2025-10-15_Dezinformacja_Krakow,P01329,mig_hostile,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0121,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137114533,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0122,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K000774,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0123,wykop,2024-10-12_Strategia_Migracyjna,L127133873,mig_other,0,0,1.0,1.0,1.0,etykieta LLM,True
+P0124,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,K020335,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0125,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,K003912,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0126,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137314797,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0127,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K035085,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0128,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P00284,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0129,wykop,2024-05-28_Atak_Zolnierz_Granica,L124766985,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0130,wykop,2024-09-08_Bojka_Srem,E273404755,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0131,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P07145,mig_other,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0132,wykop,2026-09-15_Atak_Jaroslaw,E299952689,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0133,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L136937437,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0134,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131658591,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0135,wykop,2024-09-08_Bojka_Srem,L126783411,mig_other,0,0,0.0,0.0,0.0,etykieta LLM,True
+P0136,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,E296920961,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0137,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P27699,ambiguous,0,0,1.0,0.0,1.0,etykieta LLM,True
+P0138,wykop,2025-06-06_Naloty_ICE_Los_Angeles,E283310197,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0139,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K009676,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0140,wykop,2024-10-12_Strategia_Migracyjna,L127465471,mig_hostile,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0141,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P07219,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0142,wykop,2024-09-08_Bojka_Srem,L126550417,mig_hostile,0,0,1.0,1.0,1.0,etykieta LLM,True
+P0143,wykop,2024-04-10_Pakt_Azyl_PE,E265776759,mig_hostile,1,1,0.0,0.0,0.0,etykieta LLM,True
+P0144,bluesky,2026-09-15_Atak_Jaroslaw,P00976,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0145,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P07491,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0146,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P00065,mig_other,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0147,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P06007,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0148,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131271673,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0149,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K006793,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0150,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K009161,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0151,wykop,2024-04-10_Pakt_Azyl_PE,E266610887,mig_other,1,0,0.0,0.0,0.0,etykieta LLM,True
+P0152,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P00263,mig_other,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0153,wykop,2024-10-12_Strategia_Migracyjna,L127442551,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0154,wykop,2024-05-28_Atak_Zolnierz_Granica,L124078399,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0155,bluesky,2026-08-15_Atak_Kamienna_Gora,K000878,ambiguous,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0156,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K001857,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0157,wykop,2024-09-08_Bojka_Srem,L126816593,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0158,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P07833,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0159,wykop,2026-08-15_Atak_Kamienna_Gora,E299375669,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0160,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P07524,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0161,wykop,2024-04-10_Pakt_Azyl_PE,L123553033,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0162,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,K024980,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0163,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P32089,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0164,wykop,2024-09-08_Bojka_Srem,E272473219,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0165,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K009227,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0166,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K023192,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0167,wykop,2024-09-08_Bojka_Srem,L126458475,ambiguous,0,0,,,,brak w labeled (Wykop),False
+P0168,wykop,2024-10-12_Strategia_Migracyjna,L127279719,ambiguous,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0169,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,E296083299,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0170,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P00033,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0171,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,L137787493,mig_hostile,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0172,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P04724,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0173,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K004359,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0174,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137287217,mig_other,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0175,bluesky,2025-10-15_Dezinformacja_Krakow,K017337,mig_other,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0176,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,E298527773,mig_hostile,0,0,,,,brak w labeled (Wykop),False
+P0177,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K013202,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0178,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K032225,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0179,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K011434,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0180,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K000933,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0181,wykop,2024-09-08_Bojka_Srem,L126602963,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0182,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P01940,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0183,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137448767,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0184,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P01055,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0185,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K026729,mig_hostile,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0186,wykop,2025-06-06_Naloty_ICE_Los_Angeles,E284700905,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0187,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131640005,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0188,wykop,2024-09-08_Bojka_Srem,L126261449,mig_hostile,1,0,,,,brak w labeled (Wykop),False
+P0189,wykop,2024-05-28_Atak_Zolnierz_Granica,L124364809,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0190,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P00125,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0191,wykop,2024-09-08_Bojka_Srem,L126488271,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0192,wykop,2024-09-08_Bojka_Srem,L126288857,mig_other,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0193,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K030396,mig_hostile,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0194,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K002041,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0195,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K009635,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0196,wykop,2024-10-12_Strategia_Migracyjna,L127001433,mig_other,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0197,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K004169,mig_hostile,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0198,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,E298156061,ambiguous,1,0,1.0,0.0,0.0,etykieta LLM,True
+P0199,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,E296940219,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0200,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P00399,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0201,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P01631,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0202,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P20148,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0203,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137380089,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0204,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137384423,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0205,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,E296070437,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0206,wykop,2024-06-06_Smierc_Zolnierza,L124977337,mig_hostile,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0207,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K008634,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0208,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P00968,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0209,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P01460,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0210,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,E296079643,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0211,wykop,2025-10-15_Dezinformacja_Krakow,L133180737,ambiguous,1,1,,,,brak w labeled (Wykop),False
+P0212,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P00584,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0213,wykop,2024-06-06_Smierc_Zolnierza,L125036299,mig_hostile,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0214,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,L138348009,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0215,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131119485,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0216,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P00451,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0217,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P00460,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0218,wykop,2025-06-06_Naloty_ICE_Los_Angeles,E283321951,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0219,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P00670,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0220,wykop,2024-04-10_Pakt_Azyl_PE,L123087711,mig_hostile,1,1,0.0,0.0,0.0,etykieta LLM,True
+P0221,wykop,2024-04-10_Pakt_Azyl_PE,L123797737,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0222,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K001082,ambiguous,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0223,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P08488,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0224,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P00909,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0225,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131118619,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0226,wykop,2024-04-10_Pakt_Azyl_PE,L123037107,mig_hostile,1,0,0.0,0.0,1.0,etykieta LLM,True
+P0227,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P09536,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0228,bluesky,2025-10-15_Dezinformacja_Krakow,P31325,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0229,wykop,2024-10-12_Strategia_Migracyjna,L127003839,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0230,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131342199,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0231,wykop,2024-05-28_Atak_Zolnierz_Granica,L124724093,ambiguous,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0232,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P00678,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0233,wykop,2024-04-10_Pakt_Azyl_PE,L123720167,mig_hostile,0,0,0.0,0.0,0.0,etykieta LLM,True
+P0234,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P02075,ambiguous,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0235,wykop,2024-10-12_Strategia_Migracyjna,L127345673,mig_hostile,1,1,,,,brak w labeled (Wykop),False
+P0236,wykop,2024-04-10_Pakt_Azyl_PE,L123308641,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0237,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P04491,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0238,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P23736,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0239,bluesky,2025-10-15_Dezinformacja_Krakow,K001691,ambiguous,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0240,wykop,2024-05-28_Atak_Zolnierz_Granica,L124456801,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0241,wykop,2026-08-15_Atak_Kamienna_Gora,L138479503,mig_hostile,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0242,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131588285,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0243,bluesky,2026-09-15_Atak_Jaroslaw,K000441,ambiguous,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0244,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P08446,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0245,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,K048237,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0246,bluesky,2026-08-15_Atak_Kamienna_Gora,P05842,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0247,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P00931,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0248,wykop,2024-09-08_Bojka_Srem,L126922965,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0249,wykop,2024-05-28_Atak_Zolnierz_Granica,L124375061,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0250,wykop,2024-10-12_Strategia_Migracyjna,L127227547,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0251,wykop,2024-06-06_Smierc_Zolnierza,E269808459,ambiguous,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0252,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P09027,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0253,bluesky,2025-10-15_Dezinformacja_Krakow,P01208,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0254,wykop,2024-06-06_Smierc_Zolnierza,L124997401,mig_other,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0255,wykop,2024-09-08_Bojka_Srem,E272474057,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0256,wykop,2024-04-10_Pakt_Azyl_PE,L123761349,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0257,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P00810,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0258,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131681889,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0259,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K028598,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0260,wykop,2024-05-28_Atak_Zolnierz_Granica,L124925281,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0261,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P32311,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0262,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131372091,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0263,bluesky,2025-10-15_Dezinformacja_Krakow,K025736,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0264,wykop,2024-05-28_Atak_Zolnierz_Granica,L124488697,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0265,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K000808,ambiguous,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0266,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P07772,mig_other,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0267,wykop,2024-10-12_Strategia_Migracyjna,L127084875,mig_other,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0268,wykop,2024-05-28_Atak_Zolnierz_Granica,L124728779,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0269,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P04612,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0270,bluesky,2025-10-15_Dezinformacja_Krakow,P24939,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0271,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K000328,mig_other,0,0,1.0,0.0,1.0,etykieta LLM,True
+P0272,wykop,2024-04-10_Pakt_Azyl_PE,L123619787,mig_hostile,0,0,0.0,0.0,0.0,etykieta LLM,True
+P0273,bluesky,2025-10-15_Dezinformacja_Krakow,K005819,ambiguous,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0274,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K008939,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0275,wykop,2025-10-15_Dezinformacja_Krakow,L133371053,mig_other,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0276,bluesky,2026-09-15_Atak_Jaroslaw,K000430,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0277,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,L137927279,ambiguous,1,0,0.0,0.0,0.0,etykieta LLM,True
+P0278,wykop,2024-10-12_Strategia_Migracyjna,L127347139,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0279,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,E296971807,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0280,wykop,2024-06-06_Smierc_Zolnierza,L125124831,mig_hostile,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0281,wykop,2026-09-15_Atak_Jaroslaw,E299934697,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0282,bluesky,2026-08-15_Atak_Kamienna_Gora,P00902,mig_hostile,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0283,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P01473,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0284,wykop,2024-04-10_Pakt_Azyl_PE,L123427543,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0285,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137222841,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0286,bluesky,2026-09-15_Atak_Jaroslaw,P00365,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0287,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K004182,mig_hostile,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0288,bluesky,2025-10-15_Dezinformacja_Krakow,P17392,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0289,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131588847,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0290,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P00171,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0291,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P06652,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0292,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131040275,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0293,wykop,2024-06-06_Smierc_Zolnierza,L124974949,ambiguous,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0294,wykop,2024-09-08_Bojka_Srem,E274008153,ambiguous,1,0,0.0,0.0,0.0,etykieta LLM,True
+P0295,wykop,2024-10-12_Strategia_Migracyjna,E275066773,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0296,wykop,2025-10-15_Dezinformacja_Krakow,E288003479,ambiguous,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0297,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,K001261,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0298,wykop,2025-10-15_Dezinformacja_Krakow,L133927349,mig_other,1,0,0.0,0.0,1.0,etykieta LLM,True
+P0299,bluesky,2026-08-15_Atak_Kamienna_Gora,K001015,ambiguous,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0300,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P07538,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0301,wykop,2025-10-15_Dezinformacja_Krakow,L133459087,ambiguous,1,0,0.0,0.0,1.0,etykieta LLM,True
+P0302,wykop,2024-05-28_Atak_Zolnierz_Granica,L124534095,ambiguous,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0303,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K001956,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0304,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,E298116575,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0305,bluesky,2026-08-15_Atak_Kamienna_Gora,P05596,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0306,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131853681,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0307,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137225171,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0308,bluesky,2025-10-15_Dezinformacja_Krakow,P12131,mig_hostile,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0309,wykop,2024-04-10_Pakt_Azyl_PE,L123613449,mig_hostile,0,0,0.0,0.0,0.0,etykieta LLM,True
+P0310,wykop,2026-08-15_Atak_Kamienna_Gora,L138441933,mig_hostile,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0311,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,K009905,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0312,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P00918,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0313,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P45124,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0314,bluesky,2025-10-15_Dezinformacja_Krakow,P06321,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0315,wykop,2026-09-15_Atak_Jaroslaw,E299869681,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0316,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P07741,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0317,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P05421,mig_hostile,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0318,wykop,2026-09-15_Atak_Jaroslaw,L138741759,mig_other,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0319,wykop,2024-04-10_Pakt_Azyl_PE,L123514043,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0320,wykop,2026-09-15_Atak_Jaroslaw,E299880173,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0321,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P00401,mig_other,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0322,wykop,2024-10-12_Strategia_Migracyjna,L127373851,mig_other,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0323,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,L138123649,mig_hostile,1,0,1.0,1.0,0.0,etykieta LLM,True
+P0324,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P26985,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0325,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,L137906523,mig_hostile,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0326,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K004301,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0327,bluesky,2026-09-15_Atak_Jaroslaw,P27801,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0328,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131635249,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0329,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,E297232643,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0330,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137092305,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0331,wykop,2026-08-15_Atak_Kamienna_Gora,E299444095,mig_other,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0332,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P01299,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0333,bluesky,2025-10-15_Dezinformacja_Krakow,P20301,mig_hostile,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0334,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K001217,ambiguous,0,0,1.0,0.0,1.0,etykieta LLM,True
+P0335,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,K056196,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0336,wykop,2026-08-15_Atak_Kamienna_Gora,L138436065,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0337,wykop,2024-10-12_Strategia_Migracyjna,L127475591,mig_hostile,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0338,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,K010536,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0339,wykop,2024-06-06_Smierc_Zolnierza,E269764323,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0340,wykop,2024-10-12_Strategia_Migracyjna,L127584491,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0341,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P04400,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0342,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K009115,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0343,wykop,2025-10-15_Dezinformacja_Krakow,L133381929,mig_other,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0344,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P04008,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0345,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P06810,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0346,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,K011886,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0347,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131797921,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0348,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P00915,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0349,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P00551,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0350,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P01983,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0351,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137286913,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0352,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P07008,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0353,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,L138121747,mig_hostile,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0354,bluesky,2026-09-15_Atak_Jaroslaw,P00866,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0355,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131777161,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0356,bluesky,2025-10-15_Dezinformacja_Krakow,P03719,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0357,wykop,2024-05-28_Atak_Zolnierz_Granica,L124841735,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0358,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K025775,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0359,bluesky,2025-10-15_Dezinformacja_Krakow,P06105,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0360,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K001393,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0361,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137096807,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0362,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P28184,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0363,wykop,2024-09-08_Bojka_Srem,L126068291,mig_other,0,0,0.0,0.0,0.0,etykieta LLM,True
+P0364,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P07209,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0365,wykop,2024-05-28_Atak_Zolnierz_Granica,L124111141,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0366,bluesky,2026-08-15_Atak_Kamienna_Gora,K004836,mig_hostile,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0367,bluesky,2026-08-15_Atak_Kamienna_Gora,K026950,ambiguous,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0368,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,K015302,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0369,wykop,2024-05-28_Atak_Zolnierz_Granica,L124552001,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0370,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P11182,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0371,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131744143,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0372,wykop,2024-05-28_Atak_Zolnierz_Granica,L124374349,ambiguous,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0373,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,E298529837,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0374,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P04167,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0375,bluesky,2025-10-15_Dezinformacja_Krakow,P06116,mig_other,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0376,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,E298200191,ambiguous,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0377,wykop,2024-10-12_Strategia_Migracyjna,L127255889,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0378,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K031231,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0379,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,L137938163,mig_hostile,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0380,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P06807,mig_hostile,0,0,1.0,0.0,1.0,etykieta LLM,True
+P0381,bluesky,2025-06-06_Naloty_ICE_Los_Angeles,P01633,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0382,wykop,2026-07-30_Ceuta_Masowe_Przekroczenie,E299054253,mig_hostile,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0383,wykop,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,L137219219,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0384,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P11595,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0385,wykop,2024-05-28_Atak_Zolnierz_Granica,L124037855,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0386,wykop,2024-05-28_Atak_Zolnierz_Granica,L124198893,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0387,bluesky,2025-10-15_Dezinformacja_Krakow,P23094,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0388,wykop,2025-06-06_Naloty_ICE_Los_Angeles,L131125083,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0389,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,K007635,ambiguous,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0390,bluesky,2026-07-30_Ceuta_Masowe_Przekroczenie,P00248,mig_other,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0391,wykop,2024-10-12_Strategia_Migracyjna,L127144909,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0392,wykop,2024-05-28_Atak_Zolnierz_Granica,L124353469,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0393,wykop,2024-09-08_Bojka_Srem,L126600313,ambiguous,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0394,bluesky,2026-09-15_Atak_Jaroslaw,P00281,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0395,wykop,2025-10-15_Dezinformacja_Krakow,L133526139,mig_other,1,0,0.0,0.0,1.0,etykieta LLM,True
+P0396,bluesky,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,P29859,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0397,wykop,2024-05-28_Atak_Zolnierz_Granica,L124128937,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0398,wykop,2024-04-10_Pakt_Azyl_PE,L123685255,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0399,wykop,2024-10-12_Strategia_Migracyjna,L127484277,ambiguous,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0400,wykop,2024-04-10_Pakt_Azyl_PE,L123826411,ambiguous,1,0,0.0,0.0,1.0,etykieta LLM,True
+P0401,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K037498,mig_other,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0402,youtube,2026-09-15_Atak_Jaroslaw,K109085,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0403,youtube,2025-06-06_Naloty_ICE_Los_Angeles,K007431,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0404,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K107146,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0405,youtube,2024-10-12_Strategia_Migracyjna,K134131,ambiguous,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0406,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K054787,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0407,youtube,2024-06-06_Smierc_Zolnierza,K044960,mig_other,0,0,1.0,1.0,1.0,etykieta LLM,True
+P0408,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K063660,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0409,youtube,2024-04-10_Pakt_Azyl_PE,K056879,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0410,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K107650,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0411,youtube,2022-02-24_Atak_Rosji_Ukraina,K039332,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0412,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K033078,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0413,youtube,2023-09-22_Premiera_Zielona_Granica,K052032,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0414,youtube,2024-06-06_Smierc_Zolnierza,K036043,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0415,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K034228,ambiguous,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0416,youtube,2022-02-24_Atak_Rosji_Ukraina,K042021,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0417,youtube,2024-09-08_Bojka_Srem,K033148,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0418,youtube,2023-09-22_Premiera_Zielona_Granica,K068122,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0419,youtube,2022-05-08_Zabojstwo_Nowy_Swiat,K011076,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0420,youtube,2022-02-24_Atak_Rosji_Ukraina,K047547,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0421,youtube,2024-09-08_Bojka_Srem,K030220,ambiguous,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0422,youtube,2026-08-15_Atak_Kamienna_Gora,K071967,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0423,youtube,2026-09-15_Atak_Jaroslaw,K095856,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0424,youtube,2022-02-24_Atak_Rosji_Ukraina,K056145,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0425,youtube,2024-06-06_Smierc_Zolnierza,K017792,ambiguous,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0426,youtube,2023-10-15_Referendum_Wybory,K082612,ambiguous,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0427,youtube,2026-08-15_Atak_Kamienna_Gora,K028048,mig_other,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0428,youtube,2024-10-12_Strategia_Migracyjna,K146558,ambiguous,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0429,youtube,2024-04-10_Pakt_Azyl_PE,K113533,mig_other,0,0,1.0,0.0,1.0,etykieta LLM,True
+P0430,youtube,2024-06-06_Smierc_Zolnierza,K043454,ambiguous,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0431,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K064810,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0432,youtube,2026-09-15_Atak_Jaroslaw,K162627,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0433,youtube,2026-09-15_Atak_Jaroslaw,K165439,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0434,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K105537,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0435,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K028900,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0436,youtube,2024-10-12_Strategia_Migracyjna,K080326,mig_other,0,0,1.0,1.0,1.0,etykieta LLM,True
+P0437,youtube,2022-02-24_Atak_Rosji_Ukraina,K041674,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0438,youtube,2026-09-15_Atak_Jaroslaw,K095641,ambiguous,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0439,youtube,2024-10-12_Strategia_Migracyjna,K106254,mig_other,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0440,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K003309,mig_other,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0441,youtube,2024-06-06_Smierc_Zolnierza,K037555,mig_other,0,0,1.0,1.0,1.0,etykieta LLM,True
+P0442,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K080344,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0443,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K065818,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0444,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K062264,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0445,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K058882,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0446,youtube,2024-05-28_Atak_Zolnierz_Granica,K019635,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0447,youtube,2023-09-22_Premiera_Zielona_Granica,K036035,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0448,youtube,2022-02-24_Atak_Rosji_Ukraina,K060807,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0449,youtube,2024-10-12_Strategia_Migracyjna,K138668,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0450,youtube,2024-06-06_Smierc_Zolnierza,K042267,mig_other,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0451,youtube,2024-04-10_Pakt_Azyl_PE,K062106,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0452,youtube,2023-09-22_Premiera_Zielona_Granica,K023527,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0453,youtube,2026-08-15_Atak_Kamienna_Gora,K013194,mig_other,0,0,1.0,1.0,1.0,etykieta LLM,True
+P0454,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K031266,mig_hostile,1,1,1.0,0.0,1.0,etykieta LLM,True
+P0455,youtube,2024-10-12_Strategia_Migracyjna,K143020,mig_other,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0456,youtube,2025-06-06_Naloty_ICE_Los_Angeles,K029359,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0457,youtube,2026-09-15_Atak_Jaroslaw,K040469,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0458,youtube,2026-09-15_Atak_Jaroslaw,K105413,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0459,youtube,2024-05-28_Atak_Zolnierz_Granica,K119899,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0460,youtube,2026-09-15_Atak_Jaroslaw,K108008,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0461,youtube,2024-06-06_Smierc_Zolnierza,K041678,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0462,youtube,2025-06-06_Naloty_ICE_Los_Angeles,K049927,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0463,youtube,2026-08-15_Atak_Kamienna_Gora,K072434,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0464,youtube,2023-09-22_Premiera_Zielona_Granica,K035863,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0465,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K056770,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0466,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K084236,ambiguous,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0467,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K039075,ambiguous,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0468,youtube,2023-10-15_Referendum_Wybory,K052000,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0469,youtube,2023-10-15_Referendum_Wybory,K024189,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0470,youtube,2025-10-15_Dezinformacja_Krakow,K042341,mig_other,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0471,youtube,2024-09-08_Bojka_Srem,K081287,mig_other,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0472,youtube,2024-10-12_Strategia_Migracyjna,K117250,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0473,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K036565,mig_other,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0474,youtube,2024-09-08_Bojka_Srem,K126149,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0475,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K002619,mig_other,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0476,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K058838,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0477,youtube,2024-04-10_Pakt_Azyl_PE,K081182,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0478,youtube,2024-06-06_Smierc_Zolnierza,K018210,mig_hostile,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0479,youtube,2022-02-24_Atak_Rosji_Ukraina,K026291,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0480,youtube,2024-04-10_Pakt_Azyl_PE,K002128,mig_hostile,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0481,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K094361,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0482,youtube,2026-07-27_Wroclaw_Atak,K006405,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0483,youtube,2025-10-15_Dezinformacja_Krakow,K063710,ambiguous,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0484,youtube,2026-09-15_Atak_Jaroslaw,K114112,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0485,youtube,2024-09-08_Bojka_Srem,K033048,mig_hostile,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0486,youtube,2024-09-08_Bojka_Srem,K136421,mig_hostile,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0487,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K039444,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0488,youtube,2025-06-06_Naloty_ICE_Los_Angeles,K106995,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0489,youtube,2024-05-28_Atak_Zolnierz_Granica,K106822,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0490,youtube,2023-09-22_Premiera_Zielona_Granica,K072666,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0491,youtube,2026-09-15_Atak_Jaroslaw,K112566,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0492,youtube,2026-09-15_Atak_Jaroslaw,K105528,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0493,youtube,2025-10-15_Dezinformacja_Krakow,K021094,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0494,youtube,2025-10-15_Dezinformacja_Krakow,K027882,mig_other,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0495,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K085890,ambiguous,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0496,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K101835,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0497,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K110942,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0498,youtube,2024-09-08_Bojka_Srem,K030025,ambiguous,1,1,1.0,0.0,1.0,etykieta LLM,True
+P0499,youtube,2026-09-15_Atak_Jaroslaw,K168044,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0500,youtube,2023-09-22_Premiera_Zielona_Granica,K045363,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0501,youtube,2024-04-10_Pakt_Azyl_PE,K050939,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0502,youtube,2024-06-06_Smierc_Zolnierza,K013913,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0503,youtube,2026-08-15_Atak_Kamienna_Gora,K094156,mig_other,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0504,youtube,2024-05-28_Atak_Zolnierz_Granica,K042474,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0505,youtube,2023-10-15_Referendum_Wybory,K015733,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0506,youtube,2024-09-08_Bojka_Srem,K103570,mig_hostile,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0507,youtube,2023-10-15_Referendum_Wybory,K089057,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0508,youtube,2023-10-15_Referendum_Wybory,K028760,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0509,youtube,2024-10-12_Strategia_Migracyjna,K062520,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0510,youtube,2024-05-28_Atak_Zolnierz_Granica,K126687,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0511,youtube,2024-10-12_Strategia_Migracyjna,K115760,mig_other,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0512,youtube,2024-05-28_Atak_Zolnierz_Granica,K127358,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0513,youtube,2025-06-06_Naloty_ICE_Los_Angeles,K010753,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0514,youtube,2025-10-15_Dezinformacja_Krakow,K027619,ambiguous,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0515,youtube,2026-07-27_Wroclaw_Atak,K000772,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0516,youtube,2024-06-06_Smierc_Zolnierza,K042080,mig_other,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0517,youtube,2026-09-15_Atak_Jaroslaw,K151829,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0518,youtube,2025-10-15_Dezinformacja_Krakow,K001417,ambiguous,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0519,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K098896,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0520,youtube,2026-08-15_Atak_Kamienna_Gora,K130938,mig_hostile,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0521,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K071146,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0522,youtube,2024-09-08_Bojka_Srem,K006777,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0523,youtube,2024-09-08_Bojka_Srem,K108372,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0524,youtube,2026-09-15_Atak_Jaroslaw,K112146,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0525,youtube,2024-09-08_Bojka_Srem,K034911,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0526,youtube,2026-09-15_Atak_Jaroslaw,K145766,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0527,youtube,2024-05-28_Atak_Zolnierz_Granica,K118109,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0528,youtube,2024-05-28_Atak_Zolnierz_Granica,K053407,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0529,youtube,2026-09-15_Atak_Jaroslaw,K084589,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0530,youtube,2024-10-12_Strategia_Migracyjna,K014294,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0531,youtube,2024-10-12_Strategia_Migracyjna,K147053,mig_hostile,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0532,youtube,2025-10-15_Dezinformacja_Krakow,K012015,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0533,youtube,2024-09-08_Bojka_Srem,K003948,mig_hostile,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0534,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K105490,mig_other,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0535,youtube,2024-10-12_Strategia_Migracyjna,K044555,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0536,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K084739,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0537,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K091266,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0538,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K037973,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0539,youtube,2026-08-15_Atak_Kamienna_Gora,K067162,ambiguous,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0540,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K099018,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0541,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K054339,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0542,youtube,2024-04-10_Pakt_Azyl_PE,K109473,mig_other,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0543,youtube,2026-09-15_Atak_Jaroslaw,K052235,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0544,youtube,2023-09-22_Premiera_Zielona_Granica,K044993,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0545,youtube,2026-09-15_Atak_Jaroslaw,K165473,ambiguous,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0546,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K063194,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0547,youtube,2024-06-06_Smierc_Zolnierza,K017988,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0548,youtube,2024-06-06_Smierc_Zolnierza,K016368,ambiguous,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0549,youtube,2024-05-28_Atak_Zolnierz_Granica,K129105,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0550,youtube,2023-09-22_Premiera_Zielona_Granica,K042387,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0551,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K033723,ambiguous,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0552,youtube,2023-09-22_Premiera_Zielona_Granica,K001829,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0553,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K014941,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0554,youtube,2023-09-22_Premiera_Zielona_Granica,K065131,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0555,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K086998,ambiguous,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0556,youtube,2025-10-15_Dezinformacja_Krakow,K039781,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0557,youtube,2024-06-06_Smierc_Zolnierza,K047101,ambiguous,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0558,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K049504,mig_other,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0559,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K105386,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0560,youtube,2023-09-22_Premiera_Zielona_Granica,K073185,mig_other,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0561,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K048406,mig_hostile,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0562,youtube,2026-09-15_Atak_Jaroslaw,K109109,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0563,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K023041,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0564,youtube,2023-10-15_Referendum_Wybory,K022539,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0565,youtube,2024-09-08_Bojka_Srem,K080581,mig_other,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0566,youtube,2024-04-10_Pakt_Azyl_PE,K107198,mig_hostile,1,0,0.0,0.0,1.0,etykieta LLM,True
+P0567,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K099836,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0568,youtube,2023-10-15_Referendum_Wybory,K089812,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0569,youtube,2026-08-15_Atak_Kamienna_Gora,K131071,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0570,youtube,2024-09-08_Bojka_Srem,K064681,mig_other,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0571,youtube,2024-10-12_Strategia_Migracyjna,K116205,mig_other,0,0,0.0,0.0,1.0,etykieta LLM,True
+P0572,youtube,2025-10-15_Dezinformacja_Krakow,K039331,mig_hostile,0,0,1.0,1.0,1.0,etykieta LLM,True
+P0573,youtube,2024-09-08_Bojka_Srem,K099113,mig_hostile,1,0,0.0,0.0,0.0,poza labeled → 0,True
+P0574,youtube,2022-02-24_Atak_Rosji_Ukraina,K031930,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0575,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K105805,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0576,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K038094,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0577,youtube,2026-08-15_Atak_Kamienna_Gora,K095239,mig_hostile,1,1,1.0,1.0,1.0,etykieta LLM,True
+P0578,youtube,2024-10-12_Strategia_Migracyjna,K068302,mig_hostile,1,0,1.0,1.0,1.0,etykieta LLM,True
+P0579,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K063135,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0580,youtube,2026-09-15_Atak_Jaroslaw,K112689,ambiguous,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0581,youtube,2023-09-22_Premiera_Zielona_Granica,K066790,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0582,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K038850,mig_other,1,1,1.0,0.0,1.0,etykieta LLM,True
+P0583,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K032800,ambiguous,1,1,0.0,0.0,0.0,poza labeled → 0,True
+P0584,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K086457,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0585,youtube,2026-09-15_Atak_Jaroslaw,K111354,ambiguous,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0586,youtube,2022-02-24_Atak_Rosji_Ukraina,K054501,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0587,youtube,2023-09-22_Premiera_Zielona_Granica,K063952,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0588,youtube,2023-09-22_Premiera_Zielona_Granica,K032542,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0589,youtube,2024-04-10_Pakt_Azyl_PE,K102989,mig_other,1,1,0.0,0.0,1.0,etykieta LLM,True
+P0590,youtube,2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie,K024404,mig_hostile,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0591,youtube,2025-10-15_Dezinformacja_Krakow,K036027,mig_hostile,0,0,0.0,0.0,0.0,poza labeled → 0,True
+P0592,youtube,2023-10-15_Referendum_Wybory,K070628,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0593,youtube,2023-10-15_Referendum_Wybory,K089792,ambiguous,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0594,youtube,2025-06-06_Naloty_ICE_Los_Angeles,K127656,mig_other,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0595,youtube,2022-02-24_Atak_Rosji_Ukraina,K006854,mig_other,0,0,,,,brak etykiet LLM dla wydarzenia,False
+P0596,youtube,2025-06-06_Naloty_ICE_Los_Angeles,K112012,mig_other,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0597,youtube,2023-10-15_Referendum_Wybory,K053518,mig_hostile,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0598,youtube,2024-05-28_Atak_Zolnierz_Granica,K128319,mig_hostile,1,1,,,,brak etykiet LLM dla wydarzenia,False
+P0599,youtube,2022-05-08_Zabojstwo_Nowy_Swiat,K006276,ambiguous,1,0,,,,brak etykiet LLM dla wydarzenia,False
+P0600,youtube,2026-07-30_Ceuta_Masowe_Przekroczenie,K033530,ambiguous,1,1,0.0,0.0,1.0,etykieta LLM,True
