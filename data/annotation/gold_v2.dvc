@@ -1,0 +1,6 @@
+outs:
+- md5: 2271c2e15ff5bafd1affcb9f57f5182d.dir
+  size: 978813
+  nfiles: 10
+  hash: md5
+  path: gold_v2

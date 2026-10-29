@@ -16,7 +16,7 @@ from openpyxl.worksheet.datavalidation import DataValidation
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from annotation_agreement import clean_sheet, norm, read_sheet  # noqa: E402
-from annotation_sample import OUT_ROOT  # noqa: E402
+from annotation_sample import OUT_ROOT, in_events  # noqa: E402
 
 GOLD_DIR = OUT_ROOT / 'gold'
 REASONS = ['niezgoda', 'uncertain', 'brak kodu', 'kontrola', 'rozstrzygnięte wcześniej']
@@ -186,8 +186,12 @@ def write_review(review, path):
         sys.exit(f'{path} is open in Excel - save and close it, then rerun.')
 
 
-def render(per_round, gold):
-    lines = ['# Gold standard', '', '| Runda | komentarzy | jednogłośne (w tym z uncertain) | niezgoda | uncertain do rozstrzygnięcia | brak kodu | '
+def render(per_round, gold, events=None):
+    lines = ['# Gold standard', '']
+    if events:
+        lines += [f'Tylko wydarzenia: {", ".join(events)} -> **{len(gold)}** komentarzy w gold.csv '
+                  '(tabela niżej liczy całe rundy).', '']
+    lines += ['| Runda | komentarzy | jednogłośne (w tym z uncertain) | niezgoda | uncertain do rozstrzygnięcia | brak kodu | '
              'kontrola (sprawdzone / zmienione) | rozstrzygnięte | czeka | decyzja = większość |',
              '|---|---|---|---|---|---|---|---|---|---|']
     for name, s in per_round.items():
@@ -210,6 +214,7 @@ def main():
     ap.add_argument('--names', nargs='+', required=True, help='rounds, e.g. gold_v1 gold_v2')
     ap.add_argument('--check-share', type=float, default=0.1, help='share of unanimous items a person checks')
     ap.add_argument('--seed', type=int, default=2026)
+    ap.add_argument('--events', nargs='+', help='keep only these events in gold.csv, e.g. Pakt_Azyl_PE Bojka_Srem')
     ap.add_argument('--review-uncertain', action='store_true',
                     help='send unanimous items a model marked uncertain to adjudication too')
     args = ap.parse_args()
@@ -225,9 +230,11 @@ def main():
               f"{base / 'results' / 'adjudication.xlsx'}")
 
     gold = pd.concat(golds, ignore_index=True)
+    if args.events:   # adjudication sheets stay complete, only gold.csv is filtered
+        gold = gold[gold['event_folder'].map(lambda f: in_events(f, args.events))].reset_index(drop=True)
     GOLD_DIR.mkdir(parents=True, exist_ok=True)
     gold.to_csv(GOLD_DIR / 'gold.csv', index=False, encoding='utf-8-sig')
-    md = render(per_round, gold)
+    md = render(per_round, gold, args.events)
     (GOLD_DIR / 'report.md').write_text(md, encoding='utf-8')
     print('\n' + md)
 

@@ -12,7 +12,7 @@ COLS = ['item_id', 'platform', 'event_folder', 'comment_id', 'post_id', 'pool', 
         'context_parent', 'context_quote', 'text', 'slurs']
 
 
-def fake_platform(platform):
+def fake_platform(platform, events=None):
     texts = ['Migranci znowu przyjechali do miasta dzisiaj', 'Uchodźcy dostali mieszkania od gminy wczoraj',
              'Imigranci pracują na budowie od rana do nocy']
     return pd.DataFrame({'comment_id': ['c1', 'c2', 'c3'], 'post_id': 'p', 'shown': texts, 'context_quote': '',
@@ -40,3 +40,17 @@ def test_append_keeps_old_ids_and_skips_duplicates(monkeypatch, tmp_path):
     assert set(new['platform']) == {'youtube', 'wykop'}
     assert not both.duplicated(['platform', 'comment_id']).any()        # wykop items already drawn are skipped
     assert len(pd.read_excel(tmp_path / 'gold_v1' / 'sheets' / 'gold_v1_A.xlsx')) == len(both)
+
+
+def test_events_exclude_and_n_per_platform(monkeypatch, tmp_path):
+    from annotation_sample import in_events, parse_n
+    assert in_events('2024-04-10_Pakt_Azyl_PE', ['Pakt_Azyl_PE']) and not in_events('2024-04-10_Pakt_Azyl_PE', ['Azyl'])
+    assert parse_n(['bluesky=2', 'wykop=1'], ['bluesky', 'wykop']) == {'bluesky': 2, 'wykop': 1}
+    assert parse_n(['3'], ['bluesky', 'wykop']) == {'bluesky': 3, 'wykop': 3}
+    run(monkeypatch, tmp_path, '--platforms', 'wykop', '--n-per-platform', '1')
+    first = pd.read_csv(tmp_path / 'gold_v1' / 'manifest.csv', dtype=str)
+    monkeypatch.setattr(sys, 'argv', ['annotation_sample.py', '--name', 'gold_v2', '--annotators', 'A', '--platforms',
+                                      'wykop', '--n-per-platform', '3', '--events', 'e', '--exclude', 'gold_v1'])
+    annotation_sample.main()
+    second = pd.read_csv(tmp_path / 'gold_v2' / 'manifest.csv', dtype=str)
+    assert len(second) == 2 and not set(second['comment_id']) & set(first['comment_id'])
