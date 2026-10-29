@@ -1,0 +1,5 @@
+outs:
+- md5: 59829318c2c0a487aa30fe0768442adb
+  size: 294886
+  hash: md5
+  path: gold_600_ollama.csv

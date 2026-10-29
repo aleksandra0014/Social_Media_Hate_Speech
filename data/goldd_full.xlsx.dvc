@@ -1,0 +1,5 @@
+outs:
+- md5: 880179bfb93b78eeb9b95f0f7c24d72f
+  size: 166695
+  hash: md5
+  path: goldd_full.xlsx

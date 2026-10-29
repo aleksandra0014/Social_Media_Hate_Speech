@@ -1,0 +1,6 @@
+outs:
+- md5: 245d30e42189102fba3d23d3c3bfd810.dir
+  size: 1261441
+  nfiles: 2
+  hash: md5
+  path: roberta_banpl

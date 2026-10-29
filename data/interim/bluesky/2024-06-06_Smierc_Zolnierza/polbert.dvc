@@ -1,0 +1,6 @@
+outs:
+- md5: c5baab3cc74afafdc1174e7c4037fb7d.dir
+  size: 1365
+  nfiles: 2
+  hash: md5
+  path: polbert

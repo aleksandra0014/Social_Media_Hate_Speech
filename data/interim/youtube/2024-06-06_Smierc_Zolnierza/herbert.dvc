@@ -1,0 +1,6 @@
+outs:
+- md5: c19faa897f6f4176134dde1f0a3b319e.dir
+  size: 512019
+  nfiles: 2
+  hash: md5
+  path: herbert
