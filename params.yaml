@@ -9,8 +9,8 @@ wykop:
   material_max_age: 4
 
 youtube:
-  days_before: 28
-  days_after: 28
+  days_before: 7
+  days_after: 14
   material_max_age: 4
 
 preprocess:

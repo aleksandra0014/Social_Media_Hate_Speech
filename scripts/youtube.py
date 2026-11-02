@@ -37,8 +37,8 @@ PARAMS_FILE = Path('params.yaml')
 EVENTS_FILE = Path(__file__).with_name('events.json')
 SKIP_DONE = True                   # skip events whose folder already contains report.json
 
-DAYS_BEFORE = 28                   # baseline window
-DAYS_AFTER = 28                    # event window
+DAYS_BEFORE = 7                   # baseline window
+DAYS_AFTER = 14                   # event window
 MATERIAL_MAX_AGE = 4               # comment counted when the video is 0..4 days old
 TIMEZONE = 'Europe/Warsaw'         # day boundaries in local time
 
