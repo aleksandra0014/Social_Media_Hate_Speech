@@ -1,0 +1,92 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "batch_size": 25,
+  "hate_all": false,
+  "comments": 150,
+  "classified": 75,
+  "parse_or_api_errors": 0,
+  "wall_time_s": 325.2,
+  "s_per_comment": 4.335,
+  "comments_per_min": 13.8,
+  "rate_limit_wait_s": 313.5,
+  "retries": 8,
+  "groq_requests": 3,
+  "tokens": {
+    "prompt_tokens": 16035,
+    "completion_tokens": 3387,
+    "reasoning_tokens": 0,
+    "total_tokens": 19422
+  },
+  "tokens_per_comment": 259.0,
+  "groq_server_time_s": {
+    "queue_time": 1.61,
+    "prompt_time": 1.24,
+    "completion_time": 7.13,
+    "total_time": 8.37
+  },
+  "local_cpu_time_s": 0.56,
+  "local_peak_rss_mb": 81.4,
+  "last_rate_limit_headers": {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "998",
+    "x-ratelimit-remaining-tokens": "8000",
+    "x-ratelimit-reset-requests": "2m52.8s",
+    "x-ratelimit-reset-tokens": "1ms"
+  },
+  "metrics": {
+    "migrant": {
+      "n": 75,
+      "acc": 0.56,
+      "precision": 0.481,
+      "recall": 0.839,
+      "f1": 0.612,
+      "kappa": 0.182,
+      "tp": 26,
+      "fp": 28,
+      "fn": 5,
+      "tn": 16
+    },
+    "hate": {
+      "n": 75,
+      "acc": 0.667,
+      "precision": 0.471,
+      "recall": 0.333,
+      "f1": 0.39,
+      "kappa": 0.17,
+      "tp": 8,
+      "fp": 9,
+      "fn": 16,
+      "tn": 42
+    },
+    "hate_migrant": {
+      "n": 75,
+      "acc": 0.747,
+      "precision": 0.429,
+      "recall": 0.353,
+      "f1": 0.387,
+      "kappa": 0.229,
+      "tp": 6,
+      "fp": 8,
+      "fn": 11,
+      "tn": 50
+    },
+    "hate | gold migrant=1": {
+      "n": 31,
+      "acc": 0.613,
+      "precision": 0.778,
+      "recall": 0.412,
+      "f1": 0.538,
+      "kappa": 0.256,
+      "tp": 7,
+      "fp": 2,
+      "fn": 10,
+      "tn": 12
+    }
+  },
+  "capacity_estimate": {
+    "max_comments_per_min_by_TPM": 30.9,
+    "max_comments_per_day_by_RPD": 25000,
+    "note": "dzienny limit tokenów (TPD) nie jest zwracany w nagłówkach - patrz console.groq.com/settings/limits"
+  }
+}

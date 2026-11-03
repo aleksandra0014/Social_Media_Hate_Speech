@@ -1,0 +1,92 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "batch_size": 15,
+  "hate_all": false,
+  "comments": 30,
+  "classified": 30,
+  "parse_or_api_errors": 0,
+  "wall_time_s": 33.6,
+  "s_per_comment": 1.119,
+  "comments_per_min": 53.6,
+  "rate_limit_wait_s": 28.8,
+  "retries": 0,
+  "groq_requests": 2,
+  "tokens": {
+    "prompt_tokens": 7387,
+    "completion_tokens": 1358,
+    "reasoning_tokens": 0,
+    "total_tokens": 8745
+  },
+  "tokens_per_comment": 291.5,
+  "groq_server_time_s": {
+    "queue_time": 0.55,
+    "prompt_time": 0.57,
+    "completion_time": 3.02,
+    "total_time": 3.59
+  },
+  "local_cpu_time_s": 0.31,
+  "local_peak_rss_mb": 81.4,
+  "last_rate_limit_headers": {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "997",
+    "x-ratelimit-remaining-tokens": "3875",
+    "x-ratelimit-reset-requests": "4m19.2s",
+    "x-ratelimit-reset-tokens": "32.46s"
+  },
+  "metrics": {
+    "migrant": {
+      "n": 30,
+      "acc": 0.533,
+      "precision": 0.435,
+      "recall": 0.909,
+      "f1": 0.588,
+      "kappa": 0.183,
+      "tp": 10,
+      "fp": 13,
+      "fn": 1,
+      "tn": 6
+    },
+    "hate": {
+      "n": 30,
+      "acc": 0.767,
+      "precision": 0.545,
+      "recall": 0.75,
+      "f1": 0.632,
+      "kappa": 0.467,
+      "tp": 6,
+      "fp": 5,
+      "fn": 2,
+      "tn": 17
+    },
+    "hate_migrant": {
+      "n": 30,
+      "acc": 0.733,
+      "precision": 0.2,
+      "recall": 0.2,
+      "f1": 0.2,
+      "kappa": 0.04,
+      "tp": 1,
+      "fp": 4,
+      "fn": 4,
+      "tn": 21
+    },
+    "hate | gold migrant=1": {
+      "n": 11,
+      "acc": 0.818,
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1": 0.8,
+      "kappa": 0.633,
+      "tp": 4,
+      "fp": 1,
+      "fn": 1,
+      "tn": 5
+    }
+  },
+  "capacity_estimate": {
+    "max_comments_per_min_by_TPM": 27.4,
+    "max_comments_per_day_by_RPD": 15000,
+    "note": "dzienny limit tokenów (TPD) nie jest zwracany w nagłówkach - patrz console.groq.com/settings/limits"
+  }
+}

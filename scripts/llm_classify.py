@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Step 5: LLM classification (Groq / Gemini) of the topic pre-filtered comments of one event.
 
-Prompt (summary of docs/CODEBOOK.md) and API clients from scripts/groq_gold_test.py.
+Prompt (summary of docs/CODEBOOK.md) and API clients from scripts/llm_gold_test.py.
 hate is judged for every comment (codebook); --hate-migration-only restores hate=0 outside migration.
 Slur-labelled 1/1 comments get 1/1/1 without the LLM. Results are appended after every batch,
 so a rerun (e.g. after hitting the daily limit) continues with the comments not yet classified.
@@ -37,7 +37,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from src.preprocessing.io import INTERIM_ROOT, read_csv, write_json
-from groq_gold_test import Gemini, Groq, make_messages, parse_results
+from llm_gold_test import Gemini, Groq, make_messages, parse_results
 
 ROOT = Path(__file__).resolve().parents[1]
 MIG, HATE_MIG, HATE = 'llm_is_about_migration', 'llm_is_hate_migrants', 'llm_is_hate_general'

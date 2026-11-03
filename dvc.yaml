@@ -167,7 +167,7 @@ stages:
         --provider ${llm.provider} --model ${llm.model} --batch-size ${llm.batch_size} ${item.args}
       deps:
         - scripts/llm_classify.py
-        - scripts/groq_gold_test.py
+        - scripts/llm_gold_test.py
         - data/interim/${item.platform}/${item.event}/clean
         - data/interim/${item.platform}/${item.event}/topic
       params:

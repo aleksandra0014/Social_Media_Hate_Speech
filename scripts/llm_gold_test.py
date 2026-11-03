@@ -8,11 +8,11 @@ mierzy czas, tokeny, zużycie zasobów lokalnych i limity API, a na końcu poró
 Klucze: GROQ_API_KEY / GOOGLE_API_KEY w .env.local (albo w zmiennych środowiskowych).
 
 Usage:
-    python scripts/groq_gold_test.py                       # cały gold_600, qwen/qwen3.8-27b
-    python scripts/groq_gold_test.py --n 45                # szybki test na 45 komentarzach
-    python scripts/groq_gold_test.py --model openai/gpt-oss-20b --batch-size 20
-    python scripts/groq_gold_test.py --hate-migration-only # hate tylko dla komentarzy o migracji
-    python scripts/groq_gold_test.py --provider gemini --batch-size 50   # gemini-3.5-flash-lite
+    python scripts/llm_gold_test.py                       # cały gold_600, qwen/qwen3.8-27b
+    python scripts/llm_gold_test.py --n 45                # szybki test na 45 komentarzach
+    python scripts/llm_gold_test.py --model openai/gpt-oss-20b --batch-size 20
+    python scripts/llm_gold_test.py --hate-migration-only # hate tylko dla komentarzy o migracji
+    python scripts/llm_gold_test.py --provider gemini --batch-size 50   # gemini-3.5-flash-lite
 """
 
 import argparse
