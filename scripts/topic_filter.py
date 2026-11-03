@@ -1,4 +1,5 @@
 """Step 4: topic pre-filter (no LLM) - keep comments that are slur-labelled 1/1 or pass the migration regex
+(regex checks the comment, its post and the parent comment it replies to)
     python scripts/topic_filter.py --platform wykop --event 2024-04-10_Pakt_Azyl_PE
 Reads  data/interim/<platform>/<event>/{clean,slurs}/{posts,comments}.csv
 Writes data/interim/<platform>/<event>/topic/comments.csv           (comment_id, event, text, hate_auto, hate_migrants_auto)
@@ -40,8 +41,15 @@ def main():
         p = posts.loc[post_id]
         return (p.get('title') or p.get('text') or '').strip().replace('\n', ' ')[:300]
 
+    # parent = comment being replied to (reply_to); full text, as in topic_sample.py
+    by_id = dict(zip(comments['comment_id'], comments['text']))
+
+    def parent_context(reply_to):
+        return (by_id.get(reply_to) or '').strip().replace('\n', ' ')
+
     is_slur = (df['hate_auto'] == '1') & (df['hate_migrants_auto'] == '1')
-    passes_regex = [is_potential_migration(t, post_context(p)) for t, p in zip(df['text'], df['post_id'])]
+    passes_regex = [is_potential_migration(t, post_context(p), parent_context(r))
+                    for t, p, r in zip(df['text'], df['post_id'], df['reply_to'])]
     keep = is_slur | pd.Series(passes_regex, index=df.index, dtype=bool)
 
     write_csv(df.loc[keep, COLUMNS], root / 'topic' / 'comments.csv')

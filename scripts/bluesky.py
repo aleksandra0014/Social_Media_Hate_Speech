@@ -290,8 +290,12 @@ def local_day(dt):
 
 # ---------- auth and API ----------
 
-def load_env(path=Path(__file__).with_name('.env.local')):
-    if not path.exists():
+def load_env(path=None):
+    # scripts/.env.local first, then the project root
+    candidates = [path] if path else [Path(__file__).with_name('.env.local'),
+                                      Path(__file__).parent.parent / '.env.local']
+    path = next((p for p in candidates if p.exists()), None)
+    if path is None:
         return
     for line in path.read_text(encoding='utf-8-sig').splitlines():
         line = line.strip()

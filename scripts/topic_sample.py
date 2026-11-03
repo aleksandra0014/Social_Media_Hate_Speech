@@ -36,12 +36,12 @@ SHORT_CODEBOOK = """1. is_about_migration ("1"/"0"):
 
 3. hate_migrants ("1"/"0"):
 - "1": hate=1 ORAZ atak dotyczy migrantów/Ukraińców/uchodźców/osób z Afryki/Azji ze względu na pochodzenie/status. Obelga etniczna ("ukry", "ciapaci", "nachodźcy") to ZAWSZE hate=1, hate_migrants=1!
-- "0": hate dotyczy polityka, rozmówcy, Rosjan ("kacapy"), Polaków za granicą lub instytucji (rząd Ukrainy).
+- "0": hate dotyczy polityka, rozmówcy, Polaków za granicą lub instytucji (rząd Ukrainy).
 
 PRZYKŁADY:
 - "Zamknąć granice!" -> is_about_migration:1, hate:0, hate_migrants:0
 - "Ukry na socjalu" -> is_about_migration:1, hate:1, hate_migrants:1
-- "Jebane kacapy" -> is_about_migration:0, hate:1, hate_migrants:0
+- "Jebane kacapy" -> is_about_migration:1, hate:1, hate_migrants:1
 - "Rząd to złodzieje" -> is_about_migration:0, hate:1, hate_migrants:0"""
 
 # Fast Regex pre-filter for Polish migration & slur stems

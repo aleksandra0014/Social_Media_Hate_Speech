@@ -3,7 +3,7 @@ stages:
     cmd: python scripts/bluesky.py events.json --out data/raw/bluesky
     deps:
       - scripts/bluesky.py
-      - events.json
+      - new_events.json
     params:
       - bluesky
     outs:
@@ -158,3 +158,22 @@ stages:
         - data/interim/bluesky/${item}/slurs
       outs:
         - data/interim/bluesky/${item}/topic
+
+  llm:
+    foreach: ${llm.runs}
+    do:
+      cmd: >-
+        python scripts/llm_classify.py --platform ${item.platform} --event ${item.event}
+        --provider ${llm.provider} --model ${llm.model} --batch-size ${llm.batch_size} ${item.args}
+      deps:
+        - scripts/llm_classify.py
+        - scripts/groq_gold_test.py
+        - data/interim/${item.platform}/${item.event}/clean
+        - data/interim/${item.platform}/${item.event}/topic
+      params:
+        - llm.provider
+        - llm.model
+        - llm.batch_size
+      outs:
+        - data/interim/${item.platform}/${item.event}/llm:
+            persist: true
