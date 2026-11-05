@@ -32,6 +32,12 @@ preprocess:
     - 2026-08-15_Atak_Kamienna_Gora
     - 2026-09-15_Atak_Jaroslaw
     - 2026-09-15_Raport_SG_Statystyki_Deportacje
+    - 2024-12-20_Atak_Jarmark_Magdeburg
+    - 2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow
+    - 2025-07-19_Protesty_Antyimigracyjne_Polska
+    - 2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci
+    - 2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala
+
   filter:
     min_words: 3                        # fewer letter-words (after removing links/@/#) -> very_short
     languages: [pl, en, de, ru, uk]     # candidate languages for lingua
@@ -49,3 +55,9 @@ llm:
     bluesky-Atak_Jaroslaw:              {platform: bluesky, event: 2026-09-15_Atak_Jaroslaw, args: "--window -7:14"}
     wykop-Pakt_Migracyjny:              {platform: wykop, event: 2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie, args: "--window -7:14"}
     wykop-Atak_Jaroslaw:                {platform: wykop, event: 2026-09-15_Atak_Jaroslaw, args: "--window -7:14"}
+    bluesky-Jarmark_Magdeburg: {platform: bluesky, event: 2024-12-20_Atak_Jarmark_Magdeburg, args: "--window -7:14"}
+    bluesky-Wroclaw:           {platform: bluesky, event: 2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow, args: "--window -7:14"}
+    bluesky-Protesty:          {platform: bluesky, event: 2025-07-19_Protesty_Antyimigracyjne_Polska, args: "--window -7:14"}
+    wykop-Naloty_ICE:          {platform: wykop, event: 2025-06-06_Naloty_ICE_Los_Angeles, args: "--window -7:14"}
+    bluesky-Swinoujscie: {platform: bluesky, event: 2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci, args: "--window -7:14"}
+    bluesky-Bielsko:     {platform: bluesky, event: 2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala, args: "--window -7:14"}

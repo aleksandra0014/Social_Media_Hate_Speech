@@ -5,8 +5,8 @@ stages:
     deps:
     - path: new_events.json
       hash: md5
-      md5: da4b351d5c02fdd0954a09fb0b5a29d9
-      size: 284
+      md5: bcc01997aecb18adbbfc00189ea487ba
+      size: 290
     - path: scripts/bluesky.py
       hash: md5
       md5: 8c7dea6226d7a789edbc36ded30264c8
@@ -20,9 +20,9 @@ stages:
     outs:
     - path: data/raw/bluesky
       hash: md5
-      md5: 4b9cdfda2c3ca115103a8491f349be9d.dir
-      size: 236500502
-      nfiles: 75
+      md5: 95b84616c41f4dd2df3ff4f807fde3f7.dir
+      size: 327889248
+      nfiles: 100
   filter_bluesky@2024-05-28_Atak_Zolnierz_Granica:
     cmd: python scripts/preprocess_filter.py --platform bluesky --event 
       2024-05-28_Atak_Zolnierz_Granica
@@ -4057,7 +4057,7 @@ stages:
     outs:
     - path: data/interim/wykop/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/llm
       hash: md5
-      md5: 8af7be3be1665d281cf29157f4a6b2f6.dir
+      md5: 8f9a02be566efcc2e2a301f8b098cf97.dir
       size: 155792
       nfiles: 2
   llm@wykop-Atak_Jaroslaw:
@@ -4093,4 +4093,859 @@ stages:
       hash: md5
       md5: b7601afefbc845762994f3e9856cd8e2.dir
       size: 2000453
+      nfiles: 2
+  filter_bluesky@2024-12-20_Atak_Jarmark_Magdeburg:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2024-12-20_Atak_Jarmark_Magdeburg
+    deps:
+    - path: data/raw/bluesky/2024-12-20_Atak_Jarmark_Magdeburg/comments.csv
+      hash: md5
+      md5: d462c3899e34470234676bc3ee27ee99
+      size: 11304609
+    - path: data/raw/bluesky/2024-12-20_Atak_Jarmark_Magdeburg/posts.csv
+      hash: md5
+      md5: 1fcf0bf07f1206e67d8651f00ba45fbd
+      size: 11137486
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: f308efd4d0d23f0481bf779e2fd4608e
+      size: 1741
+    - path: src/preprocessing
+      hash: md5
+      md5: a50f16185fb859a68415bba96c978bcb.dir
+      size: 24824
+      nfiles: 16
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/bluesky/2024-12-20_Atak_Jarmark_Magdeburg/filtered
+      hash: md5
+      md5: 81c7fd428971a129c59f4331994c4440.dir
+      size: 22536815
+      nfiles: 5
+  clean_bluesky@2024-12-20_Atak_Jarmark_Magdeburg:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2024-12-20_Atak_Jarmark_Magdeburg
+    deps:
+    - path: data/interim/bluesky/2024-12-20_Atak_Jarmark_Magdeburg/filtered
+      hash: md5
+      md5: 81c7fd428971a129c59f4331994c4440.dir
+      size: 22536815
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 1aae5de387516075e762fe9092273281
+      size: 1058
+    - path: src/preprocessing
+      hash: md5
+      md5: a50f16185fb859a68415bba96c978bcb.dir
+      size: 24824
+      nfiles: 16
+    outs:
+    - path: data/interim/bluesky/2024-12-20_Atak_Jarmark_Magdeburg/clean
+      hash: md5
+      md5: 914b5d5faf905fef642d014629d43636.dir
+      size: 27228133
+      nfiles: 2
+  slurs_bluesky@2024-12-20_Atak_Jarmark_Magdeburg:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2024-12-20_Atak_Jarmark_Magdeburg
+    deps:
+    - path: data/interim/bluesky/2024-12-20_Atak_Jarmark_Magdeburg/clean
+      hash: md5
+      md5: 914b5d5faf905fef642d014629d43636.dir
+      size: 27228133
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+    - path: src/lexicon
+      hash: md5
+      md5: 74add3a56c5ce01148d705de46a9e2c0.dir
+      size: 14059
+      nfiles: 4
+    outs:
+    - path: data/interim/bluesky/2024-12-20_Atak_Jarmark_Magdeburg/slurs
+      hash: md5
+      md5: df39ca72ad987d1b9c307798609337f4.dir
+      size: 806318
+      nfiles: 3
+  topic_bluesky@2024-12-20_Atak_Jarmark_Magdeburg:
+    cmd: python scripts/topic_filter.py --platform bluesky --event 
+      2024-12-20_Atak_Jarmark_Magdeburg
+    deps:
+    - path: data/interim/bluesky/2024-12-20_Atak_Jarmark_Magdeburg/clean
+      hash: md5
+      md5: 914b5d5faf905fef642d014629d43636.dir
+      size: 27228133
+      nfiles: 2
+    - path: data/interim/bluesky/2024-12-20_Atak_Jarmark_Magdeburg/slurs
+      hash: md5
+      md5: df39ca72ad987d1b9c307798609337f4.dir
+      size: 806318
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: c630cbe40592534b2d58852deed06327
+      size: 3325
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: a1bfc78c48457fc4410153c3365ef5d2
+      size: 17745
+    - path: src/preprocessing
+      hash: md5
+      md5: a50f16185fb859a68415bba96c978bcb.dir
+      size: 24824
+      nfiles: 16
+    outs:
+    - path: data/interim/bluesky/2024-12-20_Atak_Jarmark_Magdeburg/topic
+      hash: md5
+      md5: c7ea10d70245df95f0e52d3c6d1ccae3.dir
+      size: 3926077
+      nfiles: 3
+  filter_bluesky@2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow
+    deps:
+    - path: 
+        data/raw/bluesky/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/comments.csv
+      hash: md5
+      md5: d08eb523afa8ae965659210914817e2f
+      size: 8263074
+    - path: 
+        data/raw/bluesky/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/posts.csv
+      hash: md5
+      md5: 1e4c9195f5aa39429d41191a3a5a50f4
+      size: 8589868
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: f308efd4d0d23f0481bf779e2fd4608e
+      size: 1741
+    - path: src/preprocessing
+      hash: md5
+      md5: a50f16185fb859a68415bba96c978bcb.dir
+      size: 24824
+      nfiles: 16
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: 
+        data/interim/bluesky/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/filtered
+      hash: md5
+      md5: 224b02a8d0725d844a0b88da7afc2e05.dir
+      size: 16935664
+      nfiles: 5
+  clean_bluesky@2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow
+    deps:
+    - path: 
+        data/interim/bluesky/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/filtered
+      hash: md5
+      md5: 224b02a8d0725d844a0b88da7afc2e05.dir
+      size: 16935664
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 1aae5de387516075e762fe9092273281
+      size: 1058
+    - path: src/preprocessing
+      hash: md5
+      md5: a50f16185fb859a68415bba96c978bcb.dir
+      size: 24824
+      nfiles: 16
+    outs:
+    - path: 
+        data/interim/bluesky/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/clean
+      hash: md5
+      md5: 40d8ba798eea5b5dd6b1b9ce9a4f24c1.dir
+      size: 19523694
+      nfiles: 2
+  slurs_bluesky@2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow
+    deps:
+    - path: 
+        data/interim/bluesky/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/clean
+      hash: md5
+      md5: 40d8ba798eea5b5dd6b1b9ce9a4f24c1.dir
+      size: 19523694
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+    - path: src/lexicon
+      hash: md5
+      md5: 74add3a56c5ce01148d705de46a9e2c0.dir
+      size: 14059
+      nfiles: 4
+    outs:
+    - path: 
+        data/interim/bluesky/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/slurs
+      hash: md5
+      md5: f4ade573d953944602aecf504608b14d.dir
+      size: 554011
+      nfiles: 3
+  topic_bluesky@2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow:
+    cmd: python scripts/topic_filter.py --platform bluesky --event 
+      2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow
+    deps:
+    - path: 
+        data/interim/bluesky/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/clean
+      hash: md5
+      md5: 40d8ba798eea5b5dd6b1b9ce9a4f24c1.dir
+      size: 19523694
+      nfiles: 2
+    - path: 
+        data/interim/bluesky/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/slurs
+      hash: md5
+      md5: f4ade573d953944602aecf504608b14d.dir
+      size: 554011
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: c630cbe40592534b2d58852deed06327
+      size: 3325
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: a1bfc78c48457fc4410153c3365ef5d2
+      size: 17745
+    - path: src/preprocessing
+      hash: md5
+      md5: a50f16185fb859a68415bba96c978bcb.dir
+      size: 24824
+      nfiles: 16
+    outs:
+    - path: 
+        data/interim/bluesky/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/topic
+      hash: md5
+      md5: cbfd7517b05b3882d7b7b8c6d793f99d.dir
+      size: 2947339
+      nfiles: 3
+  filter_bluesky@2025-07-19_Protesty_Antyimigracyjne_Polska:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2025-07-19_Protesty_Antyimigracyjne_Polska
+    deps:
+    - path: 
+        data/raw/bluesky/2025-07-19_Protesty_Antyimigracyjne_Polska/comments.csv
+      hash: md5
+      md5: c9493194e96ca618126284dc2c1f8568
+      size: 5794231
+    - path: 
+        data/raw/bluesky/2025-07-19_Protesty_Antyimigracyjne_Polska/posts.csv
+      hash: md5
+      md5: 1212a6bb479d2e7d100edd491120e807
+      size: 6058026
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: f308efd4d0d23f0481bf779e2fd4608e
+      size: 1741
+    - path: src/preprocessing
+      hash: md5
+      md5: a50f16185fb859a68415bba96c978bcb.dir
+      size: 24824
+      nfiles: 16
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: 
+        data/interim/bluesky/2025-07-19_Protesty_Antyimigracyjne_Polska/filtered
+      hash: md5
+      md5: 4055e0d1b9ca811ddd22d76d0cf8a7d7.dir
+      size: 11903617
+      nfiles: 5
+  clean_bluesky@2025-07-19_Protesty_Antyimigracyjne_Polska:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2025-07-19_Protesty_Antyimigracyjne_Polska
+    deps:
+    - path: 
+        data/interim/bluesky/2025-07-19_Protesty_Antyimigracyjne_Polska/filtered
+      hash: md5
+      md5: 4055e0d1b9ca811ddd22d76d0cf8a7d7.dir
+      size: 11903617
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 1aae5de387516075e762fe9092273281
+      size: 1058
+    - path: src/preprocessing
+      hash: md5
+      md5: a50f16185fb859a68415bba96c978bcb.dir
+      size: 24824
+      nfiles: 16
+    outs:
+    - path: 
+        data/interim/bluesky/2025-07-19_Protesty_Antyimigracyjne_Polska/clean
+      hash: md5
+      md5: f76ceaee79b538ec202b418c01bb66ad.dir
+      size: 14273400
+      nfiles: 2
+  slurs_bluesky@2025-07-19_Protesty_Antyimigracyjne_Polska:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2025-07-19_Protesty_Antyimigracyjne_Polska
+    deps:
+    - path: 
+        data/interim/bluesky/2025-07-19_Protesty_Antyimigracyjne_Polska/clean
+      hash: md5
+      md5: f76ceaee79b538ec202b418c01bb66ad.dir
+      size: 14273400
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+    - path: src/lexicon
+      hash: md5
+      md5: 74add3a56c5ce01148d705de46a9e2c0.dir
+      size: 14059
+      nfiles: 4
+    outs:
+    - path: 
+        data/interim/bluesky/2025-07-19_Protesty_Antyimigracyjne_Polska/slurs
+      hash: md5
+      md5: 3de806af1401f43bc693b615e11b2bf9.dir
+      size: 409991
+      nfiles: 3
+  topic_bluesky@2025-07-19_Protesty_Antyimigracyjne_Polska:
+    cmd: python scripts/topic_filter.py --platform bluesky --event 
+      2025-07-19_Protesty_Antyimigracyjne_Polska
+    deps:
+    - path: 
+        data/interim/bluesky/2025-07-19_Protesty_Antyimigracyjne_Polska/clean
+      hash: md5
+      md5: f76ceaee79b538ec202b418c01bb66ad.dir
+      size: 14273400
+      nfiles: 2
+    - path: 
+        data/interim/bluesky/2025-07-19_Protesty_Antyimigracyjne_Polska/slurs
+      hash: md5
+      md5: 3de806af1401f43bc693b615e11b2bf9.dir
+      size: 409991
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: c630cbe40592534b2d58852deed06327
+      size: 3325
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: a1bfc78c48457fc4410153c3365ef5d2
+      size: 17745
+    - path: src/preprocessing
+      hash: md5
+      md5: a50f16185fb859a68415bba96c978bcb.dir
+      size: 24824
+      nfiles: 16
+    outs:
+    - path: 
+        data/interim/bluesky/2025-07-19_Protesty_Antyimigracyjne_Polska/topic
+      hash: md5
+      md5: ef096650ac0e5aedb961cd740a5ce588.dir
+      size: 2152237
+      nfiles: 3
+  filter_bluesky@2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci
+    deps:
+    - path: 
+        data/raw/bluesky/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/comments.csv
+      hash: md5
+      md5: 05599062a71e9721409f247546535df6
+      size: 5374690
+    - path: 
+        data/raw/bluesky/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/posts.csv
+      hash: md5
+      md5: efa56e0caa21a96c01619f608ac9699a
+      size: 5631831
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: f308efd4d0d23f0481bf779e2fd4608e
+      size: 1741
+    - path: src/preprocessing
+      hash: md5
+      md5: a50f16185fb859a68415bba96c978bcb.dir
+      size: 24824
+      nfiles: 16
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: 
+        data/interim/bluesky/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/filtered
+      hash: md5
+      md5: fdb818a043b5713232f1aa5f8da862e3.dir
+      size: 11054310
+      nfiles: 5
+  clean_bluesky@2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci
+    deps:
+    - path: 
+        data/interim/bluesky/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/filtered
+      hash: md5
+      md5: fdb818a043b5713232f1aa5f8da862e3.dir
+      size: 11054310
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 1aae5de387516075e762fe9092273281
+      size: 1058
+    - path: src/preprocessing
+      hash: md5
+      md5: a50f16185fb859a68415bba96c978bcb.dir
+      size: 24824
+      nfiles: 16
+    outs:
+    - path: 
+        data/interim/bluesky/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/clean
+      hash: md5
+      md5: 5ccab994f33d922c684e1c1c2e0dd0b2.dir
+      size: 13069011
+      nfiles: 2
+  slurs_bluesky@2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci
+    deps:
+    - path: 
+        data/interim/bluesky/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/clean
+      hash: md5
+      md5: 5ccab994f33d922c684e1c1c2e0dd0b2.dir
+      size: 13069011
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+    - path: src/lexicon
+      hash: md5
+      md5: 74add3a56c5ce01148d705de46a9e2c0.dir
+      size: 14059
+      nfiles: 4
+    outs:
+    - path: 
+        data/interim/bluesky/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/slurs
+      hash: md5
+      md5: 626903f4cbc886d9ea8b70ca2034b5bc.dir
+      size: 370782
+      nfiles: 3
+  topic_bluesky@2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci:
+    cmd: python scripts/topic_filter.py --platform bluesky --event 
+      2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci
+    deps:
+    - path: 
+        data/interim/bluesky/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/clean
+      hash: md5
+      md5: 5ccab994f33d922c684e1c1c2e0dd0b2.dir
+      size: 13069011
+      nfiles: 2
+    - path: 
+        data/interim/bluesky/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/slurs
+      hash: md5
+      md5: 626903f4cbc886d9ea8b70ca2034b5bc.dir
+      size: 370782
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: c630cbe40592534b2d58852deed06327
+      size: 3325
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: a1bfc78c48457fc4410153c3365ef5d2
+      size: 17745
+    - path: src/preprocessing
+      hash: md5
+      md5: a50f16185fb859a68415bba96c978bcb.dir
+      size: 24824
+      nfiles: 16
+    outs:
+    - path: 
+        data/interim/bluesky/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/topic
+      hash: md5
+      md5: f09a8b88f4084c04bf7724878b5a4419.dir
+      size: 2053729
+      nfiles: 3
+  filter_bluesky@2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala:
+    cmd: python scripts/preprocess_filter.py --platform bluesky --event 
+      2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala
+    deps:
+    - path: 
+        data/raw/bluesky/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/comments.csv
+      hash: md5
+      md5: 4fe91e3d3590092a4cc2921e05167cb6
+      size: 4929088
+    - path: 
+        data/raw/bluesky/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/posts.csv
+      hash: md5
+      md5: b5b446a739068759cc8a07fdba2d2ae3
+      size: 5223249
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: f308efd4d0d23f0481bf779e2fd4608e
+      size: 1741
+    - path: src/preprocessing
+      hash: md5
+      md5: a50f16185fb859a68415bba96c978bcb.dir
+      size: 24824
+      nfiles: 16
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: 
+        data/interim/bluesky/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/filtered
+      hash: md5
+      md5: 5768b2ec812e31bf556037ba3394b81b.dir
+      size: 10201366
+      nfiles: 5
+  clean_bluesky@2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala:
+    cmd: python scripts/preprocess_clean.py --platform bluesky --event 
+      2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala
+    deps:
+    - path: 
+        data/interim/bluesky/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/filtered
+      hash: md5
+      md5: 5768b2ec812e31bf556037ba3394b81b.dir
+      size: 10201366
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 1aae5de387516075e762fe9092273281
+      size: 1058
+    - path: src/preprocessing
+      hash: md5
+      md5: a50f16185fb859a68415bba96c978bcb.dir
+      size: 24824
+      nfiles: 16
+    outs:
+    - path: 
+        data/interim/bluesky/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/clean
+      hash: md5
+      md5: 361cd2d502eb970aa59b346a4cb340a4.dir
+      size: 11799290
+      nfiles: 2
+  slurs_bluesky@2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala:
+    cmd: python scripts/preprocess_slurs.py --platform bluesky --event 
+      2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala
+    deps:
+    - path: 
+        data/interim/bluesky/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/clean
+      hash: md5
+      md5: 361cd2d502eb970aa59b346a4cb340a4.dir
+      size: 11799290
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+    - path: src/lexicon
+      hash: md5
+      md5: 74add3a56c5ce01148d705de46a9e2c0.dir
+      size: 14059
+      nfiles: 4
+    outs:
+    - path: 
+        data/interim/bluesky/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/slurs
+      hash: md5
+      md5: a59ce8d0897bd2c710726283e4318f1e.dir
+      size: 337175
+      nfiles: 3
+  topic_bluesky@2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala:
+    cmd: python scripts/topic_filter.py --platform bluesky --event 
+      2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala
+    deps:
+    - path: 
+        data/interim/bluesky/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/clean
+      hash: md5
+      md5: 361cd2d502eb970aa59b346a4cb340a4.dir
+      size: 11799290
+      nfiles: 2
+    - path: 
+        data/interim/bluesky/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/slurs
+      hash: md5
+      md5: a59ce8d0897bd2c710726283e4318f1e.dir
+      size: 337175
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: c630cbe40592534b2d58852deed06327
+      size: 3325
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: a1bfc78c48457fc4410153c3365ef5d2
+      size: 17745
+    - path: src/preprocessing
+      hash: md5
+      md5: a50f16185fb859a68415bba96c978bcb.dir
+      size: 24824
+      nfiles: 16
+    outs:
+    - path: 
+        data/interim/bluesky/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/topic
+      hash: md5
+      md5: 750b48036133a413f72d6798b6c0edf7.dir
+      size: 1866345
+      nfiles: 3
+  llm@bluesky-Jarmark_Magdeburg:
+    cmd: python scripts/llm_classify.py --platform bluesky --event 
+      2024-12-20_Atak_Jarmark_Magdeburg --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/bluesky/2024-12-20_Atak_Jarmark_Magdeburg/clean
+      hash: md5
+      md5: 914b5d5faf905fef642d014629d43636.dir
+      size: 27228133
+      nfiles: 2
+    - path: data/interim/bluesky/2024-12-20_Atak_Jarmark_Magdeburg/topic
+      hash: md5
+      md5: c7ea10d70245df95f0e52d3c6d1ccae3.dir
+      size: 3926077
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: b4a533733f05de58b3746b3e5d4bd89b
+      size: 10042
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 2e799f06f2ee39ffca996259e1e2ddab
+      size: 27648
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/bluesky/2024-12-20_Atak_Jarmark_Magdeburg/llm
+      hash: md5
+      md5: 67f6366928fbfef02cc7a5478238e083.dir
+      size: 1228322
+      nfiles: 2
+  llm@bluesky-Wroclaw:
+    cmd: python scripts/llm_classify.py --platform bluesky --event 
+      2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow --provider gemini 
+      --model gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: 
+        data/interim/bluesky/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/clean
+      hash: md5
+      md5: 40d8ba798eea5b5dd6b1b9ce9a4f24c1.dir
+      size: 19523694
+      nfiles: 2
+    - path: 
+        data/interim/bluesky/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/topic
+      hash: md5
+      md5: cbfd7517b05b3882d7b7b8c6d793f99d.dir
+      size: 2947339
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: b4a533733f05de58b3746b3e5d4bd89b
+      size: 10042
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 2e799f06f2ee39ffca996259e1e2ddab
+      size: 27648
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: 
+        data/interim/bluesky/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/llm
+      hash: md5
+      md5: 569b2d6b311c1f2956f446d05a5e3934.dir
+      size: 963976
+      nfiles: 2
+  llm@bluesky-Protesty:
+    cmd: python scripts/llm_classify.py --platform bluesky --event 
+      2025-07-19_Protesty_Antyimigracyjne_Polska --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: 
+        data/interim/bluesky/2025-07-19_Protesty_Antyimigracyjne_Polska/clean
+      hash: md5
+      md5: f76ceaee79b538ec202b418c01bb66ad.dir
+      size: 14273400
+      nfiles: 2
+    - path: 
+        data/interim/bluesky/2025-07-19_Protesty_Antyimigracyjne_Polska/topic
+      hash: md5
+      md5: ef096650ac0e5aedb961cd740a5ce588.dir
+      size: 2152237
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: b4a533733f05de58b3746b3e5d4bd89b
+      size: 10042
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 2e799f06f2ee39ffca996259e1e2ddab
+      size: 27648
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/bluesky/2025-07-19_Protesty_Antyimigracyjne_Polska/llm
+      hash: md5
+      md5: 55ace8e5329b5d874c4d05f8df633f2f.dir
+      size: 777554
+      nfiles: 2
+  llm@wykop-Naloty_ICE:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2025-06-06_Naloty_ICE_Los_Angeles --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/wykop/2025-06-06_Naloty_ICE_Los_Angeles/clean
+      hash: md5
+      md5: b8abb8a9845a3d7f4bf73231569b94e4.dir
+      size: 17370922
+      nfiles: 2
+    - path: data/interim/wykop/2025-06-06_Naloty_ICE_Los_Angeles/topic
+      hash: md5
+      md5: 3d1fcf3db5d89e8b0a6c458ceae989e7.dir
+      size: 5438209
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: b4a533733f05de58b3746b3e5d4bd89b
+      size: 10042
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 2e799f06f2ee39ffca996259e1e2ddab
+      size: 27648
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/wykop/2025-06-06_Naloty_ICE_Los_Angeles/llm
+      hash: md5
+      md5: 6245e876c7c968ae9577c1da68414367.dir
+      size: 1994270
+      nfiles: 2
+  llm@bluesky-Swinoujscie:
+    cmd: python scripts/llm_classify.py --platform bluesky --event 
+      2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci --provider gemini 
+      --model gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: 
+        data/interim/bluesky/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/clean
+      hash: md5
+      md5: 5ccab994f33d922c684e1c1c2e0dd0b2.dir
+      size: 13069011
+      nfiles: 2
+    - path: 
+        data/interim/bluesky/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/topic
+      hash: md5
+      md5: f09a8b88f4084c04bf7724878b5a4419.dir
+      size: 2053729
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: b4a533733f05de58b3746b3e5d4bd89b
+      size: 10042
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 2e799f06f2ee39ffca996259e1e2ddab
+      size: 27648
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: 
+        data/interim/bluesky/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/llm
+      hash: md5
+      md5: 523b5c0a2296033d00c4d46115c19c84.dir
+      size: 53696
+      nfiles: 2
+  llm@bluesky-Bielsko:
+    cmd: python scripts/llm_classify.py --platform bluesky --event 
+      2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala --provider gemini 
+      --model gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: 
+        data/interim/bluesky/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/clean
+      hash: md5
+      md5: 361cd2d502eb970aa59b346a4cb340a4.dir
+      size: 11799290
+      nfiles: 2
+    - path: 
+        data/interim/bluesky/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/topic
+      hash: md5
+      md5: 750b48036133a413f72d6798b6c0edf7.dir
+      size: 1866345
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: b4a533733f05de58b3746b3e5d4bd89b
+      size: 10042
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 2e799f06f2ee39ffca996259e1e2ddab
+      size: 27648
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: 
+        data/interim/bluesky/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/llm
+      hash: md5
+      md5: d3888d7983af0b33e56bd5c8a535ce44.dir
+      size: 22331
       nfiles: 2
