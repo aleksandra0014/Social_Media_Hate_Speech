@@ -38,6 +38,40 @@ preprocess:
     - 2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci
     - 2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala
 
+  # Wykop event folders (scripts/wykop.py: events.json + data/external/wykop/nowe_wydarzenia.json)
+  events_wykop:
+    - 2024-03-15_Dezinformacja_Prawa_Wyborcze_Ukraina
+    - 2024-04-10_Pakt_Azyl_PE
+    - 2024-05-28_Atak_Zolnierz_Granica
+    - 2024-06-06_Smierc_Zolnierza
+    - 2024-06-13_Strefa_Buforowa_Granica
+    - 2024-09-08_Bojka_Srem
+    - 2024-10-12_Strategia_Migracyjna
+    - 2024-10-15_Incydent_Zabrze
+    - 2024-12-15_Raport_MSWiA_Deportacje_2024
+    - 2024-12-20_Atak_Jarmark_Magdeburg
+    - 2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow
+    - 2025-04-15_Zmiana_Ustawy_Pomoc_Ukraina
+    - 2025-04-20_Porachunki_Kryminalne_Poznan
+    - 2025-06-06_Naloty_ICE_Los_Angeles
+    - 2025-07-15_Pozar_Hali_Warszawa_Dezinformacja
+    - 2025-07-19_Protesty_Antyimigracyjne_Polska
+    - 2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci
+    - 2025-08-15_Deepfake_AI_Relokacja
+    - 2025-09-15_Szczyt_V4_Praga
+    - 2025-10-15_Dezinformacja_Krakow
+    - 2025-11-15_Akcja_Sluzb_Centra_Logistyczne
+    - 2026-01-22_Napad_Kryminalny_Katowice
+    - 2026-02-15_Balony_Rozpoznawcze_Bialorus
+    - 2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie
+    - 2026-06-12_Raport_MSWiA_Wdrazanie_Paktu
+    - 2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala
+    - 2026-07-30_Ceuta_Masowe_Przekroczenie
+    - 2026-08-15_Atak_Kamienna_Gora
+    - 2026-09-05_Usiłowanie_Zabojstwa_Gdansk
+    - 2026-09-15_Atak_Jaroslaw
+    - 2026-09-15_Raport_SG_Statystyki_Deportacje
+
   filter:
     min_words: 3                        # fewer letter-words (after removing links/@/#) -> very_short
     languages: [pl, en, de, ru, uk]     # candidate languages for lingua
@@ -61,3 +95,21 @@ llm:
     wykop-Naloty_ICE:          {platform: wykop, event: 2025-06-06_Naloty_ICE_Los_Angeles, args: "--window -7:14"}
     bluesky-Swinoujscie: {platform: bluesky, event: 2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci, args: "--window -7:14"}
     bluesky-Bielsko:     {platform: bluesky, event: 2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala, args: "--window -7:14"}
+    wykop-Dezinformacja_Prawa_Wyborcze_Ukraina: {platform: wykop, event: 2024-03-15_Dezinformacja_Prawa_Wyborcze_Ukraina, args: "--window -7:14"}
+    wykop-Strefa_Buforowa_Granica: {platform: wykop, event: 2024-06-13_Strefa_Buforowa_Granica, args: "--window -7:14"}
+    wykop-Incydent_Zabrze: {platform: wykop, event: 2024-10-15_Incydent_Zabrze, args: "--window -7:14"}
+    wykop-Raport_MSWiA_Deportacje_2024: {platform: wykop, event: 2024-12-15_Raport_MSWiA_Deportacje_2024, args: "--window -7:14"}
+    wykop-Atak_Jarmark_Magdeburg: {platform: wykop, event: 2024-12-20_Atak_Jarmark_Magdeburg, args: "--window -7:14"}
+    wykop-Dezinformacja_Wroclaw_Relokacja_Migrantow: {platform: wykop, event: 2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow, args: "--window -7:14"}
+    wykop-Zmiana_Ustawy_Pomoc_Ukraina: {platform: wykop, event: 2025-04-15_Zmiana_Ustawy_Pomoc_Ukraina, args: "--window -7:14"}
+    wykop-Porachunki_Kryminalne_Poznan: {platform: wykop, event: 2025-04-20_Porachunki_Kryminalne_Poznan, args: "--window -7:14"}
+    wykop-Pozar_Hali_Warszawa_Dezinformacja: {platform: wykop, event: 2025-07-15_Pozar_Hali_Warszawa_Dezinformacja, args: "--window -7:14"}
+    wykop-Protesty_Antyimigracyjne_Polska: {platform: wykop, event: 2025-07-19_Protesty_Antyimigracyjne_Polska, args: "--window -7:14"}
+    wykop-Dezinformacja_Swinoujscie_Autokar_Migranci: {platform: wykop, event: 2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci, args: "--window -7:14"}
+    wykop-Deepfake_AI_Relokacja: {platform: wykop, event: 2025-08-15_Deepfake_AI_Relokacja, args: "--window -7:14"}
+    wykop-Szczyt_V4_Praga: {platform: wykop, event: 2025-09-15_Szczyt_V4_Praga, args: "--window -7:14"}
+    wykop-Akcja_Sluzb_Centra_Logistyczne: {platform: wykop, event: 2025-11-15_Akcja_Sluzb_Centra_Logistyczne, args: "--window -7:14"}
+    wykop-Napad_Kryminalny_Katowice: {platform: wykop, event: 2026-01-22_Napad_Kryminalny_Katowice, args: "--window -7:14"}
+    wykop-Balony_Rozpoznawcze_Bialorus: {platform: wykop, event: 2026-02-15_Balony_Rozpoznawcze_Bialorus, args: "--window -7:14"}
+    wykop-Atak_Ukrainskie_Nastolatki_Bielsko_Biala: {platform: wykop, event: 2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala, args: "--window -7:14"}
+    wykop-Usiłowanie_Zabojstwa_Gdansk: {platform: wykop, event: 2026-09-05_Usiłowanie_Zabojstwa_Gdansk, args: "--window -7:14"}
