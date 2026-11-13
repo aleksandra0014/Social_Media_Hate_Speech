@@ -3989,22 +3989,24 @@ stages:
     deps:
     - path: data/interim/wykop/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/clean
       hash: md5
-      md5: 5a818045c3887e335f6a7a66367ee6a4.dir
-      size: 7307974
+      md5: 0102e5928f280657e9cd9ebf2f61de9d.dir
+      size: 21613288
       nfiles: 2
     - path: data/interim/wykop/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/topic
       hash: md5
-      md5: 9cc58b843c52b407be69d2dd11ef71d9.dir
-      size: 2360706
+      md5: 195f9c2e85da4c81fe852bb01e0824de.dir
+      size: 6787461
       nfiles: 3
     - path: scripts/llm_classify.py
       hash: md5
-      md5: b4a533733f05de58b3746b3e5d4bd89b
-      size: 10042
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
     - path: scripts/llm_gold_test.py
       hash: md5
-      md5: 2e799f06f2ee39ffca996259e1e2ddab
-      size: 27648
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
     params:
       params.yaml:
         llm.batch_size: 50
@@ -4013,8 +4015,8 @@ stages:
     outs:
     - path: data/interim/wykop/2026-06-12_Pakt_Migracyjny_Wejscie_w_Zycie/llm
       hash: md5
-      md5: 8f9a02be566efcc2e2a301f8b098cf97.dir
-      size: 155792
+      md5: fb915ce65ffa34fbc1376ea33707cf35.dir
+      size: 6072977
       nfiles: 2
   llm@wykop-Atak_Jaroslaw:
     cmd: python scripts/llm_classify.py --platform wykop --event 
@@ -4023,22 +4025,24 @@ stages:
     deps:
     - path: data/interim/wykop/2026-09-15_Atak_Jaroslaw/clean
       hash: md5
-      md5: e7d391272115626d59e426c70e2bf560.dir
-      size: 8091756
+      md5: cbeb72fdc17414347e20728b86e1d479.dir
+      size: 21713431
       nfiles: 2
     - path: data/interim/wykop/2026-09-15_Atak_Jaroslaw/topic
       hash: md5
-      md5: cb07080cb1ebb920dcf7d65d3ad97852.dir
-      size: 2295221
+      md5: 5632a4b84f5a704c17f49f2cdd122719.dir
+      size: 6020837
       nfiles: 3
     - path: scripts/llm_classify.py
       hash: md5
-      md5: b4a533733f05de58b3746b3e5d4bd89b
-      size: 10042
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
     - path: scripts/llm_gold_test.py
       hash: md5
-      md5: 2e799f06f2ee39ffca996259e1e2ddab
-      size: 27648
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
     params:
       params.yaml:
         llm.batch_size: 50
@@ -4047,8 +4051,8 @@ stages:
     outs:
     - path: data/interim/wykop/2026-09-15_Atak_Jaroslaw/llm
       hash: md5
-      md5: b7601afefbc845762994f3e9856cd8e2.dir
-      size: 2000453
+      md5: fa54d5181c800bf89bb4cbeba529dd16.dir
+      size: 4633632
       nfiles: 2
   filter_bluesky@2024-12-20_Atak_Jarmark_Magdeburg:
     cmd: python scripts/preprocess_filter.py --platform bluesky --event 
@@ -4804,22 +4808,24 @@ stages:
     deps:
     - path: data/interim/wykop/2025-06-06_Naloty_ICE_Los_Angeles/clean
       hash: md5
-      md5: b8abb8a9845a3d7f4bf73231569b94e4.dir
-      size: 17370922
+      md5: c08f04621cbaa9087561ef80fbd832df.dir
+      size: 7884396
       nfiles: 2
     - path: data/interim/wykop/2025-06-06_Naloty_ICE_Los_Angeles/topic
       hash: md5
-      md5: 3d1fcf3db5d89e8b0a6c458ceae989e7.dir
-      size: 5438209
+      md5: a1cb4cc34afc6f58d6cd253adc1f76d0.dir
+      size: 2271067
       nfiles: 3
     - path: scripts/llm_classify.py
       hash: md5
-      md5: b4a533733f05de58b3746b3e5d4bd89b
-      size: 10042
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
     - path: scripts/llm_gold_test.py
       hash: md5
-      md5: 2e799f06f2ee39ffca996259e1e2ddab
-      size: 27648
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
     params:
       params.yaml:
         llm.batch_size: 50
@@ -4828,8 +4834,8 @@ stages:
     outs:
     - path: data/interim/wykop/2025-06-06_Naloty_ICE_Los_Angeles/llm
       hash: md5
-      md5: 6245e876c7c968ae9577c1da68414367.dir
-      size: 1994270
+      md5: ad1848a4b4086df8a6b07151ccb45b6c.dir
+      size: 2064257
       nfiles: 2
   llm@bluesky-Swinoujscie:
     cmd: python scripts/llm_classify.py --platform bluesky --event 
@@ -7364,3 +7370,665 @@ stages:
       md5: 580a4a9b488990f681e2bd20e6414d7c.dir
       size: 7365345
       nfiles: 3
+  llm@wykop-Deepfake_AI_Relokacja:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2025-08-15_Deepfake_AI_Relokacja --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/wykop/2025-08-15_Deepfake_AI_Relokacja/clean
+      hash: md5
+      md5: 66d630771e9faa5e06b05f6fedd9fc41.dir
+      size: 21858079
+      nfiles: 2
+    - path: data/interim/wykop/2025-08-15_Deepfake_AI_Relokacja/topic
+      hash: md5
+      md5: 7dccff33cabc99a5ee2dcd579b311dc6.dir
+      size: 6306088
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/wykop/2025-08-15_Deepfake_AI_Relokacja/llm
+      hash: md5
+      md5: f96d13a74f3d99045f7e9f82e68f3514.dir
+      size: 4063044
+      nfiles: 2
+  llm@wykop-Dezinformacja_Swinoujscie_Autokar_Migranci:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci --provider gemini 
+      --model gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: 
+        data/interim/wykop/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/clean
+      hash: md5
+      md5: 45fb4679d84ac3f5ec03a5a8e8b2d93c.dir
+      size: 23890212
+      nfiles: 2
+    - path: 
+        data/interim/wykop/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/topic
+      hash: md5
+      md5: 86796708bac1241e7949d2d0f373b213.dir
+      size: 7042107
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: 
+        data/interim/wykop/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/llm
+      hash: md5
+      md5: 8b54680793f6f2f3c5059c1d26a54c75.dir
+      size: 1319021
+      nfiles: 2
+  llm@wykop-Protesty_Antyimigracyjne_Polska:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2025-07-19_Protesty_Antyimigracyjne_Polska --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/wykop/2025-07-19_Protesty_Antyimigracyjne_Polska/clean
+      hash: md5
+      md5: d55db326859ffc815134222b59cab228.dir
+      size: 23323530
+      nfiles: 2
+    - path: data/interim/wykop/2025-07-19_Protesty_Antyimigracyjne_Polska/topic
+      hash: md5
+      md5: d8f0eb683c46b01aed01a9fd4140c43a.dir
+      size: 6982573
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/wykop/2025-07-19_Protesty_Antyimigracyjne_Polska/llm
+      hash: md5
+      md5: 3a0a2134d55adf52c265f8e1614f07e2.dir
+      size: 228605
+      nfiles: 2
+  llm@wykop-Dezinformacja_Wroclaw_Relokacja_Migrantow:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow --provider gemini 
+      --model gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: 
+        data/interim/wykop/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/clean
+      hash: md5
+      md5: 0b00a5fb16bb77ed79be1113e6a4ab49.dir
+      size: 23647682
+      nfiles: 2
+    - path: 
+        data/interim/wykop/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/topic
+      hash: md5
+      md5: 244544bd80a13a8e538fd7d9127b4145.dir
+      size: 7536847
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: 
+        data/interim/wykop/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/llm
+      hash: md5
+      md5: 25d91210812ae0c8106bcb722c73077e.dir
+      size: 2843558
+      nfiles: 2
+  llm@wykop-Incydent_Zabrze:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2024-10-15_Incydent_Zabrze --provider gemini --model gemini-3.5-flash-lite
+      --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/wykop/2024-10-15_Incydent_Zabrze/clean
+      hash: md5
+      md5: 538bbc3a290644a7722d2e60b4d297a7.dir
+      size: 21403328
+      nfiles: 2
+    - path: data/interim/wykop/2024-10-15_Incydent_Zabrze/topic
+      hash: md5
+      md5: f7df47310acc1b28d1821e0ec5af216e.dir
+      size: 6277978
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/wykop/2024-10-15_Incydent_Zabrze/llm
+      hash: md5
+      md5: 9deecf60826057896ad288502de8019a.dir
+      size: 5362787
+      nfiles: 2
+  llm@wykop-Balony_Rozpoznawcze_Bialorus:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2026-02-15_Balony_Rozpoznawcze_Bialorus --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/wykop/2026-02-15_Balony_Rozpoznawcze_Bialorus/clean
+      hash: md5
+      md5: 645ba180a2285ed156c17c617fadda61.dir
+      size: 22714611
+      nfiles: 2
+    - path: data/interim/wykop/2026-02-15_Balony_Rozpoznawcze_Bialorus/topic
+      hash: md5
+      md5: e36f25042e2ed27126f0265367f49d2a.dir
+      size: 6528595
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/wykop/2026-02-15_Balony_Rozpoznawcze_Bialorus/llm
+      hash: md5
+      md5: bd7ec3603959ab3424d0be4bdf47f451.dir
+      size: 173926
+      nfiles: 2
+  llm@wykop-Napad_Kryminalny_Katowice:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2026-01-22_Napad_Kryminalny_Katowice --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/wykop/2026-01-22_Napad_Kryminalny_Katowice/clean
+      hash: md5
+      md5: 573db88c18650113d20363c10e2986ea.dir
+      size: 21885202
+      nfiles: 2
+    - path: data/interim/wykop/2026-01-22_Napad_Kryminalny_Katowice/topic
+      hash: md5
+      md5: c11f91e5046b074e490bfa1e48635f95.dir
+      size: 6277185
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/wykop/2026-01-22_Napad_Kryminalny_Katowice/llm
+      hash: md5
+      md5: bf2fc3fc16d81bf37011d886427a4a05.dir
+      size: 145295
+      nfiles: 2
+  llm@wykop-Akcja_Sluzb_Centra_Logistyczne:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2025-11-15_Akcja_Sluzb_Centra_Logistyczne --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/wykop/2025-11-15_Akcja_Sluzb_Centra_Logistyczne/clean
+      hash: md5
+      md5: cf53d7e77a99a3678331409064dd73f4.dir
+      size: 20749459
+      nfiles: 2
+    - path: data/interim/wykop/2025-11-15_Akcja_Sluzb_Centra_Logistyczne/topic
+      hash: md5
+      md5: 0615e722a0d8559b9915ed8293c1a1cb.dir
+      size: 6517577
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/wykop/2025-11-15_Akcja_Sluzb_Centra_Logistyczne/llm
+      hash: md5
+      md5: dbd51fa22d9850a03a2690e29882ab1a.dir
+      size: 152726
+      nfiles: 2
+  llm@wykop-Szczyt_V4_Praga:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2025-09-15_Szczyt_V4_Praga --provider gemini --model gemini-3.5-flash-lite
+      --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/wykop/2025-09-15_Szczyt_V4_Praga/clean
+      hash: md5
+      md5: 21d6f1ce9ba8d9773e50d4c59dcf5a2d.dir
+      size: 20291644
+      nfiles: 2
+    - path: data/interim/wykop/2025-09-15_Szczyt_V4_Praga/topic
+      hash: md5
+      md5: c36dfc8006a0012a91643e01127b068d.dir
+      size: 5933510
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/wykop/2025-09-15_Szczyt_V4_Praga/llm
+      hash: md5
+      md5: dcc2b1e4c513f8915bb0a1dd63fa996b.dir
+      size: 164254
+      nfiles: 2
+  llm@wykop-Atak_Ukrainskie_Nastolatki_Bielsko_Biala:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala --provider gemini 
+      --model gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: 
+        data/interim/wykop/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/clean
+      hash: md5
+      md5: 32bce803db748143e8a8eefe59b04a3d.dir
+      size: 20695561
+      nfiles: 2
+    - path: 
+        data/interim/wykop/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/topic
+      hash: md5
+      md5: 6b92ef280ecb428ef3b6448958e4272e.dir
+      size: 6733597
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: 
+        data/interim/wykop/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/llm
+      hash: md5
+      md5: e5b58e9a1ffbfeecfe57ab2f02c726db.dir
+      size: 344695
+      nfiles: 2
+  llm@wykop-Strefa_Buforowa_Granica:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2024-06-13_Strefa_Buforowa_Granica --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/wykop/2024-06-13_Strefa_Buforowa_Granica/clean
+      hash: md5
+      md5: 5c2c43d9c2361dec61f7afffa3cb1aec.dir
+      size: 19383788
+      nfiles: 2
+    - path: data/interim/wykop/2024-06-13_Strefa_Buforowa_Granica/topic
+      hash: md5
+      md5: f2b4e1e192594d9b5ec4fd453a71d87b.dir
+      size: 6209272
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/wykop/2024-06-13_Strefa_Buforowa_Granica/llm
+      hash: md5
+      md5: 264b8fc79a4d75ecc8ca681734e8a189.dir
+      size: 5809081
+      nfiles: 2
+  llm@wykop-Atak_Jarmark_Magdeburg:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2024-12-20_Atak_Jarmark_Magdeburg --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/wykop/2024-12-20_Atak_Jarmark_Magdeburg/clean
+      hash: md5
+      md5: 76d3c86d25722b14b1bc4a37761112a6.dir
+      size: 22125603
+      nfiles: 2
+    - path: data/interim/wykop/2024-12-20_Atak_Jarmark_Magdeburg/topic
+      hash: md5
+      md5: 8fc6b4bb07c8414d10ca9ebaccec1e91.dir
+      size: 6602543
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/wykop/2024-12-20_Atak_Jarmark_Magdeburg/llm
+      hash: md5
+      md5: bbc86018a9eb1d6cd88d2b9b16a412f2.dir
+      size: 3767954
+      nfiles: 2
+  llm@wykop-Porachunki_Kryminalne_Poznan:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2025-04-20_Porachunki_Kryminalne_Poznan --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/wykop/2025-04-20_Porachunki_Kryminalne_Poznan/clean
+      hash: md5
+      md5: 5458e2f44615bd97799010e80f2fcbe6.dir
+      size: 24694876
+      nfiles: 2
+    - path: data/interim/wykop/2025-04-20_Porachunki_Kryminalne_Poznan/topic
+      hash: md5
+      md5: bcef96e58ff4e5fb9a1a2c44711c47c6.dir
+      size: 7345820
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/wykop/2025-04-20_Porachunki_Kryminalne_Poznan/llm
+      hash: md5
+      md5: d8ec5899442d9f04c0d3ff130cfde8ce.dir
+      size: 183246
+      nfiles: 2
+  llm@wykop-Dezinformacja_Prawa_Wyborcze_Ukraina:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2024-03-15_Dezinformacja_Prawa_Wyborcze_Ukraina --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: 
+        data/interim/wykop/2024-03-15_Dezinformacja_Prawa_Wyborcze_Ukraina/clean
+      hash: md5
+      md5: c854b260866b2c418e6baeb7f3285578.dir
+      size: 22579227
+      nfiles: 2
+    - path: 
+        data/interim/wykop/2024-03-15_Dezinformacja_Prawa_Wyborcze_Ukraina/topic
+      hash: md5
+      md5: 38b0eed21bdb4b47e471f524f328eb43.dir
+      size: 6905267
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: 
+        data/interim/wykop/2024-03-15_Dezinformacja_Prawa_Wyborcze_Ukraina/llm
+      hash: md5
+      md5: 58006937b6574ffb2bb59496b04eb3ce.dir
+      size: 4752011
+      nfiles: 2
+  llm@wykop-Usiłowanie_Zabojstwa_Gdansk:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2026-09-05_Usiłowanie_Zabojstwa_Gdansk --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/wykop/2026-09-05_Usiłowanie_Zabojstwa_Gdansk/clean
+      hash: md5
+      md5: 9def73fe804ecbf1d64e659697fd466e.dir
+      size: 22547100
+      nfiles: 2
+    - path: data/interim/wykop/2026-09-05_Usiłowanie_Zabojstwa_Gdansk/topic
+      hash: md5
+      md5: 0036d340d0418e5d9474a892b555ba00.dir
+      size: 6580736
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/wykop/2026-09-05_Usiłowanie_Zabojstwa_Gdansk/llm
+      hash: md5
+      md5: 773a8b9b3a3fe67ef6ff1dcc6c6a2005.dir
+      size: 161135
+      nfiles: 2
+  llm@wykop-Raport_MSWiA_Deportacje_2024:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2024-12-15_Raport_MSWiA_Deportacje_2024 --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/wykop/2024-12-15_Raport_MSWiA_Deportacje_2024/clean
+      hash: md5
+      md5: 945a1349b823dc7a8b43d431d25e8bdb.dir
+      size: 21629397
+      nfiles: 2
+    - path: data/interim/wykop/2024-12-15_Raport_MSWiA_Deportacje_2024/topic
+      hash: md5
+      md5: e4c2e0f8cf89db07f0424874c51348c5.dir
+      size: 6582380
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/wykop/2024-12-15_Raport_MSWiA_Deportacje_2024/llm
+      hash: md5
+      md5: 41736695711486a621761753428d7cd0.dir
+      size: 4665132
+      nfiles: 2
+  llm@wykop-Zmiana_Ustawy_Pomoc_Ukraina:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2025-04-15_Zmiana_Ustawy_Pomoc_Ukraina --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/wykop/2025-04-15_Zmiana_Ustawy_Pomoc_Ukraina/clean
+      hash: md5
+      md5: 12725eec1eea9f509861c541f64f1de0.dir
+      size: 24882185
+      nfiles: 2
+    - path: data/interim/wykop/2025-04-15_Zmiana_Ustawy_Pomoc_Ukraina/topic
+      hash: md5
+      md5: 580a4a9b488990f681e2bd20e6414d7c.dir
+      size: 7365345
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/wykop/2025-04-15_Zmiana_Ustawy_Pomoc_Ukraina/llm
+      hash: md5
+      md5: d34bac93f21a4ededdb7a11124a6e49c.dir
+      size: 265334
+      nfiles: 2
+  llm@wykop-Pozar_Hali_Warszawa_Dezinformacja:
+    cmd: python scripts/llm_classify.py --platform wykop --event 
+      2025-07-15_Pozar_Hali_Warszawa_Dezinformacja --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: 
+        data/interim/wykop/2025-07-15_Pozar_Hali_Warszawa_Dezinformacja/clean
+      hash: md5
+      md5: eb633d47c41a926699ec2e84adf2d3ac.dir
+      size: 22811068
+      nfiles: 2
+    - path: 
+        data/interim/wykop/2025-07-15_Pozar_Hali_Warszawa_Dezinformacja/topic
+      hash: md5
+      md5: 3a1d88b0ca76a7e232605211977b2ae3.dir
+      size: 7009482
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+      isexec: true
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+      isexec: true
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/wykop/2025-07-15_Pozar_Hali_Warszawa_Dezinformacja/llm
+      hash: md5
+      md5: 91e328580edc62602927c56b25ce4584.dir
+      size: 187935
+      nfiles: 2
