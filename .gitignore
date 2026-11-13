@@ -8,3 +8,4 @@ data/annotation/**/*.xlsx
 data/annotation/**/*.csv
 .env
 data/annotation/**/*.jsonl
+.env.local

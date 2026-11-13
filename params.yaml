@@ -61,3 +61,18 @@ llm:
     wykop-Naloty_ICE:          {platform: wykop, event: 2025-06-06_Naloty_ICE_Los_Angeles, args: "--window -7:14"}
     bluesky-Swinoujscie: {platform: bluesky, event: 2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci, args: "--window -7:14"}
     bluesky-Bielsko:     {platform: bluesky, event: 2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala, args: "--window -7:14"}
+    wykop-Pakt_Azyl_PE:                    {platform: wykop, event: 2024-04-10_Pakt_Azyl_PE, args: "--window -7:14"}
+    wykop-Atak_Zolnierz_Granica:           {platform: wykop, event: 2024-05-28_Atak_Zolnierz_Granica, args: "--window -7:14"}
+    wykop-Smierc_Zolnierza:                {platform: wykop, event: 2024-06-06_Smierc_Zolnierza, args: "--window -7:14"}
+    wykop-Bojka_Srem:                      {platform: wykop, event: 2024-09-08_Bojka_Srem, args: "--window -7:14"}
+    wykop-Strategia_Migracyjna:            {platform: wykop, event: 2024-10-12_Strategia_Migracyjna, args: "--window -7:14"}
+    wykop-Dezinformacja_Krakow:            {platform: wykop, event: 2025-10-15_Dezinformacja_Krakow, args: "--window -7:14"}
+    wykop-Ceuta_Masowe_Przekroczenie:      {platform: wykop, event: 2026-07-30_Ceuta_Masowe_Przekroczenie, args: "--window -7:14"}
+    wykop-Atak_Kamienna_Gora:              {platform: wykop, event: 2026-08-15_Atak_Kamienna_Gora, args: "--window -7:14"}
+    bluesky-Pakt_Azyl_PE:                  {platform: bluesky, event: 2024-04-10_Pakt_Azyl_PE, args: "--window -7:14"}
+    bluesky-Smierc_Zolnierza:              {platform: bluesky, event: 2024-06-06_Smierc_Zolnierza, args: "--window -7:14"}
+    bluesky-Bojka_Srem:                    {platform: bluesky, event: 2024-09-08_Bojka_Srem, args: "--window -7:14"}
+    bluesky-Strategia_Migracyjna:          {platform: bluesky, event: 2024-10-12_Strategia_Migracyjna, args: "--window -7:14"}
+    bluesky-Dezinformacja_Krakow:          {platform: bluesky, event: 2025-10-15_Dezinformacja_Krakow, args: "--window -7:14"}
+    bluesky-Ceuta_Masowe_Przekroczenie:    {platform: bluesky, event: 2026-07-30_Ceuta_Masowe_Przekroczenie, args: "--window -7:14"}
+    bluesky-Atak_Kamienna_Gora:            {platform: bluesky, event: 2026-08-15_Atak_Kamienna_Gora, args: "--window -7:14"}
