@@ -7442,8 +7442,8 @@ stages:
     - path: 
         data/interim/wykop/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/llm
       hash: md5
-      md5: 8b54680793f6f2f3c5059c1d26a54c75.dir
-      size: 1319021
+      md5: 3a3d47cef9ec8ba4b88b5b7f3826770f.dir
+      size: 3897443
       nfiles: 2
   llm@wykop-Protesty_Antyimigracyjne_Polska:
     cmd: python scripts/llm_classify.py --platform wykop --event 
@@ -7478,8 +7478,8 @@ stages:
     outs:
     - path: data/interim/wykop/2025-07-19_Protesty_Antyimigracyjne_Polska/llm
       hash: md5
-      md5: 3a0a2134d55adf52c265f8e1614f07e2.dir
-      size: 228605
+      md5: be43dc05d440809bc6303935a4da2c7f.dir
+      size: 4546600
       nfiles: 2
   llm@wykop-Dezinformacja_Wroclaw_Relokacja_Migrantow:
     cmd: python scripts/llm_classify.py --platform wykop --event 
@@ -7517,8 +7517,8 @@ stages:
     - path: 
         data/interim/wykop/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/llm
       hash: md5
-      md5: 25d91210812ae0c8106bcb722c73077e.dir
-      size: 2843558
+      md5: 21028330e110a4d408b70b3b6bf8185f.dir
+      size: 4613010
       nfiles: 2
   llm@wykop-Incydent_Zabrze:
     cmd: python scripts/llm_classify.py --platform wykop --event 
@@ -7697,8 +7697,8 @@ stages:
     outs:
     - path: data/interim/wykop/2025-09-15_Szczyt_V4_Praga/llm
       hash: md5
-      md5: dcc2b1e4c513f8915bb0a1dd63fa996b.dir
-      size: 164254
+      md5: 613eff31be229567500c6ce5226e6fc1.dir
+      size: 4247397
       nfiles: 2
   llm@wykop-Atak_Ukrainskie_Nastolatki_Bielsko_Biala:
     cmd: python scripts/llm_classify.py --platform wykop --event 
@@ -7808,8 +7808,8 @@ stages:
     outs:
     - path: data/interim/wykop/2024-12-20_Atak_Jarmark_Magdeburg/llm
       hash: md5
-      md5: bbc86018a9eb1d6cd88d2b9b16a412f2.dir
-      size: 3767954
+      md5: 7a5c834c2a656a7588193f90d67ff372.dir
+      size: 4553084
       nfiles: 2
   llm@wykop-Porachunki_Kryminalne_Poznan:
     cmd: python scripts/llm_classify.py --platform wykop --event 
@@ -7844,8 +7844,8 @@ stages:
     outs:
     - path: data/interim/wykop/2025-04-20_Porachunki_Kryminalne_Poznan/llm
       hash: md5
-      md5: d8ec5899442d9f04c0d3ff130cfde8ce.dir
-      size: 183246
+      md5: fa86a8414152feb5d16ae71241f35166.dir
+      size: 3654214
       nfiles: 2
   llm@wykop-Dezinformacja_Prawa_Wyborcze_Ukraina:
     cmd: python scripts/llm_classify.py --platform wykop --event 
@@ -7991,8 +7991,8 @@ stages:
     outs:
     - path: data/interim/wykop/2025-04-15_Zmiana_Ustawy_Pomoc_Ukraina/llm
       hash: md5
-      md5: d34bac93f21a4ededdb7a11124a6e49c.dir
-      size: 265334
+      md5: e934cf66f054e1ae64e0d2eb980e7abc.dir
+      size: 3628735
       nfiles: 2
   llm@wykop-Pozar_Hali_Warszawa_Dezinformacja:
     cmd: python scripts/llm_classify.py --platform wykop --event 
@@ -8029,6 +8029,6 @@ stages:
     outs:
     - path: data/interim/wykop/2025-07-15_Pozar_Hali_Warszawa_Dezinformacja/llm
       hash: md5
-      md5: 91e328580edc62602927c56b25ce4584.dir
-      size: 187935
+      md5: 390e42a4cb9bceb59c6899790ee5f352.dir
+      size: 4850445
       nfiles: 2
