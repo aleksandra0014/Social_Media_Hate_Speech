@@ -5459,3 +5459,824 @@ stages:
       md5: 5eb96c6ad2b39b3dd4bb2aa6e225d301.dir
       size: 461678
       nfiles: 2
+  filter_youtube@2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow
+    deps:
+    - path: 
+        data/raw/youtube/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/comments.csv
+      hash: md5
+      md5: f67334474d0e9ed9841079f94ec332aa
+      size: 81976678
+    - path: 
+        data/raw/youtube/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/posts.csv
+      hash: md5
+      md5: 7bff536b17d331f47218f9eac2b0d0fa
+      size: 1007377
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: 
+        data/interim/youtube/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/filtered
+      hash: md5
+      md5: 3706911aa084eb092cc84585d0425234.dir
+      size: 83325450
+      nfiles: 5
+  clean_youtube@2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow
+    deps:
+    - path: 
+        data/interim/youtube/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/filtered
+      hash: md5
+      md5: 3706911aa084eb092cc84585d0425234.dir
+      size: 83325450
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: 
+        data/interim/youtube/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/clean
+      hash: md5
+      md5: 426567be1923c340b9696da4d78bc02a.dir
+      size: 108451417
+      nfiles: 2
+  slurs_youtube@2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow:
+    cmd: python scripts/preprocess_slurs.py --platform youtube --event 
+      2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow
+    deps:
+    - path: 
+        data/interim/youtube/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/clean
+      hash: md5
+      md5: 426567be1923c340b9696da4d78bc02a.dir
+      size: 108451417
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+    - path: src/lexicon
+      hash: md5
+      md5: df03ab20f2beec62ef795113ce226379.dir
+      size: 14069
+      nfiles: 4
+    outs:
+    - path: 
+        data/interim/youtube/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/slurs
+      hash: md5
+      md5: 4d5ef2e74a0588b3f51231001ac84568.dir
+      size: 3586211
+      nfiles: 3
+  topic_youtube@2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow:
+    cmd: python scripts/topic_filter.py --platform youtube --event 
+      2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow
+    deps:
+    - path: 
+        data/interim/youtube/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/clean
+      hash: md5
+      md5: 426567be1923c340b9696da4d78bc02a.dir
+      size: 108451417
+      nfiles: 2
+    - path: 
+        data/interim/youtube/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/slurs
+      hash: md5
+      md5: 4d5ef2e74a0588b3f51231001ac84568.dir
+      size: 3586211
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 7e53a3ac110cc97c06b032029cbb465b
+      size: 3401
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: a1bfc78c48457fc4410153c3365ef5d2
+      size: 17745
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: 
+        data/interim/youtube/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/topic
+      hash: md5
+      md5: c9f05a1f303ce9168835fa11b5c69d63.dir
+      size: 44387060
+      nfiles: 3
+  filter_youtube@2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci
+    deps:
+    - path: 
+        data/raw/youtube/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/comments.csv
+      hash: md5
+      md5: ed04fbb86db641ddb75efc34b0b290e8
+      size: 65391599
+    - path: 
+        data/raw/youtube/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/posts.csv
+      hash: md5
+      md5: 3659c189754563df641e5d5d7f470e4c
+      size: 1230318
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: 
+        data/interim/youtube/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/filtered
+      hash: md5
+      md5: bc81fa72297c063197dee7011ac10f55.dir
+      size: 66862314
+      nfiles: 5
+  clean_youtube@2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci
+    deps:
+    - path: 
+        data/interim/youtube/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/filtered
+      hash: md5
+      md5: bc81fa72297c063197dee7011ac10f55.dir
+      size: 66862314
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: 
+        data/interim/youtube/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/clean
+      hash: md5
+      md5: 1996d09ec0985c4a6c49dc808b507f10.dir
+      size: 87558286
+      nfiles: 2
+  slurs_youtube@2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci:
+    cmd: python scripts/preprocess_slurs.py --platform youtube --event 
+      2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci
+    deps:
+    - path: 
+        data/interim/youtube/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/clean
+      hash: md5
+      md5: 1996d09ec0985c4a6c49dc808b507f10.dir
+      size: 87558286
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+    - path: src/lexicon
+      hash: md5
+      md5: df03ab20f2beec62ef795113ce226379.dir
+      size: 14069
+      nfiles: 4
+    outs:
+    - path: 
+        data/interim/youtube/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/slurs
+      hash: md5
+      md5: 26eee26bfade57fc6580361163fe25cf.dir
+      size: 3011115
+      nfiles: 3
+  topic_youtube@2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci:
+    cmd: python scripts/topic_filter.py --platform youtube --event 
+      2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci
+    deps:
+    - path: 
+        data/interim/youtube/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/clean
+      hash: md5
+      md5: 1996d09ec0985c4a6c49dc808b507f10.dir
+      size: 87558286
+      nfiles: 2
+    - path: 
+        data/interim/youtube/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/slurs
+      hash: md5
+      md5: 26eee26bfade57fc6580361163fe25cf.dir
+      size: 3011115
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 7e53a3ac110cc97c06b032029cbb465b
+      size: 3401
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: a1bfc78c48457fc4410153c3365ef5d2
+      size: 17745
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: 
+        data/interim/youtube/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/topic
+      hash: md5
+      md5: 913ef227a6af7c31b7a69aa8d604e666.dir
+      size: 35469883
+      nfiles: 3
+  filter_youtube@2025-07-19_Protesty_Antyimigracyjne_Polska:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2025-07-19_Protesty_Antyimigracyjne_Polska
+    deps:
+    - path: 
+        data/raw/youtube/2025-07-19_Protesty_Antyimigracyjne_Polska/comments.csv
+      hash: md5
+      md5: 780cea23cc209008ef51aec990b3dba5
+      size: 60692389
+    - path: 
+        data/raw/youtube/2025-07-19_Protesty_Antyimigracyjne_Polska/posts.csv
+      hash: md5
+      md5: 8429b7a72f106ad55f419a219c8e0894
+      size: 1124168
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: 
+        data/interim/youtube/2025-07-19_Protesty_Antyimigracyjne_Polska/filtered
+      hash: md5
+      md5: 8038f2aecd9ddeaec86c144bdaa55068.dir
+      size: 62025308
+      nfiles: 5
+  clean_youtube@2025-07-19_Protesty_Antyimigracyjne_Polska:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2025-07-19_Protesty_Antyimigracyjne_Polska
+    deps:
+    - path: 
+        data/interim/youtube/2025-07-19_Protesty_Antyimigracyjne_Polska/filtered
+      hash: md5
+      md5: 8038f2aecd9ddeaec86c144bdaa55068.dir
+      size: 62025308
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: 
+        data/interim/youtube/2025-07-19_Protesty_Antyimigracyjne_Polska/clean
+      hash: md5
+      md5: 67de7456a23eafd90f13f1c2c78c5e00.dir
+      size: 83464065
+      nfiles: 2
+  slurs_youtube@2025-07-19_Protesty_Antyimigracyjne_Polska:
+    cmd: python scripts/preprocess_slurs.py --platform youtube --event 
+      2025-07-19_Protesty_Antyimigracyjne_Polska
+    deps:
+    - path: 
+        data/interim/youtube/2025-07-19_Protesty_Antyimigracyjne_Polska/clean
+      hash: md5
+      md5: 67de7456a23eafd90f13f1c2c78c5e00.dir
+      size: 83464065
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+    - path: src/lexicon
+      hash: md5
+      md5: df03ab20f2beec62ef795113ce226379.dir
+      size: 14069
+      nfiles: 4
+    outs:
+    - path: 
+        data/interim/youtube/2025-07-19_Protesty_Antyimigracyjne_Polska/slurs
+      hash: md5
+      md5: 16a590a8bdfa6eaee46fd0603943a56e.dir
+      size: 2835095
+      nfiles: 3
+  topic_youtube@2025-07-19_Protesty_Antyimigracyjne_Polska:
+    cmd: python scripts/topic_filter.py --platform youtube --event 
+      2025-07-19_Protesty_Antyimigracyjne_Polska
+    deps:
+    - path: 
+        data/interim/youtube/2025-07-19_Protesty_Antyimigracyjne_Polska/clean
+      hash: md5
+      md5: 67de7456a23eafd90f13f1c2c78c5e00.dir
+      size: 83464065
+      nfiles: 2
+    - path: 
+        data/interim/youtube/2025-07-19_Protesty_Antyimigracyjne_Polska/slurs
+      hash: md5
+      md5: 16a590a8bdfa6eaee46fd0603943a56e.dir
+      size: 2835095
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 7e53a3ac110cc97c06b032029cbb465b
+      size: 3401
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: a1bfc78c48457fc4410153c3365ef5d2
+      size: 17745
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: 
+        data/interim/youtube/2025-07-19_Protesty_Antyimigracyjne_Polska/topic
+      hash: md5
+      md5: 68321025e750b8c295eae40b58bfb3ac.dir
+      size: 32953825
+      nfiles: 3
+  filter_youtube@2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala
+    deps:
+    - path: 
+        data/raw/youtube/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/comments.csv
+      hash: md5
+      md5: d6281dc31cca4b718814f9fda9b4d9b5
+      size: 117416416
+    - path: 
+        data/raw/youtube/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/posts.csv
+      hash: md5
+      md5: ffa987cb685558186a59bb5750588cec
+      size: 6181776
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: 
+        data/interim/youtube/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/filtered
+      hash: md5
+      md5: ac6d5df54a9c6e372d86d16ba98d6184.dir
+      size: 124086402
+      nfiles: 5
+  clean_youtube@2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala
+    deps:
+    - path: 
+        data/interim/youtube/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/filtered
+      hash: md5
+      md5: ac6d5df54a9c6e372d86d16ba98d6184.dir
+      size: 124086402
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: 
+        data/interim/youtube/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/clean
+      hash: md5
+      md5: 0a4f11bd8b2b64917586270897787360.dir
+      size: 156469752
+      nfiles: 2
+  slurs_youtube@2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala:
+    cmd: python scripts/preprocess_slurs.py --platform youtube --event 
+      2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala
+    deps:
+    - path: 
+        data/interim/youtube/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/clean
+      hash: md5
+      md5: 0a4f11bd8b2b64917586270897787360.dir
+      size: 156469752
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+    - path: src/lexicon
+      hash: md5
+      md5: df03ab20f2beec62ef795113ce226379.dir
+      size: 14069
+      nfiles: 4
+    outs:
+    - path: 
+        data/interim/youtube/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/slurs
+      hash: md5
+      md5: bfb775a8056bbeba7c98f69e8b2c2197.dir
+      size: 5621275
+      nfiles: 3
+  topic_youtube@2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala:
+    cmd: python scripts/topic_filter.py --platform youtube --event 
+      2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala
+    deps:
+    - path: 
+        data/interim/youtube/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/clean
+      hash: md5
+      md5: 0a4f11bd8b2b64917586270897787360.dir
+      size: 156469752
+      nfiles: 2
+    - path: 
+        data/interim/youtube/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/slurs
+      hash: md5
+      md5: bfb775a8056bbeba7c98f69e8b2c2197.dir
+      size: 5621275
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 7e53a3ac110cc97c06b032029cbb465b
+      size: 3401
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: a1bfc78c48457fc4410153c3365ef5d2
+      size: 17745
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: 
+        data/interim/youtube/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/topic
+      hash: md5
+      md5: 88a62e2c7bea2c7d432adc8b825a0d1a.dir
+      size: 59213188
+      nfiles: 3
+  filter_youtube@2024-12-20_Atak_Jarmark_Magdeburg:
+    cmd: python scripts/preprocess_filter.py --platform youtube --event 
+      2024-12-20_Atak_Jarmark_Magdeburg
+    deps:
+    - path: data/raw/youtube/2024-12-20_Atak_Jarmark_Magdeburg/comments.csv
+      hash: md5
+      md5: d80f4f1ecca13472eb2d194331a4b08a
+      size: 37762874
+    - path: data/raw/youtube/2024-12-20_Atak_Jarmark_Magdeburg/posts.csv
+      hash: md5
+      md5: ab63c52abc0926b512c0cdd48e8c67a8
+      size: 740349
+    - path: scripts/preprocess_filter.py
+      hash: md5
+      md5: 4c494d81606ec63e8f97c1389ad7beb6
+      size: 1789
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    params:
+      params.yaml:
+        preprocess.filter:
+          min_words: 3
+          languages:
+          - pl
+          - en
+          - de
+          - ru
+          - uk
+          min_pl_confidence: 0.5
+          drop_duplicates: true
+    outs:
+    - path: data/interim/youtube/2024-12-20_Atak_Jarmark_Magdeburg/filtered
+      hash: md5
+      md5: de3d16b63e298185514e538e845a7f9f.dir
+      size: 38674749
+      nfiles: 5
+  clean_youtube@2024-12-20_Atak_Jarmark_Magdeburg:
+    cmd: python scripts/preprocess_clean.py --platform youtube --event 
+      2024-12-20_Atak_Jarmark_Magdeburg
+    deps:
+    - path: data/interim/youtube/2024-12-20_Atak_Jarmark_Magdeburg/filtered
+      hash: md5
+      md5: de3d16b63e298185514e538e845a7f9f.dir
+      size: 38674749
+      nfiles: 5
+    - path: scripts/preprocess_clean.py
+      hash: md5
+      md5: 4c4a3e596d273b239057bb50ffa63be6
+      size: 1090
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2024-12-20_Atak_Jarmark_Magdeburg/clean
+      hash: md5
+      md5: 7db48c9b95912af00867938e67dedce3.dir
+      size: 50822813
+      nfiles: 2
+  slurs_youtube@2024-12-20_Atak_Jarmark_Magdeburg:
+    cmd: python scripts/preprocess_slurs.py --platform youtube --event 
+      2024-12-20_Atak_Jarmark_Magdeburg
+    deps:
+    - path: data/interim/youtube/2024-12-20_Atak_Jarmark_Magdeburg/clean
+      hash: md5
+      md5: 7db48c9b95912af00867938e67dedce3.dir
+      size: 50822813
+      nfiles: 2
+    - path: scripts/preprocess_slurs.py
+      hash: md5
+      md5: 890be7409bff583ee2173acf54128711
+      size: 2305
+    - path: src/lexicon
+      hash: md5
+      md5: df03ab20f2beec62ef795113ce226379.dir
+      size: 14069
+      nfiles: 4
+    outs:
+    - path: data/interim/youtube/2024-12-20_Atak_Jarmark_Magdeburg/slurs
+      hash: md5
+      md5: 76d86b83e6e3c1996c42d3e524510a07.dir
+      size: 1829900
+      nfiles: 3
+  topic_youtube@2024-12-20_Atak_Jarmark_Magdeburg:
+    cmd: python scripts/topic_filter.py --platform youtube --event 
+      2024-12-20_Atak_Jarmark_Magdeburg
+    deps:
+    - path: data/interim/youtube/2024-12-20_Atak_Jarmark_Magdeburg/clean
+      hash: md5
+      md5: 7db48c9b95912af00867938e67dedce3.dir
+      size: 50822813
+      nfiles: 2
+    - path: data/interim/youtube/2024-12-20_Atak_Jarmark_Magdeburg/slurs
+      hash: md5
+      md5: 76d86b83e6e3c1996c42d3e524510a07.dir
+      size: 1829900
+      nfiles: 3
+    - path: scripts/topic_filter.py
+      hash: md5
+      md5: 7e53a3ac110cc97c06b032029cbb465b
+      size: 3401
+    - path: scripts/topic_sample.py
+      hash: md5
+      md5: a1bfc78c48457fc4410153c3365ef5d2
+      size: 17745
+    - path: src/preprocessing
+      hash: md5
+      md5: 2ef8df81c2516ee5702c6286a1ccda84.dir
+      size: 19765
+      nfiles: 12
+    outs:
+    - path: data/interim/youtube/2024-12-20_Atak_Jarmark_Magdeburg/topic
+      hash: md5
+      md5: 7d8bde725658e3eece3661031ac7c821.dir
+      size: 19160266
+      nfiles: 3
+  llm@youtube-Jarmark_Magdeburg:
+    cmd: python scripts/llm_classify.py --platform youtube --event 
+      2024-12-20_Atak_Jarmark_Magdeburg --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: data/interim/youtube/2024-12-20_Atak_Jarmark_Magdeburg/clean
+      hash: md5
+      md5: 7db48c9b95912af00867938e67dedce3.dir
+      size: 50822813
+      nfiles: 2
+    - path: data/interim/youtube/2024-12-20_Atak_Jarmark_Magdeburg/topic
+      hash: md5
+      md5: 7d8bde725658e3eece3661031ac7c821.dir
+      size: 19160266
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/youtube/2024-12-20_Atak_Jarmark_Magdeburg/llm
+      hash: md5
+      md5: 4ed8f2c35ca7426ba3e9a3bfc14b00ea.dir
+      size: 4109488
+      nfiles: 2
+  llm@youtube-Wroclaw:
+    cmd: python scripts/llm_classify.py --platform youtube --event 
+      2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow --provider gemini 
+      --model gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: 
+        data/interim/youtube/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/clean
+      hash: md5
+      md5: 426567be1923c340b9696da4d78bc02a.dir
+      size: 108451417
+      nfiles: 2
+    - path: 
+        data/interim/youtube/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/topic
+      hash: md5
+      md5: c9f05a1f303ce9168835fa11b5c69d63.dir
+      size: 44387060
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: 
+        data/interim/youtube/2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow/llm
+      hash: md5
+      md5: 05f42cd206d5c61bbdd277561e162dd0.dir
+      size: 8349706
+      nfiles: 2
+  llm@youtube-Protesty:
+    cmd: python scripts/llm_classify.py --platform youtube --event 
+      2025-07-19_Protesty_Antyimigracyjne_Polska --provider gemini --model 
+      gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: 
+        data/interim/youtube/2025-07-19_Protesty_Antyimigracyjne_Polska/clean
+      hash: md5
+      md5: 67de7456a23eafd90f13f1c2c78c5e00.dir
+      size: 83464065
+      nfiles: 2
+    - path: 
+        data/interim/youtube/2025-07-19_Protesty_Antyimigracyjne_Polska/topic
+      hash: md5
+      md5: 68321025e750b8c295eae40b58bfb3ac.dir
+      size: 32953825
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: data/interim/youtube/2025-07-19_Protesty_Antyimigracyjne_Polska/llm
+      hash: md5
+      md5: 31f04384f5b4417d33e653f395036606.dir
+      size: 9392542
+      nfiles: 2
+  llm@youtube-Swinoujscie:
+    cmd: python scripts/llm_classify.py --platform youtube --event 
+      2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci --provider gemini 
+      --model gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: 
+        data/interim/youtube/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/clean
+      hash: md5
+      md5: 1996d09ec0985c4a6c49dc808b507f10.dir
+      size: 87558286
+      nfiles: 2
+    - path: 
+        data/interim/youtube/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/topic
+      hash: md5
+      md5: 913ef227a6af7c31b7a69aa8d604e666.dir
+      size: 35469883
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: 
+        data/interim/youtube/2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci/llm
+      hash: md5
+      md5: 94d1f28cfc695783541880a268fe5535.dir
+      size: 7058862
+      nfiles: 2
+  llm@youtube-Bielsko:
+    cmd: python scripts/llm_classify.py --platform youtube --event 
+      2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala --provider gemini 
+      --model gemini-3.5-flash-lite --batch-size 50 --window -7:14
+    deps:
+    - path: 
+        data/interim/youtube/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/clean
+      hash: md5
+      md5: 0a4f11bd8b2b64917586270897787360.dir
+      size: 156469752
+      nfiles: 2
+    - path: 
+        data/interim/youtube/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/topic
+      hash: md5
+      md5: 88a62e2c7bea2c7d432adc8b825a0d1a.dir
+      size: 59213188
+      nfiles: 3
+    - path: scripts/llm_classify.py
+      hash: md5
+      md5: 6777b67518e5d63b49bddb5aa72e650e
+      size: 10250
+    - path: scripts/llm_gold_test.py
+      hash: md5
+      md5: 3808f11e71149595dd95d42876fa8975
+      size: 28142
+    params:
+      params.yaml:
+        llm.batch_size: 50
+        llm.model: gemini-3.5-flash-lite
+        llm.provider: gemini
+    outs:
+    - path: 
+        data/interim/youtube/2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala/llm
+      hash: md5
+      md5: ed7cf2a7136eecfd7f9cc22eca0b8a13.dir
+      size: 23209183
+      nfiles: 2

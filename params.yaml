@@ -76,3 +76,8 @@ llm:
     bluesky-Dezinformacja_Krakow:          {platform: bluesky, event: 2025-10-15_Dezinformacja_Krakow, args: "--window -7:14"}
     bluesky-Ceuta_Masowe_Przekroczenie:    {platform: bluesky, event: 2026-07-30_Ceuta_Masowe_Przekroczenie, args: "--window -7:14"}
     bluesky-Atak_Kamienna_Gora:            {platform: bluesky, event: 2026-08-15_Atak_Kamienna_Gora, args: "--window -7:14"}
+    youtube-Jarmark_Magdeburg: {platform: youtube, event: 2024-12-20_Atak_Jarmark_Magdeburg, args: "--window -7:14"}
+    youtube-Wroclaw:           {platform: youtube, event: 2025-03-30_Dezinformacja_Wroclaw_Relokacja_Migrantow, args: "--window -7:14"}
+    youtube-Protesty:          {platform: youtube, event: 2025-07-19_Protesty_Antyimigracyjne_Polska, args: "--window -7:14"}
+    youtube-Swinoujscie:       {platform: youtube, event: 2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci, args: "--window -7:14"}
+    youtube-Bielsko:           {platform: youtube, event: 2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala, args: "--window -7:14"}

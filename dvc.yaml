@@ -159,6 +159,30 @@ stages:
       outs:
         - data/interim/bluesky/${item}/topic
 
+  slurs_youtube:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/preprocess_slurs.py --platform youtube --event ${item}
+      deps:
+        - scripts/preprocess_slurs.py
+        - src/lexicon
+        - data/interim/youtube/${item}/clean
+      outs:
+        - data/interim/youtube/${item}/slurs
+
+  topic_youtube:
+    foreach: ${preprocess.events}
+    do:
+      cmd: python scripts/topic_filter.py --platform youtube --event ${item}
+      deps:
+        - scripts/topic_filter.py
+        - scripts/topic_sample.py
+        - src/preprocessing
+        - data/interim/youtube/${item}/clean
+        - data/interim/youtube/${item}/slurs
+      outs:
+        - data/interim/youtube/${item}/topic
+
   llm:
     foreach: ${llm.runs}
     do:
