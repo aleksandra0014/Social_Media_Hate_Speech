@@ -7573,14 +7573,12 @@ stages:
       nfiles: 3
     - path: scripts/llm_classify.py
       hash: md5
-      md5: 6777b67518e5d63b49bddb5aa72e650e
-      size: 10250
-      isexec: true
+      md5: b4a533733f05de58b3746b3e5d4bd89b
+      size: 10042
     - path: scripts/llm_gold_test.py
       hash: md5
-      md5: 3808f11e71149595dd95d42876fa8975
-      size: 28142
-      isexec: true
+      md5: 2e799f06f2ee39ffca996259e1e2ddab
+      size: 27648
     params:
       params.yaml:
         llm.batch_size: 50
@@ -7589,8 +7587,8 @@ stages:
     outs:
     - path: data/interim/wykop/2026-02-15_Balony_Rozpoznawcze_Bialorus/llm
       hash: md5
-      md5: bd7ec3603959ab3424d0be4bdf47f451.dir
-      size: 173926
+      md5: 7c7a484326bbb2f9105097e76d749841.dir
+      size: 4771636
       nfiles: 2
   llm@wykop-Napad_Kryminalny_Katowice:
     cmd: python scripts/llm_classify.py --platform wykop --event 
@@ -7609,14 +7607,12 @@ stages:
       nfiles: 3
     - path: scripts/llm_classify.py
       hash: md5
-      md5: 6777b67518e5d63b49bddb5aa72e650e
-      size: 10250
-      isexec: true
+      md5: b4a533733f05de58b3746b3e5d4bd89b
+      size: 10042
     - path: scripts/llm_gold_test.py
       hash: md5
-      md5: 3808f11e71149595dd95d42876fa8975
-      size: 28142
-      isexec: true
+      md5: 2e799f06f2ee39ffca996259e1e2ddab
+      size: 27648
     params:
       params.yaml:
         llm.batch_size: 50
@@ -7625,8 +7621,8 @@ stages:
     outs:
     - path: data/interim/wykop/2026-01-22_Napad_Kryminalny_Katowice/llm
       hash: md5
-      md5: bf2fc3fc16d81bf37011d886427a4a05.dir
-      size: 145295
+      md5: 69da9d895d977f5208e344fd35ae837a.dir
+      size: 4107487
       nfiles: 2
   llm@wykop-Akcja_Sluzb_Centra_Logistyczne:
     cmd: python scripts/llm_classify.py --platform wykop --event 
