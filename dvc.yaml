@@ -38,7 +38,7 @@ stages:
   collect_wykop:
     # data/external/wykop = export of the Wykop API collector (`dvc add`); this stage only splits it
     # into event folders with the same window rules as collect_bluesky
-    cmd: python scripts/wykop.py events.json --source data/external/wykop --out data/raw/wykop
+    cmd: python scripts/wykop.py events.json data/external/wykop/nowe_wydarzenia.json --source data/external/wykop --out data/raw/wykop
     deps:
       - scripts/wykop.py
       - events.json
@@ -49,7 +49,7 @@ stages:
       - data/raw/wykop
 
   filter_wykop:
-    foreach: ${preprocess.events}
+    foreach: ${preprocess.events_wykop}
     do:
       cmd: python scripts/preprocess_filter.py --platform wykop --event ${item}
       deps:
@@ -63,7 +63,7 @@ stages:
         - data/interim/wykop/${item}/filtered
 
   clean_wykop:
-    foreach: ${preprocess.events}
+    foreach: ${preprocess.events_wykop}
     do:
       cmd: python scripts/preprocess_clean.py --platform wykop --event ${item}
       deps:
@@ -86,7 +86,7 @@ stages:
         - data/interim/bluesky/${item}/slurs
 
   slurs_wykop:
-    foreach: ${preprocess.events}
+    foreach: ${preprocess.events_wykop}
     do:
       cmd: python scripts/preprocess_slurs.py --platform wykop --event ${item}
       deps:
@@ -133,7 +133,7 @@ stages:
         - data/interim/youtube/${item}/clean
 
   topic_wykop:
-    foreach: ${preprocess.events}
+    foreach: ${preprocess.events_wykop}
     do:
       cmd: python scripts/topic_filter.py --platform wykop --event ${item}
       deps:

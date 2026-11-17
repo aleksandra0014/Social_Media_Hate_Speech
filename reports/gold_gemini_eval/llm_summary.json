@@ -1,0 +1,40 @@
+{
+  "llm_file": "data/annotation/gold_eval/pred_gemini-3.5-flash-lite_b50.csv",
+  "n_gold": 600,
+  "sam Gemini · hate": {
+    "n": 600,
+    "f1": 0.801,
+    "f1_ci95": [
+      0.766,
+      0.836
+    ],
+    "mcc": 0.65
+  },
+  "sam Gemini · hate_migrant": {
+    "n": 600,
+    "f1": 0.671,
+    "f1_ci95": [
+      0.606,
+      0.731
+    ],
+    "mcc": 0.584
+  },
+  "Gemini + słownik · hate": {
+    "n": 600,
+    "f1": 0.814,
+    "f1_ci95": [
+      0.778,
+      0.848
+    ],
+    "mcc": 0.653
+  },
+  "Gemini + słownik · hate_migrant": {
+    "n": 600,
+    "f1": 0.696,
+    "f1_ci95": [
+      0.636,
+      0.75
+    ],
+    "mcc": 0.59
+  }
+}

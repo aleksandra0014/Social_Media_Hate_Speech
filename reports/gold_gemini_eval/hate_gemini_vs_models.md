@@ -1,0 +1,12 @@
+Na wspólnym podzbiorze (n = 600) najwyższe F1 dla hate ma Gemini + słownik: 0.814 [0.778, 0.848] (MCC 0.653).
+- Gemini + słownik vs sam Gemini: ΔF1 = +0.012 [-0.002, 0.027], różnica nieistotna (p Holm = 0.196; McNemar p Holm = 0.454)
+- Gemini + słownik vs HerBERT-HS: ΔF1 = +0.033 [-0.009, 0.075], różnica nieistotna (p Holm = 0.196; McNemar p Holm = 0.0153)
+- Gemini + słownik vs HerBERT-HS (sam model): ΔF1 = +0.055 [0.01, 0.099], różnica istotna (p Holm = 0.045; McNemar p Holm = 0.00296)
+- Gemini + słownik vs Polbert-CB: ΔF1 = +0.169 [0.123, 0.219], różnica istotna (p Holm = 0.004; McNemar p Holm = 6.33e-11)
+- Gemini + słownik vs Polbert-CB (sam model): ΔF1 = +0.254 [0.195, 0.313], różnica istotna (p Holm = 0.004; McNemar p Holm = 2.67e-15)
+- Gemini + słownik vs RoBERTa-BAN-PL: ΔF1 = +0.279 [0.227, 0.334], różnica istotna (p Holm = 0.004; McNemar p Holm = 2.07e-20)
+- Gemini + słownik vs RoBERTa-BAN-PL (sam model): ΔF1 = +0.422 [0.358, 0.485], różnica istotna (p Holm = 0.004; McNemar p Holm = 6.72e-27)
+- Gemini + słownik vs sam słownik: ΔF1 = +0.554 [0.496, 0.614], różnica istotna (p Holm = 0.004; McNemar p Holm = 7.25e-39)
+- wykop (n = 200): najlepsze F1 – Gemini + słownik 0.847; Gemini + słownik 0.847, HerBERT 0.771
+- bluesky (n = 200): najlepsze F1 – Gemini + słownik 0.812; Gemini + słownik 0.812, HerBERT 0.688
+- youtube (n = 200): najlepsze F1 – HerBERT-HS 0.844; Gemini + słownik 0.783, HerBERT 0.844

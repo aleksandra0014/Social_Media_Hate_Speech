@@ -3,6 +3,7 @@
 """
 import argparse
 import json
+import sys
 import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -199,7 +200,7 @@ def build_event(name, day, items, comments, out_root, data_until):
 def main():
     global DAYS_BEFORE, DAYS_AFTER, MATERIAL_MAX_AGE
     ap = argparse.ArgumentParser(description='Build per-event Wykop folders from the collector export.')
-    ap.add_argument('events', help='JSON file {"name": "YYYY-MM-DD", ...}')
+    ap.add_argument('events', nargs='+', help='JSON file(s) {"name": "YYYY-MM-DD", ...}, merged')
     ap.add_argument('--source', default='data/external/wykop', help='folder with items.csv and comments.csv')
     ap.add_argument('--out', default='data/raw/wykop')
     args = ap.parse_args()
@@ -210,7 +211,12 @@ def main():
         DAYS_AFTER = params.get('days_after', DAYS_AFTER)
         MATERIAL_MAX_AGE = params.get('material_max_age', MATERIAL_MAX_AGE)
 
-    events = json.loads(Path(args.events).read_text(encoding='utf-8-sig'))
+    events = {}
+    for f in args.events:   # e.g. events.json + the collector's nowe_wydarzenia.json
+        for n, d in json.loads(Path(f).read_text(encoding='utf-8-sig')).items():
+            if events.get(n, d) != d:
+                sys.exit(f'{n}: date {events[n]} vs {d} in {f}')
+            events[n] = d
     events = sorted(((n, pd.Timestamp(d).date()) for n, d in events.items()), key=lambda e: e[1])
     source, out_root = Path(args.source), Path(args.out)
 
