@@ -81,3 +81,10 @@ llm:
     youtube-Protesty:          {platform: youtube, event: 2025-07-19_Protesty_Antyimigracyjne_Polska, args: "--window -7:14"}
     youtube-Swinoujscie:       {platform: youtube, event: 2025-07-31_Dezinformacja_Swinoujscie_Autokar_Migranci, args: "--window -7:14"}
     youtube-Bielsko:           {platform: youtube, event: 2026-07-11_Atak_Ukrainskie_Nastolatki_Bielsko_Biala, args: "--window -7:14"}
+    youtube-Pakt_Azyl_PE:                  {platform: youtube, event: 2024-04-10_Pakt_Azyl_PE, args: "--window -7:14"}
+    youtube-Smierc_Zolnierza:              {platform: youtube, event: 2024-06-06_Smierc_Zolnierza, args: "--window -7:14"}
+    youtube-Bojka_Srem:                    {platform: youtube, event: 2024-09-08_Bojka_Srem, args: "--window -7:14"}
+    youtube-Strategia_Migracyjna:          {platform: youtube, event: 2024-10-12_Strategia_Migracyjna, args: "--window -7:14"}
+    youtube-Dezinformacja_Krakow:          {platform: youtube, event: 2025-10-15_Dezinformacja_Krakow, args: "--window -7:14"}
+    youtube-Ceuta_Masowe_Przekroczenie:    {platform: youtube, event: 2026-07-30_Ceuta_Masowe_Przekroczenie, args: "--window -7:14"}
+    youtube-Atak_Kamienna_Gora:            {platform: youtube, event: 2026-08-15_Atak_Kamienna_Gora, args: "--window -7:14"}
