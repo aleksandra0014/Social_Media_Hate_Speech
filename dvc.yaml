@@ -38,10 +38,12 @@ stages:
   collect_wykop:
     # data/external/wykop = export of the Wykop API collector (`dvc add`); this stage only splits it
     # into event folders with the same window rules as collect_bluesky
-    cmd: python scripts/wykop.py events.json data/external/wykop/nowe_wydarzenia.json --source data/external/wykop --out data/raw/wykop
+    # events_2022_2023.json: events in the export window that are not in events.json (Wykop only)
+    cmd: python scripts/wykop.py events.json events_2022_2023.json data/external/wykop/nowe_wydarzenia.json --source data/external/wykop --out data/raw/wykop
     deps:
       - scripts/wykop.py
       - events.json
+      - events_2022_2023.json
       - data/external/wykop
     params:
       - wykop
