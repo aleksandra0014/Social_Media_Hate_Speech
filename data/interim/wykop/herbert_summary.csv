@@ -1,4 +1,8 @@
 ﻿platform,event,clean,topic,slownik_1_1,model_scored,model_hate,hate_final,share_hate_final,windowed,lexicon_from
+wykop,2022-02-24_Atak_Rosji_Ukraina,13636,11214,190,11024,2884,3074,0.2741,5,slurs/ (DVC)
+wykop,2022-05-08_Zabojstwo_Nowy_Swiat,10286,8058,156,7902,1986,2142,0.2658,5,slurs/ (DVC)
+wykop,2023-09-22_Premiera_Zielona_Granica,12413,9250,310,8940,2825,3135,0.3389,11,slurs/ (DVC)
+wykop,2023-10-15_Referendum_Wybory,9533,4977,118,4859,1496,1614,0.3243,8,slurs/ (DVC)
 wykop,2024-04-10_Pakt_Azyl_PE,24718,17917,499,17418,5069,5568,0.3108,22,slurs/ (DVC)
 wykop,2024-05-28_Atak_Zolnierz_Granica,25349,20946,566,20380,6583,7149,0.3413,18,slurs/ (DVC)
 wykop,2024-06-06_Smierc_Zolnierza,24841,20542,531,20011,6562,7093,0.3453,19,slurs/ (DVC)
